@@ -8,8 +8,8 @@
 
 body {
     font-family: Georgia, "Merriweather", serif;
-    background: #f4f1ea;
-    color: #e8e8e8;
+    background: #000000;
+    color: #ffffff;
     line-height: 1.8;
 }
 
@@ -64,7 +64,7 @@ main {
 }
 
 section {
-    background: #1e1e1e;
+    background: #000000;
     padding: 35px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -155,7 +155,7 @@ h1, h2, h3 {
 }
 
 .lectura {
-    background: #1e1e1e;
+    background: #000000;
     padding: 60px 70px;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
@@ -239,4 +239,18 @@ h1, h2, h3 {
     .navegacion-capitulos a {
         text-align: center;
     }
+}html,
+body,
+header,
+nav,
+main,
+section,
+article,
+footer,
+.lectura {
+    background-color: #000000;
+}
+
+body {
+    color: #ffffff;
 }
