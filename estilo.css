@@ -436,4 +436,55 @@ header h1 a:hover {
 .modo-claro footer {
     background: #ffffff;
     color: #111111;
+}/* ===== WEBNOVEL / ARCOS ===== */
+
+.lista-arcos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.tarjeta-arco {
+    display: block;
+    padding: 30px;
+
+    background: #0a0a0a;
+    border: 1px solid #333;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.tarjeta-arco span {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #888;
+}
+
+.tarjeta-arco h3 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+.tarjeta-arco p {
+    color: #aaa;
+}
+
+.tarjeta-arco:hover {
+    transform: translateY(-5px);
+    border-color: white;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .lista-arcos {
+        grid-template-columns: 1fr;
+    }
+
 }
