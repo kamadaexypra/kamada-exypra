@@ -311,4 +311,15 @@ header h1 a:hover {
 
 .dropdown:hover .dropdown-contenido {
     display: block;
+}.modo-claro {
+    background: #f5f5f5;
+    color: #111111;
+}
+
+.modo-claro section,
+.modo-claro header,
+.modo-claro nav,
+.modo-claro footer {
+    background: #ffffff;
+    color: #111111;
 }
