@@ -323,3 +323,66 @@ header h1 a:hover {
     background: #ffffff;
     color: #111111;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-boton {
+    background: none;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    padding: 12px 16px;
+}
+
+.dropdown-contenido {
+    display: none;
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    background: #000000;
+
+    min-width: 200px;
+
+    z-index: 1000;
+
+    border: 1px solid #333333;
+}
+
+.dropdown-contenido a {
+    display: block;
+    color: white;
+    text-decoration: none;
+
+    padding: 12px 16px;
+
+    text-align: left;
+    margin: 0;
+}
+
+.dropdown-contenido a:hover {
+    background: #222222;
+}
+
+
+/* Ordenador: abrir al pasar el ratón */
+
+@media (min-width: 769px) {
+
+    .dropdown:hover .dropdown-contenido {
+        display: block;
+    }
+
+}
+
+
+/* Clase que usará JavaScript */
+
+.dropdown-contenido.mostrar {
+    display: block;
+}
