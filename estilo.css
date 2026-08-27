@@ -1,1 +1,144 @@
+/* ===== GENERAL ===== */
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f4f1ea;
+    color: #252525;
+    line-height: 1.8;
+}
+
+
+/* ===== CABECERA ===== */
+
+header {
+    text-align: center;
+    padding: 70px 20px;
+    background: #1e1e1e;
+    color: white;
+}
+
+header h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #cccccc;
+}
+
+
+/* ===== MENÚ ===== */
+
+nav {
+    background: #111111;
+    text-align: center;
+    padding: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 17px;
+}
+
+nav a:hover {
+    color: #c9a96e;
+}
+
+
+/* ===== CONTENIDO ===== */
+
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 25px;
+}
+
+section {
+    background: white;
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+
+/* ===== CAPÍTULOS ===== */
+
+.capitulo {
+    border-left: 4px solid #c9a96e;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.capitulo h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.capitulo a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    background: #1e1e1e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.capitulo a:hover {
+    background: #c9a96e;
+}
+
+
+/* ===== PIE DE PÁGINA ===== */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #1e1e1e;
+    color: #cccccc;
+    margin-top: 60px;
+}
+
+
+/* ===== MÓVIL ===== */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    main {
+        padding: 0 15px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+}
