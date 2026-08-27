@@ -385,4 +385,27 @@ header h1 a:hover {
 
 .dropdown-contenido.mostrar {
     display: block;
+}.selector-tema {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.selector-tema button {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 20px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.selector-tema button:first-child {
+    background: black;
+    color: white;
+}
+
+.selector-tema button:last-child {
+    background: white;
+    color: black;
 }
