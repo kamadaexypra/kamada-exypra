@@ -408,4 +408,32 @@ header h1 a:hover {
 .selector-tema button:last-child {
     background: white;
     color: black;
+}.modo-oscuro {
+    background: #000000;
+    color: #ffffff;
+}
+
+.modo-oscuro header,
+.modo-oscuro nav,
+.modo-oscuro main,
+.modo-oscuro section,
+.modo-oscuro article,
+.modo-oscuro footer {
+    background: #000000;
+    color: #ffffff;
+}
+
+.modo-claro {
+    background: #ffffff;
+    color: #111111;
+}
+
+.modo-claro header,
+.modo-claro nav,
+.modo-claro main,
+.modo-claro section,
+.modo-claro article,
+.modo-claro footer {
+    background: #ffffff;
+    color: #111111;
 }
