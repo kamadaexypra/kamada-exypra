@@ -262,3 +262,49 @@ header h1 a {
 header h1 a:hover {
     opacity: 0.8;
 }
+/* MENÚ DESPLEGABLE */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-contenido {
+    display: none;
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    background-color: #111111;
+
+    min-width: 200px;
+
+    border: 1px solid #333333;
+
+    z-index: 1000;
+}
+
+.dropdown-contenido a {
+    display: block;
+
+    padding: 12px 18px;
+
+    color: white;
+
+    text-decoration: none;
+
+    text-align: left;
+
+    margin: 0;
+}
+
+.dropdown-contenido a:hover {
+    background-color: #222222;
+}
+
+/* Mostrar el menú al pasar el ratón */
+
+.dropdown:hover .dropdown-contenido {
+    display: block;
+}
