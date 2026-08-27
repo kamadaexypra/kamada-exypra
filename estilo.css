@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Georgia, "Merriweather", serif;
     background: #f4f1ea;
     color: #e8e8e8;
     line-height: 1.8;
@@ -141,4 +141,7 @@ footer {
         padding: 25px;
     }
 
+}
+h1, h2, h3 {
+    font-family: "Cinzel", serif;
 }
