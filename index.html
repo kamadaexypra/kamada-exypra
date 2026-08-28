@@ -2,144 +2,298 @@
 <html lang="es">
 
 <head>
-    <style>
-    nav {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 25px !important;
-
-        background: black !important;
-        padding: 15px !important;
-    }
-
-    nav > a {
-        font-size: 18px !important;
-        color: #BFFF00 !important;
-        text-decoration: none !important;
-    }
-
-    .dropdown-boton {
-        font-size: 18px !important;
-        color: #BFFF00 !important;
-        background: transparent !important;
-        border: none !important;
-    }
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Kamada;Exypra</title>
 
-    <!-- Conecta con nuestro CSS -->
+    <!-- FUENTE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="estilo.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CORRECCIÓN DEL MENÚ -->
+    <style>
 
-<link rel="stylesheet" href="estilo.css">
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 25px;
+            padding: 15px;
+
+            background-color: black;
+        }
+
+        nav > a {
+            font-size: 18px;
+            color: #BFFF00;
+            text-decoration: none;
+        }
+
+        nav > a:hover {
+            color: white;
+        }
+
+        /* DROPDOWN */
+
+        .dropdown {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .dropdown-boton {
+            font-size: 18px;
+            font-family: inherit;
+
+            color: #BFFF00;
+
+            background: transparent;
+            border: none;
+
+            padding: 0;
+            margin: 0;
+
+            cursor: pointer;
+        }
+
+        .dropdown-boton:hover {
+            color: white;
+        }
+
+        .dropdown-contenido {
+            display: none;
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+
+            min-width: 190px;
+
+            background-color: black;
+            border: 1px solid #444;
+
+            z-index: 1000;
+        }
+
+        .dropdown-contenido a {
+            display: block;
+
+            padding: 12px 15px;
+
+            color: #BFFF00;
+            text-decoration: none;
+
+            white-space: nowrap;
+        }
+
+        .dropdown-contenido a:hover {
+            color: white;
+            background-color: #222;
+        }
+
+        /* PC: mostrar desplegable al pasar el ratón */
+
+        .dropdown:hover .dropdown-contenido {
+            display: block;
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- CABECERA -->
+
+    <!-- =========================
+         CABECERA
+    ========================== -->
+
     <header>
-      <h1>
-    <a href="index.html">KAMADA;EXYPRA</a>
-      </h1>
-        <em><p>Natura Humana</p></em>
-       <div class="selector-tema">
-    <button onclick="modoOscuro()">Modo Oscuro</button>
-    <button onclick="modoClaro()">Modo Claro</button>
-</div>
-    </header>
+
+        <h1>
+            <a href="index.html">KAMADA;EXYPRA</a>
+        </h1>
+
+        <p>
+            <em>Natura Humana</em>
+        </p>
 
 
-    <!-- MENÚ -->
-   <nav>
+        <!-- MODO OSCURO / CLARO -->
 
-    <a href="index.html">Inicio</a>
+        <div class="selector-tema">
 
-    <div class="dropdown">
+            <button type="button" onclick="modoOscuro()">
+                Modo Oscuro
+            </button>
 
-        <button type="button" class="dropdown-boton">
-            Kamada;Exypra
-        </button>
-
-        <div class="dropdown-contenido">
-
-            <a href="kamadaexypra/webnovel.html">Webnovel</a>
-            <a href="kamadaexypra/extrastories.html">Extra Stories</a>
-            <a href="kamadaexypra/personajes.html">Personajes</a>
-            <a href="kamadaexypra/historia.html">Historia</a>
+            <button type="button" onclick="modoClaro()">
+                Modo Claro
+            </button>
 
         </div>
 
-    </div>
-
-    <a href="#">Kamada La Fuerza del Amor</a>
-
-    <a href="#">Zear Yero</a>
-
-    <a href="#">Videojuegos</a>
-
-    <a href="#">Recomendaciones de la Hoya</a>
-
-    <a href="#">Kamada/Extra</a>
-
-</nav>
+    </header>
 
 
-    <!-- CONTENIDO PRINCIPAL -->
+
+    <!-- =========================
+         MENÚ PRINCIPAL
+    ========================== -->
+
+    <nav>
+
+        <a href="index.html">
+            Inicio
+        </a>
+
+
+        <!-- KAMADA EXYPRA -->
+
+        <div class="dropdown">
+
+            <button type="button" class="dropdown-boton">
+                Kamada;Exypra
+            </button>
+
+
+            <div class="dropdown-contenido">
+
+                <a href="kamadaexypra/webnovel.html">
+                    Webnovel
+                </a>
+
+                <a href="kamadaexypra/extrastories.html">
+                    Extra Stories
+                </a>
+
+                <a href="kamadaexypra/personajes.html">
+                    Personajes
+                </a>
+
+                <a href="kamadaexypra/historia.html">
+                    Historia
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a href="#">
+            Kamada La Fuerza del Amor
+        </a>
+
+        <a href="#">
+            Zear Yero
+        </a>
+
+        <a href="#">
+            Videojuegos
+        </a>
+
+        <a href="#">
+            Recomendaciones de la Hoya
+        </a>
+
+        <a href="#">
+            Kamada/Extra
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+
     <main>
 
-        <!-- PRESENTACIÓN -->
+
+        <!-- ACERCA DE -->
+
         <section>
-            <h2>Acerca de KAMADA;EXYPRA</h2>
+
+            <h2>
+                Acerca de KAMADA;EXYPRA
+            </h2>
 
             <p>
-            Hola, llamadame sora. Bienvendidos a kamada;Expyra.com xddd
-            En esta web pretendo crear una comunidad amante del universo Natura Humana y de personajes como María Los
-            Ángeles Obispo Cuadros, Fabián Málaga Alba o un despiadado Takami-
-            chceckead la página de recomendaciones si os gustaría saber más de mi.
-        </p
+                Hola, llamadme Sora. Bienvenidos a Kamada;Exypra.com xddd.
+                En esta web pretendo crear una comunidad amante del universo
+                Natura Humana y de personajes como María Los Ángeles Obispo
+                Cuadros, Fabián Málaga Alba o un despiadado Takami.
+                Checkead la página de recomendaciones si os gustaría saber
+                más de mí.
+            </p>
+
         </section>
+
 
 
         <!-- SINOPSIS -->
+
         <section>
-        <h2>Sobre la novela</h2>
+
+            <h2>
+                Sobre la novela
+            </h2>
 
             <p>
-        Escribe aquí la sinopsis de tu novela.
+                Escribe aquí la sinopsis de tu novela.
             </p>
+
         </section>
 
 
+
         <!-- CAPÍTULOS -->
+
         <section id="capitulos">
 
-        <h2>📖 Capítulos</h2>
+            <h2>
+                📖 Capítulos
+            </h2>
 
-        <div class="capitulo">
 
-        <h3>Ruta 1 Capítulo 1</h3>
+            <div class="capitulo">
 
-                <p>Kamada;Exypra</p>
+                <h3>
+                    Ruta 1 Capítulo 1
+                </h3>
 
-                <a href="../kamadaexypra/webnovel.html">
-                Leer capítulo →
+                <p>
+                    Kamada;Exypra
+                </p>
+
+
+                <a href="kamadaexypra/webnovel.html">
+                    Leer capítulo →
                 </a>
 
             </div>
 
         </section>
+
+
+
         <!-- PERSONAJES -->
+
         <section id="personajes">
 
-            <h2>👤 Personajes</h2>
+            <h2>
+                👤 Personajes
+            </h2>
 
             <p>
                 Aquí podrás añadir los personajes de tu novela.
@@ -148,10 +302,14 @@
         </section>
 
 
+
         <!-- MUNDO -->
+
         <section id="mundo">
 
-            <h2>🌍 Mundo</h2>
+            <h2>
+                🌍 Mundo
+            </h2>
 
             <p>
                 Aquí podrás explicar los lugares, organizaciones,
@@ -160,19 +318,29 @@
 
         </section>
 
+
     </main>
 
 
-    <!-- PIE DE PÁGINA -->
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+
     <footer>
 
-        <p>© 2026 - Kamada;exypra</p>
+        <p>
+            © 2026 - Kamada;Exypra
+        </p>
 
     </footer>
 
 
-    <!-- Conecta con JavaScript -->
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
+
 
 </body>
 
