@@ -562,4 +562,81 @@ header h1 a:hover {
         grid-template-columns: 1fr;
     }
 
+}/* ===== ARREGLO DEL MENÚ ===== */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    background-color: black;
+    padding: 18px 10px;
+
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+nav a {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #8a2be2 !important;
+}
+
+
+/* KAMADA EXYPRA */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-boton {
+    background: transparent !important;
+    border: none !important;
+    color: white !important;
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/* MENÚ QUE APARECE AL PASAR EL RATÓN */
+
+.dropdown-contenido {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 200px;
+    background-color: black;
+
+    border: 1px solid #444;
+
+    z-index: 9999;
+}
+
+.dropdown-contenido a {
+    display: block;
+    padding: 12px 16px;
+
+    color: white !important;
+    text-decoration: none !important;
+
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-contenido {
+    display: block;
 }
