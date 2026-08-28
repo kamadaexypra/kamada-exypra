@@ -41,7 +41,13 @@ header p {
 
 /* ===== MENÚ ===== */
 
-nav {
+nav {nav a {
+    color: #BFFF00;
+    text-decoration: none;
+    .dropdown-boton {
+    color: #BFFF00;
+}
+}
   /* ===== MENÚ PRINCIPAL ===== */
 
 nav {
