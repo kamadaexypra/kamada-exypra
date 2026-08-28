@@ -649,3 +649,33 @@ body.modo-claro .tarjeta-arco h3 {
     font-size: 18px;
     line-height: 2;
 }
+/* ===== CITA DEL INICIO DEL CAPÍTULO ===== */
+
+.cita-inicio {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.cita-texto {
+    text-align: center;
+    font-family: "Merriweather", serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.cita-autor {
+    text-align: right;
+    font-family: "Merriweather", serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+
+/* ===== TEXTO DE LA NOVELA ===== */
+
+.texto-novela {
+    white-space: pre-line;
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    line-height: 2;
+}
