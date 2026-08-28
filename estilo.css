@@ -42,37 +42,95 @@ header p {
 /* ===== MENÚ ===== */
 
 nav {
-    nav {
-}
-    background: #111111;
-    text-align: center;
-    padding: 18px;
-     width: 100%;
-    background-color: #000000;
+  /* ===== MENÚ PRINCIPAL ===== */
 
+nav {
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 35px;
 
-    padding: 15px 20px;
+    padding: 18px 20px;
 
-    position: sticky;
-    top: 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+
+    position: relative;
+}
+
+nav > a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+nav > a:hover {
+    color: #9b4dca;
+}
+
+
+/* ===== DROPDOWN KAMADA;EXYPRA ===== */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-boton {
+    background: none;
+    border: none;
+    color: white;
+
+    font-family: inherit;
+    font-size: 18px;
+
+    cursor: pointer;
+    padding: 0;
+}
+
+.dropdown-boton:hover {
+    color: #9b4dca;
+}
+
+.dropdown-contenido {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 180px;
+
+    background-color: #111;
+
+    border: 1px solid #333;
+
     z-index: 1000;
 }
-nav a {
+
+.dropdown-contenido a {
+    display: block;
+
     color: white;
     text-decoration: none;
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-size: 17px;
+
+    padding: 12px 15px;
+
+    white-space: nowrap;
 }
 
-nav a:hover {
-    color: #c9a96e;
+.dropdown-contenido a:hover {
+    background-color: #222;
+}
+
+
+/* PC: mostrar al pasar el ratón */
+
+.dropdown:hover .dropdown-contenido {
+    display: block;
+}
 }
 
 
