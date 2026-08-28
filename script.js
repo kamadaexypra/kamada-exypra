@@ -16,5 +16,15 @@ function modoOscuro() {
 function modoClaro() {
     document.body.classList.remove("modo-oscuro");
     document.body.classList.add("modo-claro");
-}
+}document.querySelectorAll(".texto-novela").forEach(contenedor => {
+
+    const texto = contenedor.textContent.trim();
+
+    const parrafos = texto.split(/\n\s*\n/);
+
+    contenedor.innerHTML = parrafos
+        .map(parrafo => `<p>${parrafo.trim()}</p>`)
+        .join("");
+
+});
 }
