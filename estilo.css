@@ -66,8 +66,12 @@ nav {
 }
 
 nav > a {
-    color: white;
+    nav a {
+    color: #BFFF00;
     text-decoration: none;
+    .dropdown-boton {
+    color: #BFFF00;
+}
     font-size: 18px;
     white-space: nowrap;
 }
