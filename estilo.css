@@ -653,3 +653,46 @@ nav a:hover {
 }font-size: 24px;  /* mediano */
 font-size: 32px;  /* grande */
 font-size: 48px;  /* muy grande */
+/* ===== RESTAURAR MENÚ ===== */
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 25px;
+    padding: 15px 20px;
+
+    background-color: #000;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+/* Enlaces del menú */
+
+nav a {
+    font-size: 18px !important;
+    color: #BFFF00 !important;
+    text-decoration: none !important;
+    font-weight: normal;
+}
+
+/* Kamada;Exypra */
+
+.dropdown-boton {
+    font-size: 18px !important;
+    color: #BFFF00 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* Al pasar el ratón */
+
+nav a:hover,
+.dropdown-boton:hover {
+    color: white !important;
+}
