@@ -1,3 +1,8 @@
+/* ==================================================
+   KAMADA;EXYPRA - ESTILO PRINCIPAL
+   ================================================== */
+
+
 /* ===== GENERAL ===== */
 
 * {
@@ -6,116 +11,173 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Georgia, "Playfair Dispair", serif;
-    background: #000000;
+    font-family: Georgia, "Playfair Display", serif;
+    background-color: #000000;
     color: #ffffff;
     line-height: 1.8;
 }
 
 
-/* ===== CABECERA ===== */
+/* ==================================================
+   CABECERA
+   ================================================== */
 
 header {
     text-align: center;
     padding: 70px 20px;
-    background: #1e1e1e;
+    background-color: #1e1e1e;
     color: #BFFF00;
 }
 
 header h1 {
+    font-family: "Playfair Display", serif;
     font-size: 48px;
     letter-spacing: 4px;
     margin-bottom: 10px;
-   .titulo-principal a {
+}
+
+header h1 a {
     color: #BFFF00;
     text-decoration: none;
 }
+
+header h1 a:hover {
+    opacity: 0.8;
 }
 
 header p {
     font-size: 18px;
     color: #BFFF00;
+    margin-bottom: 15px;
 }
 
 
-/* ===== MENÚ ===== */
+/* ==================================================
+   BOTONES MODO OSCURO / CLARO
+   ================================================== */
 
-nav {nav a {
-    color: #BFFF00;
-    text-decoration: none;
-    .dropdown-boton {
-    color: #BFFF00;
-}
-}
-  /* ===== MENÚ PRINCIPAL ===== */
-
-nav {
-    background-color: #000;
+.selector-tema {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.selector-tema button {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    padding: 7px 15px;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.selector-tema button:first-child {
+    background-color: black;
+    color: white;
+}
+
+.selector-tema button:last-child {
+    background-color: white;
+    color: black;
+}
+
+
+/* ==================================================
+   MENÚ PRINCIPAL
+   ================================================== */
+
+nav {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 30px;
 
     padding: 18px 20px;
 
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
+    background-color: #000000;
+
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
 
     position: relative;
+    z-index: 100;
 }
 
+
+/* ENLACES DEL MENÚ */
+
 nav > a {
-    nav a {
     color: #BFFF00;
     text-decoration: none;
-    .dropdown-boton {
-    color: #BFFF00;
-}
+
     font-size: 18px;
     white-space: nowrap;
 }
 
 nav > a:hover {
-    color: #9b4dca;
+    color: white;
 }
 
 
-/* ===== DROPDOWN KAMADA;EXYPRA ===== */
+/* ==================================================
+   DROPDOWN KAMADA;EXYPRA
+   ================================================== */
 
 .dropdown {
     position: relative;
-    display: inline-block;
+
+    display: flex;
+    align-items: center;
 }
 
+
+/* BOTÓN KAMADA;EXYPRA */
+
 .dropdown-boton {
-    background: none;
+    background: transparent;
     border: none;
-    color: white;
+
+    color: #BFFF00;
 
     font-family: inherit;
     font-size: 18px;
 
-    cursor: pointer;
     padding: 0;
+    margin: 0;
+
+    cursor: pointer;
 }
 
 .dropdown-boton:hover {
-    color: #9b4dca;
+    color: white;
 }
+
+
+/* CONTENIDO DEL DROPDOWN */
 
 .dropdown-contenido {
     display: none;
 
     position: absolute;
+
     top: 100%;
     left: 0;
 
-    min-width: 180px;
+    min-width: 200px;
 
-    background-color: #111;
+    background-color: #111111;
 
-    border: 1px solid #333;
+    border: 1px solid #333333;
 
     z-index: 1000;
 }
@@ -123,41 +185,68 @@ nav > a:hover {
 .dropdown-contenido a {
     display: block;
 
-    color: white;
+    color: #BFFF00;
     text-decoration: none;
 
-    padding: 12px 15px;
+    padding: 12px 16px;
 
+    text-align: left;
     white-space: nowrap;
 }
 
 .dropdown-contenido a:hover {
-    background-color: #222;
+    background-color: #222222;
+    color: white;
 }
 
 
-/* PC: mostrar al pasar el ratón */
+/* PC: ABRIR DROPDOWN AL PASAR EL RATÓN */
 
-.dropdown:hover .dropdown-contenido {
+@media (min-width: 769px) {
+
+    .dropdown:hover .dropdown-contenido {
+        display: block;
+    }
+
+}
+
+
+/* MÓVIL / JAVASCRIPT */
+
+.dropdown-contenido.mostrar {
     display: block;
 }
-}
 
 
-/* ===== CONTENIDO ===== */
+/* ==================================================
+   CONTENIDO PRINCIPAL
+   ================================================== */
 
 main {
-    max-width: 900px;
+    max-width: 1000px;
+
     margin: 50px auto;
+
     padding: 0 25px;
 }
 
 section {
-    background: #000000;
+    background-color: #000000;
+
     padding: 35px;
+
     margin-bottom: 30px;
+
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* TÍTULOS */
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
 }
 
 h2 {
@@ -165,17 +254,60 @@ h2 {
     margin-bottom: 20px;
 }
 
+h3 {
+    margin-bottom: 10px;
+}
+
+
+/* PÁRRAFOS */
+
 p {
     font-size: 18px;
     margin-bottom: 18px;
 }
 
 
-/* ===== CAPÍTULOS ===== */
+/* ==================================================
+   TAMAÑOS DE TEXTO
+   ================================================== */
+
+.texto-pequeno {
+    font-size: 14px;
+}
+
+.texto-normal {
+    font-size: 18px;
+}
+
+.texto-mediano {
+    font-size: 24px;
+}
+
+.texto-grande {
+    font-size: 32px;
+}
+
+.texto-muy-grande {
+    font-size: 48px;
+}
+
+
+/* TEXTO CENTRADO */
+
+.texto-centrado {
+    text-align: center;
+}
+
+
+/* ==================================================
+   CAPÍTULOS DE LA PÁGINA PRINCIPAL
+   ================================================== */
 
 .capitulo {
-    border-left: 4px solid #c9a96e;
+    border-left: 4px solid #BFFF00;
+
     padding: 25px;
+
     margin-top: 20px;
 }
 
@@ -186,128 +318,305 @@ p {
 
 .capitulo a {
     display: inline-block;
+
     margin-top: 10px;
+
     padding: 10px 18px;
-    background: #1e1e1e;
-    color: white;
+
+    background-color: #1e1e1e;
+
+    color: #BFFF00;
+
     text-decoration: none;
+
     border-radius: 5px;
 }
 
 .capitulo a:hover {
-    background: #c9a96e;
+    background-color: #BFFF00;
+    color: black;
 }
 
 
-/* ===== PIE DE PÁGINA ===== */
+/* ==================================================
+   WEBNOVEL - LISTA DE ARCOS
+   ================================================== */
 
-footer {
-    text-align: center;
+.lista-arcos {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+
+/* TARJETA DE ARCO */
+
+.tarjeta-arco {
+    display: block;
+
     padding: 30px;
-    background: #1e1e1e;
-    color: #cccccc;
-    margin-top: 60px;
+
+    min-height: 200px;
+
+    background-color: #0a0a0a;
+
+    border: 1px solid #333333;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.tarjeta-arco span {
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: #aaaaaa;
+}
+
+.tarjeta-arco h3 {
+    margin-top: 10px;
+
+    font-size: 24px;
+
+    color: white;
+}
+
+.tarjeta-arco p {
+    color: #aaaaaa;
+}
+
+.tarjeta-arco:hover {
+    transform: translateY(-5px);
+
+    border-color: #BFFF00;
 }
 
 
-/* ===== MÓVIL ===== */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 34px;
-    }
-
-    nav a {
-        margin: 0 8px;
-    }
-
-    main {
-        padding: 0 15px;
-    }
-
-    section {
-        padding: 25px;
-    }
-
-}
-h1, h2, h3 {
-    font-family: "Cinzel", serif;
-}
-/* =========================
+/* ==================================================
    PÁGINA DE LECTURA
-========================= */
+   ================================================== */
 
 .pagina-capitulo {
     max-width: 850px;
+
     margin: 60px auto;
+
+    padding: 0 20px;
 }
 
 .lectura {
-    background: #000000;
+    background-color: #000000;
+
     padding: 60px 70px;
+
     border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
 .numero-capitulo {
     text-align: center;
-    font-family: "Cinzel", serif;
+
     letter-spacing: 4px;
+
     font-size: 14px;
-    color: #c9a96e;
+
+    color: #BFFF00;
+
     margin-bottom: 10px;
 }
 
 .lectura h2 {
     text-align: center;
-    font-family: "Cinzel", serif;
-    font-size: 38px;
-    margin-bottom: 10px;
-}
 
-.separador {
-    text-align: center;
-    color: #c9a96e;
-    font-size: 22px;
-    margin: 25px 0 40px;
+    font-size: 38px;
+
+    margin-bottom: 20px;
 }
 
 .lectura p {
-    font-family: "Merriweather", serif;
+    font-family: "Playfair Display", Georgia, serif;
+
     font-size: 18px;
+
     line-height: 2;
+
     margin-bottom: 25px;
 }
 
-.lectura p:first-of-type {
-    margin-top: 0;
+
+/* SEPARADOR ENTRE ESCENAS */
+
+.separador {
+    text-align: center;
+
+    color: #BFFF00;
+
+    font-size: 22px;
+
+    margin: 25px 0 40px;
 }
+
+
+/* ==================================================
+   NAVEGACIÓN ENTRE CAPÍTULOS
+   ================================================== */
 
 .navegacion-capitulos {
     display: flex;
+
     justify-content: space-between;
+
     gap: 20px;
+
     margin-top: 35px;
 }
 
 .navegacion-capitulos a {
-    background: #1e1e1e;
-    color: #ffffff;
+    background-color: #1e1e1e;
+
+    color: #BFFF00;
+
     text-decoration: none;
+
     padding: 12px 20px;
+
     border-radius: 6px;
 }
 
 .navegacion-capitulos a:hover {
-    background: #c9a96e;
+    background-color: #BFFF00;
+
+    color: black;
+}
+
+
+/* ==================================================
+   PIE DE PÁGINA
+   ================================================== */
+
+footer {
+    text-align: center;
+
+    padding: 30px;
+
+    background-color: #1e1e1e;
+
+    color: #cccccc;
+
+    margin-top: 60px;
+}
+
+
+/* ==================================================
+   MODO OSCURO
+   ================================================== */
+
+body.modo-oscuro {
+    background-color: #000000;
+
+    color: #ffffff;
+}
+
+body.modo-oscuro main,
+body.modo-oscuro section,
+body.modo-oscuro article {
+    background-color: #000000;
+
+    color: #ffffff;
+}
+
+
+/* ==================================================
+   MODO CLARO
+   ================================================== */
+
+body.modo-claro {
+    background-color: #ffffff;
+
+    color: #111111;
+}
+
+body.modo-claro header {
+    background-color: #eeeeee;
+
+    color: #111111;
+}
+
+body.modo-claro main,
+body.modo-claro section,
+body.modo-claro article {
+    background-color: #ffffff;
+
+    color: #111111;
+}
+
+body.modo-claro footer {
+    background-color: #eeeeee;
+
     color: #111111;
 }
 
 
-/* MÓVILES */
+/* TARJETAS EN MODO CLARO */
 
-@media (max-width: 600px) {
+body.modo-claro .tarjeta-arco {
+    background-color: #f5f5f5;
+
+    color: #111111;
+}
+
+body.modo-claro .tarjeta-arco h3 {
+    color: #111111;
+}
+
+
+/* ==================================================
+   MÓVILES
+   ================================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 45px 15px;
+    }
+
+    header h1 {
+        font-size: 34px;
+
+        letter-spacing: 2px;
+    }
+
+    nav {
+        gap: 18px;
+
+        padding: 15px 10px;
+    }
+
+    nav > a,
+    .dropdown-boton {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 0 15px;
+
+        margin-top: 30px;
+    }
+
+    section {
+        padding: 25px 15px;
+    }
+
+    .lista-arcos {
+        grid-template-columns: 1fr;
+    }
 
     .lectura {
         padding: 35px 22px;
@@ -328,371 +637,9 @@ h1, h2, h3 {
     .navegacion-capitulos a {
         text-align: center;
     }
-}html,
-body,
-header,
-nav,
-main,
-section,
-article,
-footer,
-.lectura {
-    background-color: #000000;
-}
 
-body {
-    color: #ffffff;
-}
-header h1 a {
-    color: inherit;
-    text-decoration: none;
-}
-
-header h1 a:hover {
-    opacity: 0.8;
-}
-/* MENÚ DESPLEGABLE */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-contenido {
-    display: none;
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-
-    background-color: #111111;
-
-    min-width: 200px;
-
-    border: 1px solid #333333;
-
-    z-index: 1000;
-}
-
-.dropdown-contenido a {
-    display: block;
-
-    padding: 12px 18px;
-
-    color: white;
-
-    text-decoration: none;
-
-    text-align: left;
-
-    margin: 0;
-}
-
-.dropdown-contenido a:hover {
-    background-color: #222222;
-}
-
-/* Mostrar el menú al pasar el ratón */
-
-.dropdown:hover .dropdown-contenido {
-    display: block;
-}.modo-claro {
-    background: #f5f5f5;
-    color: #111111;
-}
-
-.modo-claro section,
-.modo-claro header,
-.modo-claro nav,
-.modo-claro footer {
-    background: #ffffff;
-    color: #111111;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-boton {
-    background: none;
-    border: none;
-    color: white;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-    padding: 12px 16px;
-}
-
-.dropdown-contenido {
-    display: none;
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-
-    background: #000000;
-
-    min-width: 200px;
-
-    z-index: 1000;
-
-    border: 1px solid #333333;
-}
-
-.dropdown-contenido a {
-    display: block;
-    color: white;
-    text-decoration: none;
-
-    padding: 12px 16px;
-
-    text-align: left;
-    margin: 0;
-}
-
-.dropdown-contenido a:hover {
-    background: #222222;
-}
-
-
-/* Ordenador: abrir al pasar el ratón */
-
-@media (min-width: 769px) {
-
-    .dropdown:hover .dropdown-contenido {
-        display: block;
+    .selector-tema {
+        flex-wrap: wrap;
     }
 
-}
-
-
-/* Clase que usará JavaScript */
-
-.dropdown-contenido.mostrar {
-    display: block;
-}.selector-tema {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-}
-
-.selector-tema button {
-    font-family: "Playfair Display", serif;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 8px 20px;
-    border: 2px solid white;
-    cursor: pointer;
-}
-
-.selector-tema button:first-child {
-    background: black;
-    color: white;
-}
-
-.selector-tema button:last-child {
-    background: white;
-    color: black;
-}.modo-oscuro {
-    background: #000000;
-    color: #ffffff;
-}
-
-.modo-oscuro header,
-.modo-oscuro nav,
-.modo-oscuro main,
-.modo-oscuro section,
-.modo-oscuro article,
-.modo-oscuro footer {
-    background: #000000;
-    color: #ffffff;
-}
-
-.modo-claro {
-    background: #ffffff;
-    color: #111111;
-}
-
-.modo-claro header,
-.modo-claro nav,
-.modo-claro main,
-.modo-claro section,
-.modo-claro article,
-.modo-claro footer {
-    background: #ffffff;
-    color: #111111;
-}/* ===== WEBNOVEL / ARCOS ===== */
-
-.lista-arcos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.tarjeta-arco {
-    display: block;
-    padding: 30px;
-
-    background: #0a0a0a;
-    border: 1px solid #333;
-
-    color: white;
-    text-decoration: none;
-
-    transition: 0.3s;
-}
-
-.tarjeta-arco span {
-    font-size: 13px;
-    letter-spacing: 3px;
-    color: #888;
-}
-
-.tarjeta-arco h3 {
-    margin-top: 10px;
-    font-size: 24px;
-}
-
-.tarjeta-arco p {
-    color: #aaa;
-}
-
-.tarjeta-arco:hover {
-    transform: translateY(-5px);
-    border-color: white;
-}
-
-
-/* MÓVIL */
-
-@media (max-width: 700px) {
-
-    .lista-arcos {
-        grid-template-columns: 1fr;
-    }
-
-}/* ===== ARREGLO DEL MENÚ ===== */
-
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-
-    background-color: black;
-    padding: 18px 10px;
-
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-}
-
-nav a {
-    color: white !important;
-    text-decoration: none !important;
-    font-size: 18px;
-}
-
-nav a:hover {
-    color: #8a2be2 !important;
-}
-
-
-/* KAMADA EXYPRA */
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-boton {
-    background: transparent !important;
-    border: none !important;
-    color: white !important;
-
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: bold;
-
-    cursor: pointer;
-    padding: 0;
-}
-
-
-/* MENÚ QUE APARECE AL PASAR EL RATÓN */
-
-.dropdown-contenido {
-    display: none;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-
-    min-width: 200px;
-    background-color: black;
-
-    border: 1px solid #444;
-
-    z-index: 9999;
-}
-
-.dropdown-contenido a {
-    display: block;
-    padding: 12px 16px;
-
-    color: white !important;
-    text-decoration: none !important;
-
-    white-space: nowrap;
-}
-
-.dropdown:hover .dropdown-contenido {
-    display: block;
- font-size: 18px;  /* pequeño */   
-}font-size: 24px;  /* mediano */
-font-size: 32px;  /* grande */
-font-size: 48px;  /* muy grande */
-/* ===== RESTAURAR MENÚ ===== */
-
-nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-
-    gap: 25px;
-    padding: 15px 20px;
-
-    background-color: #000;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-}
-
-/* Enlaces del menú */
-
-nav a {
-    font-size: 18px !important;
-    color: #BFFF00 !important;
-    text-decoration: none !important;
-    font-weight: normal;
-}
-
-/* Kamada;Exypra */
-
-.dropdown-boton {
-    font-size: 18px !important;
-    color: #BFFF00 !important;
-    background: none !important;
-    border: none !important;
-    cursor: pointer;
-    font-family: inherit;
-}
-
-/* Al pasar el ratón */
-
-nav a:hover,
-.dropdown-boton:hover {
-    color: white !important;
 }
