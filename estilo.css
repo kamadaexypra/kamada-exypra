@@ -643,3 +643,9 @@ body.modo-claro .tarjeta-arco h3 {
     }
 
 }
+.texto-novela {
+    white-space: pre-line;
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    line-height: 2;
+}
