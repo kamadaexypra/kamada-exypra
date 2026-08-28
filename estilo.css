@@ -684,3 +684,6 @@ body.modo-claro .tarjeta-arco h3 {
     font-size: 18px;
     line-height: 2;
 }
+.texto-centrado {
+    text-align: center;
+}
