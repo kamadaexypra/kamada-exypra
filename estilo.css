@@ -651,12 +651,15 @@ body.modo-claro .tarjeta-arco h3 {
 }
 /* ===== CITA DEL INICIO DEL CAPÍTULO ===== */
 
+/* ===== CITA INICIAL ===== */
+
 .cita-inicio {
     width: 100%;
     margin-bottom: 40px;
 }
 
 .cita-texto {
+    width: 100%;
     text-align: center;
     font-family: "Merriweather", serif;
     font-size: 22px;
@@ -664,10 +667,12 @@ body.modo-claro .tarjeta-arco h3 {
 }
 
 .cita-autor {
+    width: 100%;
     text-align: right;
     font-family: "Merriweather", serif;
     font-size: 20px;
-    margin-top: 5px;
+    margin-top: 8px;
+    padding-right: 20px;
 }
 
 
