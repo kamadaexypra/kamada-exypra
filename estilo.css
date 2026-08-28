@@ -649,4 +649,7 @@ nav a:hover {
 
 .dropdown:hover .dropdown-contenido {
     display: block;
-}
+ font-size: 18px;  /* pequeño */   
+}font-size: 24px;  /* mediano */
+font-size: 32px;  /* grande */
+font-size: 48px;  /* muy grande */
