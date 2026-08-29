@@ -30,20 +30,37 @@ function modoClaro() {
 }
 function reproducirCancion() {
 
-    const audio = document.getElementById("interlude");
-    const icono = document.getElementById("iconoPlay");
+    <script>
+
+const audio = document.getElementById("interlude");
+const icono = document.getElementById("iconoPlay");
+
+function reproducirCancion() {
 
     if (audio.paused) {
 
-        audio.play();
-
-        icono.textContent = "❚❚";
+        audio.play()
+            .then(() => {
+                icono.textContent = "❚❚";
+            })
+            .catch(error => {
+                console.log("Error reproduciendo audio:", error);
+            });
 
     } else {
 
         audio.pause();
-
         icono.textContent = "▶";
+
+    }
+
+}
+
+audio.addEventListener("ended", function () {
+    icono.textContent = "▶";
+});
+
+</script>
 
     }
 
