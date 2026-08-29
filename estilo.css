@@ -693,3 +693,93 @@ body.modo-claro .tarjeta-arco h3 {
     margin-top: 0;
     margin-bottom: 40px;
 }
+/* ==========================================
+   ANCHO DE LAS PÁGINAS DE LECTURA
+   ========================================== */
+
+.pagina-capitulo {
+    width: 100%;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+.lectura {
+    width: 100%;
+    background-color: #000000;
+    padding: 60px 35px;
+    border-radius: 10px;
+}
+
+
+/* TEXTO DE LA NOVELA */
+
+.texto-novela {
+    width: 100%;
+    white-space: pre-line;
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    line-height: 2;
+}
+
+
+/* CITA */
+
+.cita-inicio {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.cita-texto {
+    width: 100%;
+    text-align: center;
+    font-family: "Merriweather", serif;
+    font-size: 22px;
+    line-height: 1.8;
+}
+
+.cita-autor {
+    width: 100%;
+    text-align: right;
+    font-family: "Merriweather", serif;
+    font-size: 20px;
+    margin-top: 8px;
+    padding-right: 20px;
+}
+
+
+/* NAVEGACIÓN SUPERIOR */
+
+.navegacion-superior {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .pagina-capitulo {
+        padding: 0 15px;
+        margin: 30px auto;
+    }
+
+    .lectura {
+        padding: 35px 20px;
+    }
+
+    .texto-novela {
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .cita-texto {
+        font-size: 18px;
+    }
+
+    .cita-autor {
+        font-size: 16px;
+        padding-right: 0;
+    }
+}
