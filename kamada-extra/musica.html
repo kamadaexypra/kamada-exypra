@@ -1,39 +1,305 @@
-<!-- CANCIÓN 1 -->
-<link rel="stylesheet" href="../estilo.css">
-<div class="tarjeta-musica">
+<!DOCTYPE html>
+<html lang="es">
 
-    <button class="boton-portada" onclick="reproducirCancion()">
+<head>
 
-        <img
-            src="Phase 2.jfif"
-            alt="Phase 2.jfif"
-            class="imagen-album">
+    <meta charset="UTF-8">
 
-        <span class="icono-play" id="iconoPlay">
-            ▶
-        </span>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    </button>
+    <title>MP3 - Kamada/Extra</title>
+
+    <!-- FUENTE -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../estilo.css">
+
+</head>
 
 
-    <div class="info-musica">
+<body>
 
-        <h3>Interlude</h3>
 
-        <p>
-            Fear, and Loathing in Las Vegas
-        </p>
+<!-- =========================
+     CABECERA
+========================== -->
 
-        <audio id="interlude">
+<header>
 
-            <source
-                src="phase 2 interlude trimmed.wav"
-                type="audio/wav">
+    <h1>
+        <a href="../index.html">
+            KAMADA;EXYPRA
+        </a>
+    </h1>
 
-        </audio>
+    <p>
+        <em>Kamada/Extra</em>
+    </p>
+
+
+    <!-- MODO OSCURO / CLARO -->
+
+    <div class="selector-tema">
+
+        <button type="button"
+                onclick="modoOscuro()">
+            Modo Oscuro
+        </button>
+
+        <button type="button"
+                onclick="modoClaro()">
+            Modo Claro
+        </button>
 
     </div>
 
-</div>
-</div>
+</header>
+
+
+
+<!-- =========================
+     MENÚ
+========================== -->
+
+<nav>
+
+    <a href="../index.html">
+        Inicio
+    </a>
+
+
+    <!-- KAMADA EXYPRA -->
+
+    <div class="dropdown">
+
+        <button type="button"
+                class="dropdown-boton">
+            Kamada;Exypra
+        </button>
+
+        <div class="dropdown-contenido">
+
+            <a href="../kamadaexypra/webnovel.html">
+                Webnovel
+            </a>
+
+            <a href="../kamadaexypra/extrastories.html">
+                <em>Extra Stories</em>
+            </a>
+
+            <a href="../kamadaexypra/personajes.html">
+                Personajes
+            </a>
+
+            <a href="../kamadaexypra/historia.html">
+                Historia
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- KAMADA LA FUERZA DEL AMOR -->
+
+    <a href="../kamadalafuerzadelamor/index.html">
+        Kamada, La Fuerza del Amor
+    </a>
+
+
+    <!-- ZEAR YERO -->
+
+    <a href="#">
+        <em>Zear Yero</em>
+    </a>
+
+
+    <!-- VIDEOJUEGOS -->
+
+    <a href="#">
+        Videojuegos
+    </a>
+
+
+    <!-- RECOMENDACIONES -->
+
+    <a href="#">
+        Recomendaciones de la Hoya
+    </a>
+
+
+    <!-- KAMADA EXTRA -->
+
+    <div class="dropdown">
+
+        <button type="button"
+                class="dropdown-boton">
+            Kamada/Extra
+        </button>
+
+        <div class="dropdown-contenido">
+
+            <a href="musica.html">
+                🎵 MP3 / Música
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     CONTENIDO
+========================== -->
+
+<main>
+
+    <section>
+
+        <h2>
+            🎵 MP3 / Música
+        </h2>
+
+        <p>
+            Canciones y música relacionada con Kamada.
+        </p>
+
+
+
+        <!-- =========================
+             CANCIÓN 1
+        ========================== -->
+
+        <div class="tarjeta-musica">
+
+
+            <!-- PORTADA / BOTÓN -->
+
+            <button
+                type="button"
+                class="boton-portada"
+                onclick="reproducirCancion()">
+
+
+                <!-- IMAGEN DEL ÁLBUM -->
+
+                <img
+                    src="phase 2 album.jfif"
+                    alt="Portada de Interlude"
+                    class="imagen-album">
+
+
+                <!-- BOTÓN PLAY -->
+
+                <span
+                    class="icono-play"
+                    id="iconoPlay">
+
+                    ▶
+
+                </span>
+
+            </button>
+
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="info-musica">
+
+                <h3>
+                    Interlude
+                </h3>
+
+                <p class="artista">
+                    Fear, and Loathing in Las Vegas
+                </p>
+
+                <p class="tipo-cancion">
+                    Instrumental
+                </p>
+
+
+                <!-- AUDIO -->
+
+                <audio id="interlude">
+
+                    <source
+                        src="phase 2 interlude trimmed.wav"
+                        type="audio/wav">
+
+                    Tu navegador no puede reproducir
+                    esta canción.
+
+                </audio>
+
+            </div>
+
+
+        </div>
+
+        <!-- FIN CANCIÓN 1 -->
+
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     PIE DE PÁGINA
+========================== -->
+
+<footer>
+
+    <p>
+        © 2026 - Kamada;Exypra
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================== -->
+
 <script src="../script.js"></script>
+
+
+<script>
+
+    /*
+    Cuando la canción termina,
+    el botón vuelve a mostrar ▶
+    */
+
+    const interlude = document.getElementById("interlude");
+
+    interlude.addEventListener("ended", function () {
+
+        document.getElementById("iconoPlay").textContent = "▶";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
