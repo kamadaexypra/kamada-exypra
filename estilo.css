@@ -783,3 +783,11 @@ body.modo-claro .tarjeta-arco h3 {
         padding-right: 0;
     }
 }
+/* ===== CHAT CENTRADO ===== */
+
+.chat-centrado {
+    width: 100%;
+    text-align: center;
+    white-space: pre-line;
+    margin: 50px auto;
+}
