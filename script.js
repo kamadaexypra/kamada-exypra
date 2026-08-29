@@ -28,3 +28,23 @@ function modoClaro() {
 
 });
 }
+function reproducirCancion() {
+
+    const audio = document.getElementById("interlude");
+    const icono = document.getElementById("iconoPlay");
+
+    if (audio.paused) {
+
+        audio.play();
+
+        icono.textContent = "❚❚";
+
+    } else {
+
+        audio.pause();
+
+        icono.textContent = "▶";
+
+    }
+
+}
