@@ -791,3 +791,14 @@ body.modo-claro .tarjeta-arco h3 {
     white-space: pre-line;
     margin: 50px auto;
 }
+.chat-centrado {
+    width: 100%;
+    text-align: center !important;
+    white-space: pre-line;
+    margin: 50px auto;
+}
+
+.chat-centrado strong,
+.chat-centrado em {
+    text-align: center !important;
+}
