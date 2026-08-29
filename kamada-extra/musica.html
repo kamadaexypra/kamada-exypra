@@ -1,51 +1,38 @@
 <!-- CANCIÓN 1 -->
 <link rel="stylesheet" href="../estilo.css">
-<div class="cancion">
+<div class="tarjeta-musica">
 
-    <h3>Interlude</h3>
+    <button class="boton-portada" onclick="reproducirCancion()">
 
-    <p>Fear, and Loathing in Las Vegas (instrumental)</p>
+        <img
+            src="portada-interlude.jpg"
+            alt="Portada de Interlude"
+            class="imagen-album">
 
-    <audio controls>
+        <span class="icono-play" id="iconoPlay">
+            ▶
+        </span>
 
-        <source
-            src="https://res.cloudinary.com/ip2n3vxp/video/upload/v1787998933/Interlude-Eb-63bpm-441hz.mp3"
-            type="audio/mpeg">
+    </button>
 
-        Tu navegador no puede reproducir esta canción.
-<div class="biblioteca-musica">
 
-    <div class="tarjeta-musica">
+    <div class="info-musica">
 
-        <div class="portada-musica">
-            ♪
-        </div>
+        <h3>Interlude</h3>
 
-        <div class="info-musica">
+        <p>
+            Fear, and Loathing in Las Vegas
+        </p>
 
-            <h3>Interlude</h3>
+        <audio id="interlude">
 
-            <p class="artista">
-                Fear, and Loathing in Las Vegas
-            </p>
+            <source
+                src="phase 2 interlude trimmed.wav"
+                type="audio/wav">
 
-            <p class="tipo-cancion">
-                Instrumental
-            </p>
-
-            <audio controls>
-                <source
-                    src="phase 2 interlude trimmed.wav"
-                    type="audio/wav">
-
-                Tu navegador no puede reproducir esta canción.
-            </audio>
-
-        </div>
+        </audio>
 
     </div>
 
 </div>
-    </audio>
-
 </div>
