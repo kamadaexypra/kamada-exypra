@@ -849,3 +849,28 @@ body.modo-claro .tarjeta-arco h3 {
     }
 
 }
+/* ================================
+   SECCIÓN DE MÚSICA
+   ================================ */
+
+.cancion {
+    margin: 35px 0;
+    padding: 25px;
+    background: #111;
+    border-left: 4px solid #BFFF00;
+    border-radius: 8px;
+}
+
+.cancion h3 {
+    color: #BFFF00;
+    margin-bottom: 5px;
+}
+
+.cancion p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.cancion audio {
+    width: 100%;
+}
