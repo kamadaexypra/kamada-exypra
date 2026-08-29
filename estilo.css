@@ -687,3 +687,9 @@ body.modo-claro .tarjeta-arco h3 {
 .texto-centrado {
     text-align: center;
 }
+/* NAVEGACIÓN DE ARRIBA */
+
+.navegacion-superior {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
