@@ -48,8 +48,6 @@
     </p>
 
 
-    <!-- MODO OSCURO / CLARO -->
-
     <div class="selector-tema">
 
         <button type="button"
@@ -78,8 +76,6 @@
         Inicio
     </a>
 
-
-    <!-- KAMADA EXYPRA -->
 
     <div class="dropdown">
 
@@ -111,35 +107,25 @@
     </div>
 
 
-    <!-- KAMADA LA FUERZA DEL AMOR -->
-
     <a href="../kamadalafuerzadelamor/index.html">
         Kamada, La Fuerza del Amor
     </a>
 
-
-    <!-- ZEAR YERO -->
 
     <a href="#">
         <em>Zear Yero</em>
     </a>
 
 
-    <!-- VIDEOJUEGOS -->
-
     <a href="#">
         Videojuegos
     </a>
 
 
-    <!-- RECOMENDACIONES -->
-
     <a href="#">
         Recomendaciones de la Hoya
     </a>
 
-
-    <!-- KAMADA EXTRA -->
 
     <div class="dropdown">
 
@@ -187,23 +173,19 @@
         <div class="tarjeta-musica">
 
 
-            <!-- PORTADA / BOTÓN -->
+            <!-- PORTADA -->
 
             <button
                 type="button"
                 class="boton-portada"
-                onclick="reproducirCancion()">
+                id="botonInterlude">
 
-
-                <!-- IMAGEN DEL ÁLBUM -->
 
                 <img
                     src="phase 2 album.jfif"
                     alt="Portada de Interlude"
                     class="imagen-album">
 
-
-                <!-- BOTÓN PLAY -->
 
                 <span
                     class="icono-play"
@@ -242,17 +224,13 @@
                         src="phase 2 interlude trimmed.wav"
                         type="audio/wav">
 
-                    Tu navegador no puede reproducir
-                    esta canción.
+                    Tu navegador no puede reproducir esta canción.
 
                 </audio>
 
             </div>
 
-
         </div>
-
-        <!-- FIN CANCIÓN 1 -->
 
 
     </section>
@@ -279,22 +257,54 @@
      JAVASCRIPT
 ========================== -->
 
-
-
 <script>
 
-    /*
-    Cuando la canción termina,
-    el botón vuelve a mostrar ▶
-    */
+const audio = document.getElementById("interlude");
+const boton = document.getElementById("botonInterlude");
+const icono = document.getElementById("iconoPlay");
 
-    const interlude = document.getElementById("interlude");
 
-    interlude.addEventListener("ended", function () {
+boton.addEventListener("click", function () {
 
-        document.getElementById("iconoPlay").textContent = "▶";
+    if (audio.paused) {
 
-    });
+        audio.play()
+            .then(function () {
+
+                icono.textContent = "❚❚";
+
+            })
+            .catch(function (error) {
+
+                console.log("Error al reproducir:", error);
+
+                alert("No se pudo reproducir la canción. Comprueba que el archivo de audio existe.");
+
+            });
+
+    } else {
+
+        audio.pause();
+
+        icono.textContent = "▶";
+
+    }
+
+});
+
+
+audio.addEventListener("ended", function () {
+
+    icono.textContent = "▶";
+
+});
+
+
+audio.addEventListener("error", function () {
+
+    console.log("No se pudo cargar el archivo de audio.");
+
+});
 
 </script>
 
