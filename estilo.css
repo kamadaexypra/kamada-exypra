@@ -984,8 +984,8 @@ body.modo-claro .tarjeta-arco h3 {
 .boton-portada {
     position: relative;
 
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
 
     padding: 0;
     border: none;
@@ -994,7 +994,7 @@ body.modo-claro .tarjeta-arco h3 {
 
     cursor: pointer;
 
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -1019,8 +1019,8 @@ body.modo-claro .tarjeta-arco h3 {
 
     transform: translate(-50%, -50%);
 
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
     justify-content: center;
@@ -1030,7 +1030,7 @@ body.modo-claro .tarjeta-arco h3 {
 
     color: #BFFF00;
 
-    font-size: 28px;
+    font-size: 18px;
 
     border-radius: 50%;
 }
