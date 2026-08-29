@@ -802,3 +802,50 @@ body.modo-claro .tarjeta-arco h3 {
 .chat-centrado em {
     text-align: center !important;
 }
+/* ==========================================
+   CHAT DEL ARCO 2 CENTRADO
+   ========================================== */
+
+.chat-centrado {
+    display: block;
+    width: 100%;
+    margin: 50px auto;
+    padding: 20px 0;
+
+    text-align: center !important;
+    white-space: pre-line;
+
+    font-family: "Merriweather", serif;
+    font-size: 18px;
+    line-height: 2;
+    font-style: italic;
+}
+
+
+/* NOMBRES DE USUARIO */
+
+.chat-centrado strong {
+    font-weight: 700;
+}
+
+
+/* TODO EL CONTENIDO DEL CHAT CENTRADO */
+
+.chat-centrado em,
+.chat-centrado strong {
+    text-align: center !important;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .chat-centrado {
+        width: 100%;
+        font-size: 16px;
+        line-height: 1.9;
+        padding: 10px;
+    }
+
+}
