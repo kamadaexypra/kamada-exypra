@@ -1164,3 +1164,43 @@ body.modo-claro .tarjeta-arco h3 {
 .capitulo p:last-child {
     margin-bottom: 0;
 }
+/* =========================
+   LISTA DE ARCOS
+========================= */
+
+.indice-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px 20px;
+
+    background: transparent;
+}
+
+.indice-principal h2 {
+    color: #BFFF00;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.indice-principal a {
+    display: block;
+
+    color: #ff2f7d;
+    text-decoration: none;
+
+    font-size: 25px;
+    line-height: 1.5;
+
+    margin: 4px 0;
+
+    text-align: center;
+}
+
+.indice-principal a:hover {
+    color: white;
+    text-decoration: underline;
+}
