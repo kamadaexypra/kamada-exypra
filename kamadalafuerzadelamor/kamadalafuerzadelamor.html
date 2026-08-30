@@ -10,26 +10,82 @@
 
     <title>Kamada, La Fuerza del Amor</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-
     <link rel="stylesheet" href="../estilo.css">
+
+    <style>
+
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .pagina-escritura {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+
+        .pagina-escritura h1 {
+            color: #BFFF00;
+            margin-bottom: 10px;
+        }
+
+        .pagina-escritura p {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 600px;
+
+            padding: 25px;
+
+            background: white;
+            color: black;
+
+            border: none;
+            border-radius: 5px;
+
+            font-size: 18px;
+            line-height: 1.8;
+
+            resize: vertical;
+        }
+
+        .botones {
+            margin-top: 20px;
+
+            display: flex;
+            gap: 15px;
+        }
+
+        .botones button {
+            padding: 12px 20px;
+
+            border: none;
+            border-radius: 5px;
+
+            background: #BFFF00;
+            color: black;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        .botones button:hover {
+            background: white;
+        }
+
+    </style>
 
 </head>
 
 
 <body>
 
-
-<!-- CABECERA -->
 
 <header>
 
@@ -40,13 +96,11 @@
     </h1>
 
     <p>
-        <em>Kamada, La Fuerza del Amor</em>
+        Kamada, La Fuerza del Amor
     </p>
 
 </header>
 
-
-<!-- MENÚ -->
 
 <nav>
 
@@ -54,171 +108,99 @@
         Inicio
     </a>
 
-
-    <!-- KAMADA EXYPRA -->
-
-    <div class="dropdown">
-
-        <button type="button"
-                class="dropdown-boton">
-
-            Kamada;Exypra
-
-        </button>
-
-        <div class="dropdown-contenido">
-
-            <a href="../kamadaexypra/webnovel.html">
-                Webnovel
-            </a>
-
-            <a href="../kamadaexypra/extrastories.html">
-                Extra Stories
-            </a>
-
-            <a href="../kamadaexypra/personajes.html">
-                Personajes
-            </a>
-
-            <a href="../kamadaexypra/historia.html">
-                Historia
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- KAMADA LA FUERZA DEL AMOR -->
-
     <a href="kamadalafuerzadelamor.html">
-    Kamada, La Fuerza del Amor
-</a>
-    
-
-    <a href="#">
-        <em>Zear Yero</em>
+        Kamada, La Fuerza del Amor
     </a>
 
-
-    <a href="#">
-        Videojuegos
+    <a href="../kamada-extra/musica.html">
+        Música
     </a>
-
-
-    <a href="#">
-        Recomendaciones de la Hoya
-    </a>
-
-
-    <!-- KAMADA EXTRA -->
-
-    <div class="dropdown">
-
-        <button type="button"
-                class="dropdown-boton">
-
-            Kamada/Extra
-
-        </button>
-
-        <div class="dropdown-contenido">
-
-            <a href="../kamada-extra/musica.html">
-                🎵 MP3 / Música
-            </a>
-
-        </div>
-
-    </div>
 
 </nav>
 
 
-<!-- CONTENIDO -->
+<main class="pagina-escritura">
 
-<main>
+    <h1>
+        Kamada, La Fuerza del Amor
+    </h1>
 
-    <section>
-
-        <h2>
-            Kamada, La Fuerza del Amor
-        </h2>
-
-        <p>
-            Bienvenido a la sección de
-            <strong>Kamada, La Fuerza del Amor</strong>.
-        </p>
-
-        <p>
-            Aquí podrás encontrar la historia,
-            capítulos, personajes y contenido
-            relacionado con la obra.
-        </p>
-
-    </section>
+    <p>
+        Escribe aquí tu historia.
+    </p>
 
 
-    <!-- HISTORIA -->
-
-    <section>
-
-        <h2>
-            📖 Historia
-        </h2>
-
-        <p>
-            Próximamente...
-        </p>
-
-    </section>
+    <textarea
+        id="editor"
+        placeholder="Empieza a escribir aquí..."></textarea>
 
 
-    <!-- CAPÍTULOS -->
+    <div class="botones">
 
-    <section>
+        <button onclick="guardarTexto()">
+            Guardar
+        </button>
 
-        <h2>
-            📚 Capítulos
-        </h2>
+        <button onclick="borrarTexto()">
+            Borrar
+        </button>
 
-        <p>
-            Los capítulos aparecerán aquí.
-        </p>
-
-    </section>
-
-
-    <!-- PERSONAJES -->
-
-    <section>
-
-        <h2>
-            👤 Personajes
-        </h2>
-
-        <p>
-            Información sobre los personajes
-            próximamente.
-        </p>
-
-    </section>
+    </div>
 
 </main>
 
 
-<!-- PIE DE PÁGINA -->
+<script>
 
-<footer>
-
-    <p>
-        © 2026 - Kamada;Exypra
-    </p>
-
-</footer>
+    const editor = document.getElementById("editor");
 
 
-<script src="../script.js"></script>
+    /* RECUPERAR TEXTO GUARDADO */
+
+    const textoGuardado =
+        localStorage.getItem("kamadaFuerzaAmor");
+
+    if (textoGuardado) {
+
+        editor.value = textoGuardado;
+
+    }
+
+
+    /* GUARDAR */
+
+    function guardarTexto() {
+
+        localStorage.setItem(
+            "kamadaFuerzaAmor",
+            editor.value
+        );
+
+        alert("Texto guardado");
+
+    }
+
+
+    /* BORRAR */
+
+    function borrarTexto() {
+
+        const confirmar =
+            confirm("¿Seguro que quieres borrar todo?");
+
+        if (confirmar) {
+
+            editor.value = "";
+
+            localStorage.removeItem(
+                "kamadaFuerzaAmor"
+            );
+
+        }
+
+    }
+
+</script>
 
 
 </body>
