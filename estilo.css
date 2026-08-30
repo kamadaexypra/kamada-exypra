@@ -1132,8 +1132,9 @@ body.modo-claro .tarjeta-arco h3 {
 }
 /* FUENTE CÓMIC PARA RECOMENDACIONES */
 
-.recomendacion-final h3,
-.recomendacion-final h4 {
-    font-family: "Bangers", cursive;
+..recomendacion-final h3,
+.recomendacion-info h4 {
+    font-family: "Dela Gothic One", sans-serif;
+}
     letter-spacing: 2px;
 }
