@@ -1046,3 +1046,78 @@ body.modo-claro .tarjeta-arco h3 {
     transform: translate(-50%, -50%) scale(1.1);
 }
 }
+/* =========================
+   RECOMENDACIÓN FINAL
+========================= */
+
+.recomendacion-final {
+    margin-top: 80px;
+    padding-top: 35px;
+
+    border-top: 1px solid #333;
+}
+
+.recomendacion-final h3 {
+    color: #BFFF00;
+    margin-bottom: 25px;
+}
+
+.recomendacion-tarjeta {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+    background: #111;
+    border: 1px solid #333;
+    border-left: 4px solid #BFFF00;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+.recomendacion-imagen {
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+.recomendacion-info {
+    flex: 1;
+}
+
+.recomendacion-info h4 {
+    color: #BFFF00;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.recomendacion-tipo {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.recomendacion-info p {
+    font-size: 16px;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 650px) {
+
+    .recomendacion-tarjeta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .recomendacion-imagen {
+        width: 100%;
+        height: 220px;
+    }
+
+}
