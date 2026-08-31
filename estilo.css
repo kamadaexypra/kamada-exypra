@@ -1272,3 +1272,12 @@ body.modo-claro .tarjeta-arco h3 {
     font-style: italic;
     margin: 0;
 }
+.enlace-recomendacion {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.enlace-recomendacion:hover .recomendacion-tarjeta {
+    transform: translateY(-4px);
+}
