@@ -1204,3 +1204,55 @@ body.modo-claro .tarjeta-arco h3 {
     color: white;
     text-decoration: underline;
 }
+/* =========================
+   LISTA DE CAPÍTULOS
+========================= */
+
+.indice-principal {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 60px auto;
+    padding: 30px 20px;
+}
+
+.indice-principal h2 {
+    width: 100%;
+    text-align: center;
+
+    font-family: "Merriweather", serif;
+    font-size: 32px;
+
+    color: #BFFF00;
+
+    margin-bottom: 25px;
+}
+
+.indice-principal a {
+    display: block !important;
+    width: 100%;
+
+    text-align: center;
+
+    font-family: "Merriweather", serif;
+    font-size: 24px;
+
+    color: #BFFF00 !important;
+    text-decoration: none !important;
+
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+.indice-principal a:visited {
+    color: #BFFF00 !important;
+}
+
+.indice-principal a:hover {
+    color: white !important;
+    text-decoration: underline !important;
+}
