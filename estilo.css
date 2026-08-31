@@ -1256,3 +1256,19 @@ body.modo-claro .tarjeta-arco h3 {
     color: white !important;
     text-decoration: underline !important;
 }
+/* MINI SINOPSIS */
+
+.mini-sinopsis {
+    max-width: 750px;
+    margin: 0 auto 45px auto;
+    text-align: center;
+}
+
+.mini-sinopsis p {
+    font-family: "Merriweather", serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #aaaaaa;
+    font-style: italic;
+    margin: 0;
+}
