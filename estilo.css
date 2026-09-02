@@ -1483,3 +1483,114 @@ body.modo-claro .tarjeta-arco h3 {
     color: #111;
     margin-top: 0;
 }
+/* =========================================
+   RECOMENDACIÓN FINAL WEBNOVEL - COMPACTA
+========================================= */
+
+.recomendacion-final {
+    width: 100% !important;
+    max-width: 700px !important;
+    margin: 60px auto !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.recomendacion-final > h3 {
+    font-family: "Dela Gothic One", sans-serif !important;
+    font-size: 22px !important;
+    margin: 0 0 25px 0 !important;
+    padding: 0 !important;
+}
+
+
+/* CAJA BLANCA */
+
+.recomendacion-final .recomendacion-tarjeta {
+    width: 100% !important;
+    max-width: 700px !important;
+
+    min-height: 0 !important;
+    height: auto !important;
+
+    margin: 0 auto !important;
+    padding: 35px 30px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+
+    gap: 25px !important;
+
+    background: white !important;
+    color: #111 !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* IMAGEN */
+
+.recomendacion-final .recomendacion-imagen {
+    width: 120px !important;
+    height: auto !important;
+
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+
+    margin: 0 !important;
+
+    flex: 0 0 120px !important;
+}
+
+
+/* TEXTO DE LA DERECHA */
+
+.recomendacion-final .recomendacion-info {
+    flex: 1 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: #111 !important;
+}
+
+
+/* TÍTULO */
+
+.recomendacion-final .recomendacion-info h4 {
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+
+    color: #111 !important;
+
+    margin: 0 0 8px 0 !important;
+    padding: 0 !important;
+}
+
+
+/* AÑO */
+
+.recomendacion-final .recomendacion-tipo {
+    font-size: 13px !important;
+
+    color: #111 !important;
+
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+}
+
+
+/* OPINIÓN */
+
+.recomendacion-final .recomendacion-info p {
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+
+    color: #111 !important;
+
+    margin-top: 0 !important;
+}
