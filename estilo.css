@@ -1396,3 +1396,90 @@ body.modo-claro .tarjeta-arco h3 {
 
     color: #111;
 }
+/* =========================================
+   RECOMENDACIONES COMPACTAS
+========================================= */
+
+.recomendaciones-compilado {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.recomendaciones-compilado > h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+
+/* TARJETA COMPACTA */
+
+.recomendaciones-compilado .recomendacion-tarjeta {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 35px auto;
+    padding: 35px 30px;
+
+    background: white;
+    color: #111;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* PORTADA */
+
+.recomendaciones-compilado .recomendacion-imagen {
+    width: 120px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+/* PARTE DERECHA */
+
+.recomendaciones-compilado .recomendacion-info {
+    flex: 1;
+    color: #111;
+}
+
+
+/* TÍTULO */
+
+.recomendaciones-compilado .recomendacion-info h4 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    color: #111;
+
+    margin: 0 0 10px 0;
+}
+
+
+/* AÑO */
+
+.recomendaciones-compilado .recomendacion-tipo {
+    font-size: 13px;
+    margin: 0 0 15px 0;
+    color: #111;
+}
+
+
+/* TEXTO */
+
+.recomendaciones-compilado .recomendacion-info p {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #111;
+    margin-top: 0;
+}
