@@ -1281,3 +1281,26 @@ body.modo-claro .tarjeta-arco h3 {
 .enlace-recomendacion:hover .recomendacion-tarjeta {
     transform: translateY(-4px);
 }
+/* =========================
+   RECOMENDACIÓN EN CAPÍTULO
+========================= */
+
+.recomendacion-en-capitulo {
+    width: 100%;
+    max-width: 750px;
+    margin: 70px auto 30px auto;
+}
+
+/* TÍTULO */
+.recomendacion-en-capitulo > h3 {
+    text-align: center;
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* Usa exactamente el mismo diseño de tarjeta */
+.recomendacion-en-capitulo .recomendacion-tarjeta {
+    width: 100%;
+    box-sizing: border-box;
+}
