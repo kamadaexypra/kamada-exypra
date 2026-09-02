@@ -643,15 +643,22 @@ body.modo-claro .tarjeta-arco h3 {
     }
 
 }
+
+/* ==================================================
+   TEXTO DE LA NOVELA / CITA / PÁGINA DE LECTURA
+   ================================================== */
+
 .texto-novela {
+    width: 100%;
     white-space: pre-line;
     font-family: "Merriweather", serif;
     font-size: 18px;
     line-height: 2;
 }
-/* ===== CITA DEL INICIO DEL CAPÍTULO ===== */
 
-/* ===== CITA INICIAL ===== */
+.texto-centrado {
+    text-align: center;
+}
 
 .cita-inicio {
     width: 100%;
@@ -675,27 +682,10 @@ body.modo-claro .tarjeta-arco h3 {
     padding-right: 20px;
 }
 
-
-/* ===== TEXTO DE LA NOVELA ===== */
-
-.texto-novela {
-    white-space: pre-line;
-    font-family: "Merriweather", serif;
-    font-size: 18px;
-    line-height: 2;
-}
-.texto-centrado {
-    text-align: center;
-}
-/* NAVEGACIÓN DE ARRIBA */
-
 .navegacion-superior {
     margin-top: 0;
     margin-bottom: 40px;
 }
-/* ==========================================
-   ANCHO DE LAS PÁGINAS DE LECTURA
-   ========================================== */
 
 .pagina-capitulo {
     width: 100%;
@@ -711,55 +701,7 @@ body.modo-claro .tarjeta-arco h3 {
     border-radius: 10px;
 }
 
-
-/* TEXTO DE LA NOVELA */
-
-.texto-novela {
-    width: 100%;
-    white-space: pre-line;
-    font-family: "Merriweather", serif;
-    font-size: 18px;
-    line-height: 2;
-}
-
-
-/* CITA */
-
-.cita-inicio {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.cita-texto {
-    width: 100%;
-    text-align: center;
-    font-family: "Merriweather", serif;
-    font-size: 22px;
-    line-height: 1.8;
-}
-
-.cita-autor {
-    width: 100%;
-    text-align: right;
-    font-family: "Merriweather", serif;
-    font-size: 20px;
-    margin-top: 8px;
-    padding-right: 20px;
-}
-
-
-/* NAVEGACIÓN SUPERIOR */
-
-.navegacion-superior {
-    margin-top: 0;
-    margin-bottom: 40px;
-}
-
-
-/* MÓVIL */
-
 @media (max-width: 700px) {
-
     .pagina-capitulo {
         padding: 0 15px;
         margin: 30px auto;
@@ -783,75 +725,47 @@ body.modo-claro .tarjeta-arco h3 {
         padding-right: 0;
     }
 }
-/* ===== CHAT CENTRADO ===== */
 
-.chat-centrado {
-    width: 100%;
-    text-align: center;
-    white-space: pre-line;
-    margin: 50px auto;
-}
-.chat-centrado {
-    width: 100%;
-    text-align: center !important;
-    white-space: pre-line;
-    margin: 50px auto;
-}
 
-.chat-centrado strong,
-.chat-centrado em {
-    text-align: center !important;
-}
-/* ==========================================
-   CHAT DEL ARCO 2 CENTRADO
-   ========================================== */
+/* ==================================================
+   CHAT CENTRADO
+   ================================================== */
 
 .chat-centrado {
     display: block;
     width: 100%;
     margin: 50px auto;
     padding: 20px 0;
-
     text-align: center !important;
     white-space: pre-line;
-
     font-family: "Merriweather", serif;
     font-size: 18px;
     line-height: 2;
     font-style: italic;
 }
 
-
-/* NOMBRES DE USUARIO */
-
 .chat-centrado strong {
     font-weight: 700;
 }
-
-
-/* TODO EL CONTENIDO DEL CHAT CENTRADO */
 
 .chat-centrado em,
 .chat-centrado strong {
     text-align: center !important;
 }
 
-
-/* MÓVIL */
-
 @media (max-width: 700px) {
-
     .chat-centrado {
         width: 100%;
         font-size: 16px;
         line-height: 1.9;
         padding: 10px;
     }
-
 }
-/* ================================
+
+
+/* ==================================================
    SECCIÓN DE MÚSICA
-   ================================ */
+   ================================================== */
 
 .cancion {
     margin: 35px 0;
@@ -874,68 +788,42 @@ body.modo-claro .tarjeta-arco h3 {
 .cancion audio {
     width: 100%;
 }
-/* =========================================
-   PÁGINA DE MÚSICA
-========================================= */
 
 .biblioteca-musica {
     width: 100%;
     margin-top: 40px;
 }
 
-
-/* TARJETA */
-
 .tarjeta-musica {
     display: flex;
     align-items: center;
     gap: 30px;
-
     background: #111;
-
     border: 1px solid #333;
     border-left: 5px solid #BFFF00;
-
     border-radius: 12px;
-
     padding: 25px;
     margin-bottom: 25px;
-
     transition: 0.3s;
 }
-
-
-/* EFECTO AL PASAR EL RATÓN */
 
 .tarjeta-musica:hover {
     transform: translateY(-4px);
     border-color: #BFFF00;
 }
 
-
-/* PORTADA */
-
 .portada-musica {
     width: 130px;
     height: 130px;
-
     flex-shrink: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: #1e1e1e;
-
     border-radius: 10px;
-
     color: #BFFF00;
-
     font-size: 55px;
 }
-
-
-/* INFORMACIÓN */
 
 .info-musica {
     width: 100%;
@@ -957,19 +845,55 @@ body.modo-claro .tarjeta-arco h3 {
     font-size: 15px;
 }
 
-
-/* REPRODUCTOR */
-
 .info-musica audio {
     width: 100%;
     margin-top: 15px;
 }
 
+.boton-portada {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-/* MÓVIL */
+.imagen-album {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.icono-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    color: #BFFF00;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.boton-portada:hover .imagen-album {
+    opacity: 0.7;
+}
+
+.boton-portada:hover .icono-play {
+    transform: translate(-50%, -50%) scale(1.1);
+}
 
 @media (max-width: 700px) {
-
     .tarjeta-musica {
         flex-direction: column;
         align-items: flex-start;
@@ -979,180 +903,140 @@ body.modo-claro .tarjeta-arco h3 {
         width: 100%;
         height: 180px;
     }
-/* BOTÓN CON PORTADA DEL ÁLBUM */
-
-.boton-portada {
-    position: relative;
-
-    width: 120px;
-    height: 120px;
-
-    padding: 0;
-    border: none;
-
-    background: none;
-
-    cursor: pointer;
-
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 
-.imagen-album {
+/* ==================================================
+   RECOMENDACIONES
+   MISMO DISEÑO COMPACTO EN WEBNOVEL Y COMPILADO
+   ================================================== */
+
+.recomendacion-final,
+.recomendaciones-compilado {
     width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 0;
+    background: transparent;
 }
 
-
-/* BOTÓN PLAY ENCIMA DE LA PORTADA */
-
-.icono-play {
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background: rgba(0, 0, 0, 0.75);
-
+.recomendacion-final > h3,
+.recomendaciones-compilado > h1,
+.recomendaciones-compilado > h3 {
+    font-family: "Dela Gothic One", sans-serif;
     color: #BFFF00;
-
-    font-size: 18px;
-
-    border-radius: 50%;
+    margin: 0 0 25px 0;
 }
 
-
-/* EFECTO AL PASAR EL RATÓN */
-
-.boton-portada:hover .imagen-album {
-    opacity: 0.7;
+.recomendacion-final > h3 {
+    font-size: 22px;
 }
 
-.boton-portada:hover .icono-play {
-    transform: translate(-50%, -50%) scale(1.1);
+.recomendaciones-compilado > h1 {
+    font-size: 28px;
 }
-}
-/* =========================
-   RECOMENDACIÓN FINAL
-========================= */
-
-.recomendacion-final {
-    margin-top: 80px;
-    padding-top: 35px;
-
-    border-top: 1px solid #333;
-}
-
-.recomendacion-final h3 {
-    color: #BFFF00;
-    margin-bottom: 25px;
-}
-
-/* RECOMENDACIÓN ESTILO HOJA DE WORD */
 
 .recomendacion-tarjeta {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+    padding: 35px 30px;
+    background: #ffffff;
+    color: #111111;
     display: flex;
-    gap: 30px;
+    flex-direction: row;
     align-items: flex-start;
-
-    background-color: white;
-    color: black;
-
-    max-width: 800px;
-    margin: 30px auto;
-
-    padding: 45px;
-
-    border-radius: 2px;
-
-    /* sombra de hoja */
+    gap: 25px;
+    border-radius: 3px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
 }
 
 .recomendacion-imagen {
-    width: 180px;
+    width: 120px;
+    height: auto;
     aspect-ratio: 9 / 16;
-
-    object-fit: contain;
-
+    object-fit: cover;
     display: block;
+    flex: 0 0 120px;
     border-radius: 8px;
 }
 
 .recomendacion-info {
     flex: 1;
+    color: #111111;
 }
 
 .recomendacion-info h4 {
-    color: black;
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-family: "Dela Gothic One", sans-serif;
+    font-size: 20px;
+    line-height: 1.3;
+    color: #111111;
+    margin: 0 0 10px 0;
 }
 
 .recomendacion-tipo {
-     color: #666;
-    font-size: 14px;
-    margin-bottom: 15px;
+    font-size: 13px;
+    color: #111111;
+    margin: 0 0 15px 0;
 }
 
 .recomendacion-info p {
-   color: black;
-    font-size: 16px;
-   line-height: 1.7;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #111111;
+    margin-top: 0;
 }
 
+.enlace-recomendacion {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
 
-/* MÓVIL */
+.enlace-recomendacion:hover .recomendacion-tarjeta {
+    transform: translateY(-4px);
+}
 
 @media (max-width: 650px) {
+    .recomendacion-final,
+    .recomendaciones-compilado {
+        max-width: 100%;
+    }
 
     .recomendacion-tarjeta {
-        flex-direction: column;
-        align-items: flex-start;
+        padding: 22px 18px;
+        gap: 18px;
     }
 
     .recomendacion-imagen {
-        width: 100%;
-        height: 220px;
+        width: 90px;
+        flex-basis: 90px;
     }
 
-}
-/* FUENTE CÓMIC PARA RECOMENDACIONES */
+    .recomendacion-info h4 {
+        font-size: 17px;
+    }
 
-..recomendacion-final h3,
-.recomendacion-info h4 {
-    font-family: "Dela Gothic One", sans-serif;
+    .recomendacion-info p {
+        font-size: 12px;
+    }
 }
-    letter-spacing: 2px;
-}
-/* ESTILO DEL CAPÍTULO */
+
+
+/* ==================================================
+   ESTILO DEL CAPÍTULO
+   ================================================== */
 
 .capitulo {
     max-width: 750px;
     margin: 40px auto;
     padding: 60px 70px;
-
     background: white;
     color: #111;
-
     font-family: Georgia, "Times New Roman", serif;
     font-size: 19px;
     line-height: 1.9;
-
     border-radius: 3px;
 }
 
@@ -1164,99 +1048,57 @@ body.modo-claro .tarjeta-arco h3 {
 .capitulo p:last-child {
     margin-bottom: 0;
 }
-/* =========================
+
+
+/* ==================================================
    LISTA DE CAPÍTULOS
-========================= */
+   ================================================== */
 
 .indice-principal {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    width: 100%;
     max-width: 900px;
     margin: 60px auto;
     padding: 30px 20px;
-
     background: transparent;
 }
 
 .indice-principal h2 {
-    color: #BFFF00;
+    width: 100%;
+    text-align: center;
+    font-family: "Merriweather", serif;
     font-size: 32px;
+    color: #BFFF00;
     margin-bottom: 25px;
 }
 
 .indice-principal a {
     display: block;
-
-    color: #ff2f7d;
-    text-decoration: none;
-
-    font-size: 25px;
-    line-height: 1.5;
-
-    margin: 4px 0;
-
+    width: 100%;
     text-align: center;
+    font-family: "Merriweather", serif;
+    font-size: 24px;
+    color: #BFFF00;
+    text-decoration: none;
+    line-height: 1.6;
+    margin: 4px 0;
+}
+
+.indice-principal a:visited {
+    color: #BFFF00;
 }
 
 .indice-principal a:hover {
     color: white;
     text-decoration: underline;
 }
-/* =========================
-   LISTA DE CAPÍTULOS
-========================= */
 
-.indice-principal {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
 
-    width: 100%;
-    max-width: 900px;
-
-    margin: 60px auto;
-    padding: 30px 20px;
-}
-
-.indice-principal h2 {
-    width: 100%;
-    text-align: center;
-
-    font-family: "Merriweather", serif;
-    font-size: 32px;
-
-    color: #BFFF00;
-
-    margin-bottom: 25px;
-}
-
-.indice-principal a {
-    display: block !important;
-    width: 100%;
-
-    text-align: center;
-
-    font-family: "Merriweather", serif;
-    font-size: 24px;
-
-    color: #BFFF00 !important;
-    text-decoration: none !important;
-
-    line-height: 1.6;
-    margin: 4px 0;
-}
-
-.indice-principal a:visited {
-    color: #BFFF00 !important;
-}
-
-.indice-principal a:hover {
-    color: white !important;
-    text-decoration: underline !important;
-}
-/* MINI SINOPSIS */
+/* ==================================================
+   MINI SINOPSIS
+   ================================================== */
 
 .mini-sinopsis {
     max-width: 750px;
@@ -1272,418 +1114,4 @@ body.modo-claro .tarjeta-arco h3 {
     font-style: italic;
     margin: 0;
 }
-.enlace-recomendacion {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
 
-.enlace-recomendacion:hover .recomendacion-tarjeta {
-    transform: translateY(-4px);
-}
-/* =========================
-   RECOMENDACIÓN EN CAPÍTULO
-========================= */
-
-.recomendacion-en-capitulo {
-    width: 100%;
-    max-width: 750px;
-    margin: 70px auto 30px auto;
-}
-
-/* TÍTULO */
-.recomendacion-en-capitulo > h3 {
-    text-align: center;
-    font-family: "Dela Gothic One", sans-serif;
-    font-size: 22px;
-    margin-bottom: 30px;
-}
-
-/* Usa exactamente el mismo diseño de tarjeta */
-.recomendacion-en-capitulo .recomendacion-tarjeta {
-    width: 100%;
-    box-sizing: border-box;
-}
-/* =========================================
-   MISMO DISEÑO DE RECOMENDACIÓN EN TODA LA WEB
-========================================= */
-
-.recomendacion-final {
-    width: 100%;
-    max-width: 900px;
-    margin: 70px auto;
-}
-
-.recomendacion-final > h3 {
-    font-family: "Dela Gothic One", sans-serif;
-    font-size: 24px;
-    margin-bottom: 25px;
-}
-
-
-/* TARJETA */
-
-.recomendacion-tarjeta {
-    width: 100%;
-    max-width: 900px;
-
-    margin: 0 auto;
-    padding: 55px 35px;
-
-    box-sizing: border-box;
-
-    background: white;
-    color: #111;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 35px;
-
-    border-radius: 3px;
-}
-
-
-/* PORTADA */
-
-.recomendacion-imagen {
-    width: 180px;
-    aspect-ratio: 9 / 16;
-
-    object-fit: cover;
-
-    flex-shrink: 0;
-}
-
-
-/* INFORMACIÓN */
-
-.recomendacion-info {
-    flex: 1;
-    color: #111;
-}
-
-
-/* TÍTULO */
-
-.recomendacion-info h4 {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 25px;
-    font-weight: bold;
-    color: #111;
-
-    margin: 70px 0 80px 0;
-}
-
-
-/* AÑO */
-
-.recomendacion-tipo {
-    font-size: 16px;
-    color: #111;
-
-    margin-bottom: 85px;
-}
-
-
-/* OPINIÓN */
-
-.recomendacion-info p {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 17px;
-    line-height: 1.65;
-
-    color: #111;
-}
-/* =========================================
-   RECOMENDACIONES COMPACTAS
-========================================= */
-
-.recomendaciones-compilado {
-    width: 100%;
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.recomendaciones-compilado > h1 {
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
-
-/* TARJETA COMPACTA */
-
-.recomendaciones-compilado .recomendacion-tarjeta {
-    width: 100%;
-    max-width: 700px;
-
-    margin: 0 auto 35px auto;
-    padding: 35px 30px;
-
-    background: white;
-    color: #111;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-
-    box-sizing: border-box;
-}
-
-
-/* PORTADA */
-
-.recomendaciones-compilado .recomendacion-imagen {
-    width: 120px;
-    height: auto;
-    aspect-ratio: 9 / 16;
-    object-fit: cover;
-
-    flex-shrink: 0;
-}
-
-
-/* PARTE DERECHA */
-
-.recomendaciones-compilado .recomendacion-info {
-    flex: 1;
-    color: #111;
-}
-
-
-/* TÍTULO */
-
-.recomendaciones-compilado .recomendacion-info h4 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    color: #111;
-
-    margin: 0 0 10px 0;
-}
-
-
-/* AÑO */
-
-.recomendaciones-compilado .recomendacion-tipo {
-    font-size: 13px;
-    margin: 0 0 15px 0;
-    color: #111;
-}
-
-
-/* TEXTO */
-
-.recomendaciones-compilado .recomendacion-info p {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #111;
-    margin-top: 0;
-}
-/* =========================================
-   RECOMENDACIÓN FINAL WEBNOVEL - COMPACTA
-========================================= */
-
-.recomendacion-final {
-    width: 100% !important;
-    max-width: 700px !important;
-    margin: 60px auto !important;
-    padding: 0 !important;
-    background: transparent !important;
-}
-
-.recomendacion-final > h3 {
-    font-family: "Dela Gothic One", sans-serif !important;
-    font-size: 22px !important;
-    margin: 0 0 25px 0 !important;
-    padding: 0 !important;
-}
-
-
-/* CAJA BLANCA */
-
-.recomendacion-final .recomendacion-tarjeta {
-    width: 100% !important;
-    max-width: 700px !important;
-
-    min-height: 0 !important;
-    height: auto !important;
-
-    margin: 0 auto !important;
-    padding: 35px 30px !important;
-
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: flex-start !important;
-
-    gap: 25px !important;
-
-    background: white !important;
-    color: #111 !important;
-
-    box-sizing: border-box !important;
-}
-
-
-/* IMAGEN */
-
-.recomendacion-final .recomendacion-imagen {
-    width: 120px !important;
-    height: auto !important;
-
-    aspect-ratio: 9 / 16 !important;
-    object-fit: cover !important;
-
-    margin: 0 !important;
-
-    flex: 0 0 120px !important;
-}
-
-
-/* TEXTO DE LA DERECHA */
-
-.recomendacion-final .recomendacion-info {
-    flex: 1 !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    color: #111 !important;
-}
-
-
-/* TÍTULO */
-
-.recomendacion-final .recomendacion-info h4 {
-    font-family: Georgia, "Times New Roman", serif !important;
-
-    font-size: 20px !important;
-    line-height: 1.3 !important;
-
-    color: #111 !important;
-
-    margin: 0 0 8px 0 !important;
-    padding: 0 !important;
-}
-
-
-/* AÑO */
-
-.recomendacion-final .recomendacion-tipo {
-    font-size: 13px !important;
-
-    color: #111 !important;
-
-    margin: 0 0 12px 0 !important;
-    padding: 0 !important;
-}
-
-
-/* OPINIÓN */
-
-.recomendacion-final .recomendacion-info p {
-    font-family: Georgia, "Times New Roman", serif !important;
-
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-
-    color: #111 !important;
-
-    margin-top: 0 !important;
-}
-/* =====================================
-   RECOMENDACIÓN PEQUEÑA - WEBNOVEL
-===================================== */
-
-.recomendacion-webnovel-pequena {
-    width: 100%;
-    max-width: 700px;
-    margin: 60px auto;
-}
-
-.recomendacion-webnovel-pequena h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-
-/* CAJA BLANCA */
-
-.tarjeta-webnovel-pequena {
-    width: 100%;
-    max-width: 600px;
-
-    margin: 0 auto;
-    padding: 30px 25px;
-
-    background: #ffffff;
-    color: #111111;
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-
-    gap: 20px;
-
-    box-sizing: border-box;
-}
-
-
-/* PORTADA PEQUEÑA */
-
-.imagen-webnovel-pequena {
-    width: 90px;
-    height: 128px;
-
-    object-fit: cover;
-
-    flex-shrink: 0;
-}
-
-
-/* INFORMACIÓN */
-
-.info-webnovel-pequena {
-    flex: 1;
-    color: #111111;
-}
-
-
-/* TÍTULO */
-
-.info-webnovel-pequena h4 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-
-    color: #111111;
-
-    margin: 0 0 8px 0;
-}
-
-
-/* AÑO */
-
-.tipo-webnovel-pequena {
-    font-size: 11px !important;
-
-    margin: 0 0 10px 0 !important;
-
-    color: #111111 !important;
-}
-
-
-/* DESCRIPCIÓN */
-
-.info-webnovel-pequena p {
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 12px;
-    line-height: 1.5;
-
-    color: #111111;
-
-    margin-top: 0;
-}
