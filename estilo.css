@@ -1317,3 +1317,71 @@ body.fuerza-amor .capitulo p {
 body.fuerza-amor.modo-claro .capitulo p {
     color: #000000 !important;
 }
+.recomendaciones-compilado {
+    max-width: 950px;
+    margin: 70px auto;
+    padding: 30px;
+}
+
+.recomendaciones-compilado h2 {
+    color: #BFFF00;
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+}
+
+.recomendacion-tarjeta {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 35px;
+}
+
+.recomendacion-imagen {
+    width: 220px;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.recomendacion-info {
+    flex: 1;
+}
+
+.recomendacion-info h4 {
+    margin: 0 0 10px;
+    color: #BFFF00;
+    font-size: 28px;
+}
+
+.recomendacion-info p {
+    line-height: 1.8;
+}
+
+.recomendacion-tipo {
+    opacity: 0.65;
+}
+
+.ver-recomendaciones {
+    display: inline-block;
+    margin-top: 30px;
+    color: #BFFF00;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.ver-recomendaciones:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .recomendacion-tarjeta {
+        flex-direction: column;
+    }
+
+    .recomendacion-imagen {
+        width: 100%;
+        max-width: 300px;
+    }
+}
