@@ -1250,3 +1250,29 @@ body.modo-claro .tarjeta-arco h3 {
     }
 
 }
+/* =====================================
+   HEADER SIEMPRE OSCURO
+===================================== */
+
+header,
+body.modo-claro header,
+body.modo-oscuro header {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Título KAMADA;EXYPRA */
+header h1,
+header h1 a,
+body.modo-claro header h1,
+body.modo-claro header h1 a {
+    color: #BFFF00;
+}
+
+/* Natura Humana */
+header em,
+body.modo-claro header em,
+body.modo-oscuro header em {
+    color: #fff;
+    opacity: 0.8;
+}
