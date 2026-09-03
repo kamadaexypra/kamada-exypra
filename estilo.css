@@ -1390,3 +1390,10 @@ body.fuerza-amor.modo-claro .capitulo p {
 .american-psycho-gif {
     object-fit: contain;
 }
+.american-psycho-gif {
+    display: block;
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    flex: 0 0 120px;
+}
