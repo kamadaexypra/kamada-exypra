@@ -1303,3 +1303,14 @@ body.modo-oscuro header em {
 .enlace-verde:hover {
     text-decoration: underline;
 }
+/* TEXTO KAMADA, LA FUERZA DEL AMOR */
+
+/* Modo oscuro */
+.capitulo p {
+    color: #fff;
+}
+
+/* Modo claro */
+body.modo-claro .capitulo p {
+    color: #000;
+}
