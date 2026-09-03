@@ -1385,3 +1385,8 @@ body.fuerza-amor.modo-claro .capitulo p {
         max-width: 300px;
     }
 }
+/* GIF DE AMERICAN PSYCHO */
+
+.american-psycho-gif {
+    object-fit: contain;
+}
