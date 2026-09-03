@@ -1285,3 +1285,12 @@ body.modo-oscuro header em {
 .titulo-verde {
     color: #BFFF00;
 }
+.enlace-verde {
+    color: #BFFF00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.enlace-verde:hover {
+    text-decoration: underline;
+}
