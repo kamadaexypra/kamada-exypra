@@ -1,13 +1,16 @@
+
+// =========================
+// MODO CLARO / OSCURO
+// =========================
+
 const botonTema = document.getElementById("boton-tema");
 
-botonTema.addEventListener("click", function () {
-    document.body.classList.toggle("modo-claro");
-});
-function abrirMenu() {
+if (botonTema) {
+    botonTema.addEventListener("click", function () {
+        document.body.classList.toggle("modo-claro");
+    });
+}
 
-    const menu = document.getElementById("menuKamada");
-
-    menu.classList.toggle("mostrar");
 function modoOscuro() {
     document.body.classList.remove("modo-claro");
     document.body.classList.add("modo-oscuro");
@@ -16,7 +19,28 @@ function modoOscuro() {
 function modoClaro() {
     document.body.classList.remove("modo-oscuro");
     document.body.classList.add("modo-claro");
-}document.querySelectorAll(".texto-novela").forEach(contenedor => {
+}
+
+
+// =========================
+// MENÚ KAMADA;EXYPRA
+// =========================
+
+function abrirMenu() {
+
+    const menu = document.getElementById("menuKamada");
+
+    if (menu) {
+        menu.classList.toggle("mostrar");
+    }
+}
+
+
+// =========================
+// TEXTO DE LA NOVELA
+// =========================
+
+document.querySelectorAll(".texto-novela").forEach(contenedor => {
 
     const texto = contenedor.textContent.trim();
 
@@ -27,15 +51,20 @@ function modoClaro() {
         .join("");
 
 });
-}
-function reproducirCancion() {
 
-    <script>
 
-const audio = document.getElementById("interlude");
-const icono = document.getElementById("iconoPlay");
+// =========================
+// REPRODUCTOR DE MÚSICA
+// =========================
 
 function reproducirCancion() {
+
+    const audio = document.getElementById("interlude");
+    const icono = document.getElementById("iconoPlay");
+
+    if (!audio || !icono) {
+        return;
+    }
 
     if (audio.paused) {
 
@@ -53,15 +82,18 @@ function reproducirCancion() {
         icono.textContent = "▶";
 
     }
-
 }
 
-audio.addEventListener("ended", function () {
-    icono.textContent = "▶";
-});
 
-</script>
+// Cambiar el icono cuando termine la canción
 
-    }
+const audioInterlude = document.getElementById("interlude");
+const iconoInterlude = document.getElementById("iconoPlay");
+
+if (audioInterlude && iconoInterlude) {
+
+    audioInterlude.addEventListener("ended", function () {
+        iconoInterlude.textContent = "▶";
+    });
 
 }
