@@ -1251,28 +1251,31 @@ body.modo-claro .tarjeta-arco h3 {
 
 }
 /* =====================================
-   HEADER SIEMPRE OSCURO
+   SOLO EL HEADER SE MANTIENE NEGRO
 ===================================== */
 
 header,
 body.modo-claro header,
 body.modo-oscuro header {
-    background-color: #000;
-    color: #fff;
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
-/* Título KAMADA;EXYPRA */
-header h1,
+
+/* KAMADA;EXYPRA */
+
 header h1 a,
-body.modo-claro header h1,
-body.modo-claro header h1 a {
-    color: #BFFF00;
+body.modo-claro header h1 a,
+body.modo-oscuro header h1 a {
+    color: #BFFF00 !important;
 }
 
-/* Natura Humana */
+
+/* NATURA HUMANA */
+
 header em,
 body.modo-claro header em,
 body.modo-oscuro header em {
-    color: #fff;
+    color: #fff !important;
     opacity: 0.8;
 }
