@@ -1115,3 +1115,107 @@ body.modo-claro .tarjeta-arco h3 {
     margin: 0;
 }
 
+/* =====================================
+   BLOQUE PRINCIPAL DE LA WEBNOVEL
+===================================== */
+
+.hero-novela {
+    max-width: 900px;
+    margin: 80px auto 100px auto;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+.hero-etiqueta {
+    margin-bottom: 20px;
+
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+
+    opacity: 0.65;
+}
+
+.hero-novela h2 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.hero-frase {
+    margin-top: 18px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-style: italic;
+
+    opacity: 0.8;
+}
+
+.hero-descripcion {
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    opacity: 0.8;
+}
+
+.boton-leer {
+    display: inline-block;
+
+    margin-top: 15px;
+    padding: 15px 32px;
+
+    border: 1px solid #BFFF00;
+
+    color: #BFFF00;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.boton-leer:hover {
+    background-color: #BFFF00;
+    color: #000;
+
+    transform: translateY(-3px);
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 600px) {
+
+    .hero-novela {
+        margin: 50px auto 70px auto;
+        padding: 45px 20px;
+    }
+
+    .hero-novela h2 {
+        font-size: 45px;
+    }
+
+    .hero-frase {
+        font-size: 18px;
+    }
+
+    .hero-descripcion {
+        font-size: 15px;
+    }
+
+}
