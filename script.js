@@ -11,14 +11,39 @@ if (botonTema) {
     });
 }
 
-function modoOscuro() {
-    document.body.classList.remove("modo-claro");
+// =========================
+// GUARDAR MODO CLARO / OSCURO
+// =========================
+
+// Recuperar el tema guardado
+const temaGuardado = localStorage.getItem("tema");
+
+if (temaGuardado === "claro") {
+    document.body.classList.add("modo-claro");
+    document.body.classList.remove("modo-oscuro");
+} else {
     document.body.classList.add("modo-oscuro");
+    document.body.classList.remove("modo-claro");
 }
 
+
+// MODO OSCURO
+function modoOscuro() {
+
+    document.body.classList.remove("modo-claro");
+    document.body.classList.add("modo-oscuro");
+
+    localStorage.setItem("tema", "oscuro");
+}
+
+
+// MODO CLARO
 function modoClaro() {
+
     document.body.classList.remove("modo-oscuro");
     document.body.classList.add("modo-claro");
+
+    localStorage.setItem("tema", "claro");
 }
 
 
