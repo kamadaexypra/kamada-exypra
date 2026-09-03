@@ -1314,3 +1314,16 @@ body.modo-oscuro header em {
 body.modo-claro .capitulo p {
     color: #000;
 }
+/* =====================================
+   KAMADA, LA FUERZA DEL AMOR
+===================================== */
+
+/* MODO OSCURO */
+body.fuerza-amor .capitulo p {
+    color: #ffffff !important;
+}
+
+/* MODO CLARO */
+body.fuerza-amor.modo-claro .capitulo p {
+    color: #000000 !important;
+}
