@@ -1399,17 +1399,17 @@ body.fuerza-amor.modo-claro .capitulo p {
     }
 }
 .american-psycho-gif {
-    width: 120px;
-    height: 240px;
+    width: 180px;
+    height: 320px;
     object-fit: cover;
     object-position: 75% center;
+    flex: 0 0 180px;
 }
 /* ===== TODAS LAS RECOMENDACIONES ===== */
 
 .recomendacion-tarjeta {
     width: 100%;
     max-width: 700px;
-    min-height: 400px;
     box-sizing: border-box;
 
     display: flex;
