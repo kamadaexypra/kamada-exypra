@@ -1511,3 +1511,13 @@ body.fuerza-amor.modo-claro .capitulo p {
     object-position: 75% center !important;
 }
 aspect-ratio: auto !important;
+/* Misma fuente que la Webnovel */
+.recomendacion-info,
+.recomendacion-info h4,
+.recomendacion-info p,
+.recomendacion-tipo {
+    font-family: "Merriweather", serif !important;
+}
+.recomendaciones-compilado h3 {
+    font-family: "Merriweather", serif !important;
+}
