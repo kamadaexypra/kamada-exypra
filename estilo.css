@@ -1404,3 +1404,48 @@ body.fuerza-amor.modo-claro .capitulo p {
     object-fit: cover;
     object-position: 75% center;
 }
+/* ===== TODAS LAS RECOMENDACIONES ===== */
+
+.recomendacion-tarjeta {
+    width: 100%;
+    max-width: 700px;
+    min-height: 400px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    padding: 35px 30px;
+    margin: 30px auto;
+
+    background: white;
+    border-radius: 6px;
+}
+
+/* Todas las portadas/GIF tienen el mismo tamaño */
+.recomendacion-imagen {
+    width: 180px;
+    height: 320px;
+    flex: 0 0 180px;
+
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Texto */
+.recomendacion-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.recomendacion-info h4 {
+    margin-top: 0;
+    font-size: 24px;
+    color: black;
+}
+
+.recomendacion-info p {
+    color: black;
+}
