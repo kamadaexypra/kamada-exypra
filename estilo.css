@@ -1318,137 +1318,168 @@ body.fuerza-amor.modo-claro .capitulo p {
     color: #000000 !important;
 }
 
-/* GIF DE AMERICAN PSYCHO */
+/* ==================================================
+   RECOMENDACIONES - DISEÑO DEFINITIVO
+   ================================================== */
 
-}
-.american-psycho-gif {
-    width: 120px;
-    height: 213px;
-    object-fit: contain;
-    display: block;
-    flex: 0 0 120px;
-}
-/* ===== ARREGLO RECOMENDACIÓN AMERICAN PSYCHO ===== */
-
-.pagina-capitulo .recomendaciones-compilado {
+.recomendaciones-compilado,
+.recomendacion-final {
     width: 100%;
     max-width: 700px;
     margin: 60px auto;
     padding: 0;
+    background: transparent;
 }
 
-.pagina-capitulo .recomendacion-tarjeta {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 700px;
-    padding: 35px 30px;
-
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-
-    background: white;
-    border-radius: 6px;
+.recomendaciones-compilado > h1,
+.recomendaciones-compilado > h2,
+.recomendaciones-compilado > h3,
+.recomendacion-final > h3 {
+    color: #BFFF00;
+    margin: 0 0 30px 0;
 }
 
-.pagina-capitulo .recomendacion-imagen {
-    display: block;
-    width: 120px;
-    height: 213px;
-    object-fit: cover;
-    flex: 0 0 120px;
-    border-radius: 8px;
-}
 
-.pagina-capitulo .american-psycho-gif {
-    object-fit: contain;
-}
-
-.pagina-capitulo .recomendacion-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.pagina-capitulo .recomendacion-info h4 {
-    margin: 0 0 15px;
-    color: black;
-    font-size: 20px;
-}
-
-.pagina-capitulo .recomendacion-info p {
-    margin: 0 0 14px;
-    color: black;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.pagina-capitulo .recomendacion-tipo {
-    opacity: 0.75;
-}
-
-@media (max-width: 600px) {
-    .pagina-capitulo .recomendacion-tarjeta {
-        padding: 25px 20px;
-        gap: 18px;
-    }
-
-    .pagina-capitulo .recomendacion-imagen {
-        width: 90px;
-        height: 160px;
-        flex-basis: 90px;
-    }
-}
-.american-psycho-gif {
-    width: 180px;
-    height: 320px;
-    object-fit: cover;
-    object-position: 75% center;
-    flex: 0 0 180px;
-}
-/* ===== TODAS LAS RECOMENDACIONES ===== */
+/* TARJETA */
 
 .recomendacion-tarjeta {
     width: 100%;
     max-width: 700px;
-    box-sizing: border-box;
 
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     gap: 25px;
 
+    margin: 0 auto 35px auto;
     padding: 35px 30px;
-    margin: 30px auto;
 
-    background: white;
+    background: #ffffff;
+    color: #111111;
+
     border-radius: 6px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* Todas las portadas/GIF tienen el mismo tamaño */
+
+/* TODAS LAS IMÁGENES DEL MISMO TAMAÑO */
+
 .recomendacion-imagen {
-    width: 180px;
-    height: 320px;
-    flex: 0 0 180px;
+    width: 180px !important;
+    height: 320px !important;
+
+    min-width: 180px;
+    max-width: 180px;
+
+    flex: 0 0 180px !important;
 
     object-fit: cover;
+    display: block;
+
     border-radius: 10px;
+}
+
+
+/* AMERICAN PSYCHO */
+
+.american-psycho-gif {
+    width: 180px !important;
+    height: 320px !important;
+
+    min-width: 180px;
+    max-width: 180px;
+
+    flex: 0 0 180px !important;
+
+    object-fit: cover !important;
+    object-position: 75% center;
+
     display: block;
 }
 
-/* Texto */
+
+/* TEXTO */
+
 .recomendacion-info {
     flex: 1;
     min-width: 0;
+    color: #111111;
 }
 
 .recomendacion-info h4 {
-    margin-top: 0;
+    margin: 0 0 15px 0;
+
+    color: #111111;
+
     font-size: 24px;
-    color: black;
+    line-height: 1.3;
+}
+
+.recomendacion-tipo {
+    margin: 0 0 15px 0 !important;
+
+    color: #111111 !important;
+
+    font-size: 14px !important;
 }
 
 .recomendacion-info p {
-    color: black;
+    margin: 0 0 15px 0;
+
+    color: #111111 !important;
+
+    font-size: 14px !important;
+    line-height: 1.7 !important;
 }
-.american-psycho-gif {
-    object-position: 75% center;
+
+
+/* BOTÓN VER TODAS */
+
+.ver-recomendaciones {
+    display: inline-block;
+
+    margin-top: 10px;
+    padding: 8px 14px;
+
+    color: #BFFF00;
+    text-decoration: none;
+
+    border: 1px solid #BFFF00;
+    border-radius: 4px;
+}
+
+.ver-recomendaciones:hover {
+    background: #BFFF00;
+    color: #000000;
+}
+
+
+/* MÓVIL */
+
+@media (max-width: 650px) {
+
+    .recomendacion-tarjeta {
+        gap: 18px;
+        padding: 22px 18px;
+    }
+
+    .recomendacion-imagen,
+    .american-psycho-gif {
+        width: 100px !important;
+        height: 178px !important;
+
+        min-width: 100px;
+        max-width: 100px;
+
+        flex: 0 0 100px !important;
+    }
+
+    .recomendacion-info h4 {
+        font-size: 18px;
+    }
+
+    .recomendacion-info p,
+    .recomendacion-tipo {
+        font-size: 12px !important;
+    }
 }
