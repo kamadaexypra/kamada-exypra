@@ -1483,3 +1483,30 @@ body.fuerza-amor.modo-claro .capitulo p {
         font-size: 12px !important;
     }
 }
+/* =========================================
+   TAMAÑO FINAL DE TODAS LAS RECOMENDACIONES
+   ========================================= */
+
+.recomendacion-tarjeta .recomendacion-imagen {
+    width: 180px !important;
+    height: 320px !important;
+    min-width: 180px !important;
+    max-width: 180px !important;
+
+    aspect-ratio: auto !important;
+
+    flex-grow: 0 !important;
+    flex-shrink: 0 !important;
+    flex-basis: 180px !important;
+
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Encuadre especial del GIF de American Psycho */
+.recomendacion-tarjeta .american-psycho-gif {
+    width: 180px !important;
+    height: 320px !important;
+    object-fit: cover !important;
+    object-position: 75% center !important;
+}
