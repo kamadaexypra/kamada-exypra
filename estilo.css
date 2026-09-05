@@ -1650,3 +1650,45 @@ body.modo-claro .footer-copyright {
     }
 
 }
+/* =========================================
+   CONTACTO POR EMAIL
+   ========================================= */
+
+.footer-contacto {
+    margin: 20px 0 25px;
+}
+
+.footer-contacto p {
+    margin-bottom: 12px;
+
+    font-family: "Cinzel", serif;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+.boton-email {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid #BFFF00;
+    border-radius: 3px;
+
+    color: #BFFF00;
+    background: transparent;
+
+    font-family: "Merriweather", serif;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.boton-email:hover {
+    background: #BFFF00;
+    color: #111;
+}
