@@ -1776,3 +1776,29 @@ body.modo-claro .footer-copyright {
 
     background: #BFFF00;
 }
+/* =========================================
+   COLORES FOOTER SEGÚN EL TEMA
+   ========================================= */
+
+/* MODO OSCURO */
+body.modo-oscuro .footer-marca strong,
+body.modo-oscuro .footer-simbolo,
+body.modo-oscuro .footer-legal a:hover {
+    color: #BFFF00;
+}
+
+body.modo-oscuro .footer-marca::after {
+    background: #BFFF00;
+}
+
+
+/* MODO CLARO */
+body.modo-claro .footer-marca strong,
+body.modo-claro .footer-simbolo,
+body.modo-claro .footer-legal a:hover {
+    color: #000000;
+}
+
+body.modo-claro .footer-marca::after {
+    background: #000000;
+}
