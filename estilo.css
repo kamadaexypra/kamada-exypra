@@ -1521,3 +1521,132 @@ aspect-ratio: auto !important;
 .recomendaciones-compilado h3 {
     font-family: "Merriweather", serif !important;
 }
+/* =========================================
+   FOOTER KAMADA;EXYPRA
+   ========================================= */
+
+.footer-principal {
+    width: 100%;
+    margin-top: 80px;
+    padding: 45px 20px 30px;
+
+    text-align: center;
+
+    background: #080808;
+    border-top: 1px solid #333;
+}
+
+
+/* MARCA */
+
+.footer-marca {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 25px;
+}
+
+.footer-marca strong {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #BFFF00;
+}
+
+.footer-marca span {
+    font-family: "Merriweather", serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #aaa;
+}
+
+
+/* ENLACES LEGALES */
+
+.footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.footer-legal a {
+    font-family: "Merriweather", serif;
+    font-size: 13px;
+
+    color: #ccc;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.footer-legal a:hover {
+    color: #BFFF00;
+}
+
+.footer-legal span {
+    color: #555;
+}
+
+
+/* COPYRIGHT */
+
+.footer-copyright {
+    margin: 0;
+
+    font-family: "Merriweather", serif;
+    font-size: 11px;
+
+    color: #666;
+}
+
+
+/* =========================================
+   MODO CLARO
+   ========================================= */
+
+body.modo-claro .footer-principal {
+    background: #f3f3f3;
+    border-top: 1px solid #ddd;
+}
+
+body.modo-claro .footer-legal a {
+    color: #444;
+}
+
+body.modo-claro .footer-legal a:hover {
+    color: #648000;
+}
+
+body.modo-claro .footer-marca span {
+    color: #555;
+}
+
+body.modo-claro .footer-copyright {
+    color: #777;
+}
+
+
+/* =========================================
+   MÓVIL
+   ========================================= */
+
+@media (max-width: 650px) {
+
+    .footer-principal {
+        padding: 35px 15px 25px;
+    }
+
+    .footer-legal {
+        gap: 8px;
+    }
+
+    .footer-legal a {
+        font-size: 12px;
+    }
+
+}
