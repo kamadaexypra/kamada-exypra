@@ -1692,3 +1692,31 @@ body.modo-claro .footer-copyright {
     background: #BFFF00;
     color: #111;
 }
+/* CONTACTO */
+
+.footer-contacto {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.contacto-titulo {
+    margin-bottom: 12px;
+
+    font-family: "Cinzel", serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+
+    color: #ffffff;
+}
+
+.contacto-email {
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+
+    color: #BFFF00;
+    text-decoration: none;
+}
+
+.contacto-email:hover {
+    text-decoration: underline;
+}
