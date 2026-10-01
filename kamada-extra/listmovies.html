@@ -5,188 +5,318 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>List Movies</title>
+    <title>Movie List | KAMADA;EXYPRA</title>
+
+    <link rel="stylesheet" href="../estilo.css">
 
     <style>
-        body {
-            margin: 0;
-            background-color: black;
-            color: white;
-            font-family: "Courier New", monospace;
+        /* =========================
+           MOVIE LIST
+        ========================== */
+
+        .movie-page {
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+            padding: 40px 20px 100px;
+            font-family: "Courier New", Courier, monospace;
         }
 
-        .contenedor {
-            width: 80%;
-            margin: 20px auto;
+        .movie-container {
+            max-width: 1450px;
+            margin: 0 auto;
+        }
+
+        .movie-title {
+            text-align: center;
+            font-size: 38px;
+            letter-spacing: 4px;
+            margin-bottom: 8px;
+        }
+
+        .movie-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        /* Permite desplazarse lateralmente en móvil */
+        .table-wrapper {
+            width: 100%;
             overflow-x: auto;
         }
 
-        table {
+        .movie-table {
             width: 100%;
+            min-width: 950px;
             border-collapse: collapse;
-            table-layout: fixed;
+            background: #000;
         }
 
-        th,
-        td {
+        .movie-table th,
+        .movie-table td {
             border: 1px solid #aaa;
-            padding: 10px;
-            height: 55px;
+            padding: 10px 8px;
             text-align: left;
             vertical-align: middle;
         }
 
-        th {
+        .movie-table th {
             text-align: center;
-            height: 30px;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
         }
 
-        /* Primera columna gris */
-        td:first-child {
-            background-color: #5c5c5c;
+        .movie-table td {
+            font-size: 17px;
         }
 
-        /* Tamaños de columnas */
-        th:nth-child(1),
-        td:nth-child(1) {
-            width: 22%;
+        /* Primera columna gris como en tu referencia */
+        .movie-table td:first-child {
+            background: #5b5b5b;
         }
 
-        th:nth-child(2),
-        td:nth-child(2) {
-            width: 15%;
+        .movie-name {
+            font-weight: bold;
         }
 
-        th:nth-child(3),
-        td:nth-child(3) {
-            width: 25%;
+        .movie-year {
+            font-weight: normal;
         }
 
-        th:nth-child(4),
-        td:nth-child(4) {
-            width: 19%;
+        .original-title {
+            display: block;
+            margin-top: 5px;
+            font-style: italic;
+            font-weight: normal;
         }
 
-        th:nth-child(5),
-        td:nth-child(5) {
-            width: 19%;
+        .stars {
+            white-space: nowrap;
+            font-size: 22px;
+            letter-spacing: 2px;
         }
 
-        @media (max-width: 800px) {
-            .contenedor {
-                width: 95%;
+        .movie-table tbody tr:hover td {
+            background: #191919;
+        }
+
+        .movie-table tbody tr:hover td:first-child {
+            background: #707070;
+        }
+
+        /* Enlaces */
+        .movie-name a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .movie-name a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+
+            .movie-page {
+                padding: 25px 10px 70px;
             }
 
-            table {
-                min-width: 900px;
+            .movie-title {
+                font-size: 27px;
+            }
+
+            .movie-subtitle {
+                font-size: 14px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
-    <div class="contenedor">
+<main class="movie-page">
 
-        <table>
+    <div class="movie-container">
 
-            <thead>
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
+        <h1 class="movie-title">MOVIE LIST</h1>
 
-            <tbody>
+        <p class="movie-subtitle">
+            Películas vistas, recomendadas y seleccionadas por Kamada.
+        </p>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+        <div class="table-wrapper">
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <table class="movie-table">
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>FILM</th>
+                        <th>DIRECTOR</th>
+                        <th>COUNTRY</th>
+                        <th>YEAR</th>
+                        <th>GENRE</th>
+                        <th>COMMENTS</th>
+                    </tr>
+                </thead>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <tbody>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                    <!-- PELÍCULA 1 -->
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                    <tr>
+                        <td>
+                            <span class="movie-name">
+                                Buffalo '66
+                            </span>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                            <span class="movie-year">
+                                (1998)
+                            </span>
+                        </td>
 
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                        <td>
+                            Vincent Gallo
+                        </td>
 
-            </tbody>
+                        <td>
+                            USA
+                        </td>
 
-        </table>
+                        <td>
+                            1998
+                        </td>
+
+                        <td>
+                            Drama / Comedy
+                        </td>
+
+                        <td class="stars">
+                            ☆☆☆☆
+                        </td>
+                    </tr>
+
+
+                    <!-- PELÍCULA 2 -->
+
+                    <tr>
+                        <td>
+                            <span class="movie-name">
+                                Perfect Blue
+                            </span>
+
+                            <span class="movie-year">
+                                (1997)
+                            </span>
+                        </td>
+
+                        <td>
+                            Satoshi Kon
+                        </td>
+
+                        <td>
+                            Japan
+                        </td>
+
+                        <td>
+                            1997
+                        </td>
+
+                        <td>
+                            Psychological / Thriller
+                        </td>
+
+                        <td class="stars">
+                            ☆☆☆☆☆
+                        </td>
+                    </tr>
+
+
+                    <!-- PELÍCULA 3 -->
+
+                    <tr>
+                        <td>
+                            <span class="movie-name">
+                                Fallen Angels
+                            </span>
+
+                            <span class="movie-year">
+                                (1995)
+                            </span>
+                        </td>
+
+                        <td>
+                            Wong Kar-wai
+                        </td>
+
+                        <td>
+                            Hong Kong
+                        </td>
+
+                        <td>
+                            1995
+                        </td>
+
+                        <td>
+                            Crime / Romance
+                        </td>
+
+                        <td class="stars">
+                            ☆☆☆☆
+                        </td>
+                    </tr>
+
+
+                    <!-- PELÍCULA 4 -->
+
+                    <tr>
+                        <td>
+                            <span class="movie-name">
+                                A Silent Voice
+                            </span>
+
+                            <span class="movie-year">
+                                (2016)
+                            </span>
+
+                            <span class="original-title">
+                                Koe no Katachi
+                            </span>
+                        </td>
+
+                        <td>
+                            Naoko Yamada
+                        </td>
+
+                        <td>
+                            Japan
+                        </td>
+
+                        <td>
+                            2016
+                        </td>
+
+                        <td>
+                            Drama / Animation
+                        </td>
+
+                        <td class="stars">
+                            ☆☆☆☆☆
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
 
     </div>
+
+</main>
 
 </body>
 </html>
