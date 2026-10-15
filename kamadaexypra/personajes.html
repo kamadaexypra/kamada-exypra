@@ -1,298 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Personajes | KAMADA;EXYPRA</title>
-
-    <link rel="stylesheet" href="../estilo.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        .personajes-pagina {
-            max-width: 1150px;
-            margin: 60px auto;
-            padding: 20px;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .personajes-titulo {
-            text-align: center;
-            font-size: 42px;
-            color: #BFFF00;
-            margin-bottom: 12px;
-        }
-
-        .personajes-subtitulo {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 55px;
-            font-style: italic;
-        }
-
-        .personajes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        .personaje {
-            background: #191919;
-            border: 1px solid #383838;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .personaje:hover {
-            transform: translateY(-6px);
-            border-color: #BFFF00;
-        }
-
-        .personaje img {
-            width: 100%;
-            height: 330px;
-            object-fit: cover;
-            display: block;
-            background: #292929;
-        }
-
-        .personaje-info {
-            padding: 22px;
-        }
-
-        .personaje-info h2 {
-            color: #BFFF00;
-            font-size: 25px;
-            margin: 0 0 10px;
-        }
-
-        .personaje-fecha {
-            color: #999;
-            font-size: 13px;
-            margin-bottom: 16px;
-        }
-
-        .personaje-descripcion {
-            color: #ddd;
-            font-size: 15px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .personaje-boton {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid #BFFF00;
-            border-radius: 4px;
-            color: #BFFF00;
-            background: transparent;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 14px;
-        }
-
-        .personaje-boton:hover {
-            background: #BFFF00;
-            color: #111;
-        }
-
-        .personaje-detalles {
-            display: none;
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #444;
-            color: #ddd;
-            line-height: 1.8;
-        }
-
-        .personaje-detalles.visible {
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .personajes-titulo {
-                font-size: 32px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personajes - KAMADA;EXYPRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<style>
+.personajes-pagina{max-width:1050px;margin:55px auto;padding:0 20px}
+.personajes-titulo{text-align:center;font-family:Cinzel,serif;color:#BFFF00;font-size:clamp(28px,5vw,42px)}
+.personajes-subtitulo{text-align:center;font-style:italic;margin-bottom:55px;opacity:.7}
+.ficha-personaje{display:flex;align-items:stretch;margin-bottom:30px;border:1px solid #555;border-radius:5px;overflow:hidden;background:#1c1c1c;color:#eee}
+.ficha-personaje img{width:260px;min-height:310px;object-fit:cover;background:#333}
+.ficha-info{flex:1;padding:26px 30px}
+.ficha-info h2{font-family:Cinzel,serif;color:#BFFF00;margin:0 0 12px}
+.ficha-fecha{font-size:13px;opacity:.7}
+.ficha-descripcion{line-height:1.9;margin:22px 0}
+.ficha-detalles{display:none;border-top:1px solid #555;margin-top:20px;padding-top:18px;line-height:1.8}
+.ficha-detalles.visible{display:block}
+.ficha-boton{background:transparent;color:#BFFF00;border:1px solid #BFFF00;padding:10px 17px;cursor:pointer;font:inherit}
+.ficha-boton:hover{background:#BFFF00;color:#111}
+.separador-personajes{text-align:center;color:#BFFF00;margin:35px auto;font-size:22px}
+body:not(.oscuro):not(.modo-oscuro) .ficha-personaje{background:#f7f7f7;color:#222}
+body:not(.oscuro):not(.modo-oscuro) .ficha-fecha{color:#555}
+@media(max-width:650px){.ficha-personaje{flex-direction:column}.ficha-personaje img{width:100%;height:340px;min-height:0}.ficha-info{padding:22px}}
+</style>
 </head>
- <nav>
-
-        <a href="../index.html">
-            Inicio
-        </a>
-
-
-        <div class="dropdown">
-
-            <button type="button" class="dropdown-boton">
-                Kamada;Exypra
-            </button>
-
-            <div class="dropdown-contenido">
-
-                 <a href="webnovel.html">
-    Webnovel
-</a>
-
-                <a href="extrastories.html">
-                    Extra Stories
-                </a>
-
-                <a href="personajes.html">
-                    Personajes
-                </a>
-
-                <a href="historia.html">
-                    Historia
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">
-    Kamada, La Fuerza del Amor
-</a>
-
-        <a href="#">
-            Zear Yero
-        </a>
-
-        <a href="#">
-            Videojuegos
-        </a>
-
-        <a href="../recomendaciones.html">
-    Recomendaciones de la Hoya
-</a>
-
-        <div class="dropdown">
-
-    <button type="button" class="dropdown-boton">
-        Kamada/Extra
-    </button>
-
-    <div class="dropdown-contenido">
-
-        <a href="../kamada-extra/musica.html">
-            🎵 MP3 / Música
-        </a>
-
-    </div>
-
-</div>
-
-    </nav>
 <body>
-
-    <!-- Conserva aquí el menú de tu web -->
-
-    <main class="personajes-pagina">
-
-        <h1 class="personajes-titulo">PERSONAJES</h1>
-
-        <p class="personajes-subtitulo">
-            KAMADA;EXYPRA — Natura Humana
-        </p>
-
-        <section class="personajes-grid">
-
-            <!-- PERSONAJE 1 -->
-            <article class="personaje">
-
-                <img src="../imagenes/personaje1.jpg"
-                     alt="Retrato del personaje 1">
-
-                <div class="personaje-info">
-
-                    <h2>Nombre del personaje</h2>
-
-                    <p class="personaje-fecha">
-                        Publicado: 15/10/2026
-                    </p>
-
-                    <p class="personaje-descripcion">
-                        Escribe aquí una breve descripción.
-                    </p>
-
-                    <button class="personaje-boton"
-                            onclick="mostrarDetalles(this)"
-                            aria-expanded="false">
-                        Leer más
-                    </button>
-
-                    <div class="personaje-detalles">
-                        <p>
-                            Aquí puedes escribir su historia,
-                            personalidad, habilidades y
-                            cualquier información adicional.
-                        </p>
-                    </div>
-
-                </div>
-            </article>
-
-            <!-- PERSONAJE 2 -->
-            <article class="personaje">
-
-                <img src="../imagenes/personaje2.jpg"
-                     alt="Retrato del personaje 2">
-
-                <div class="personaje-info">
-
-                    <h2>Nombre del personaje</h2>
-
-                    <p class="personaje-fecha">
-                        Publicado: DD/MM/AAAA
-                    </p>
-
-                    <p class="personaje-descripcion">
-                        Descripción del personaje.
-                    </p>
-
-                    <button class="personaje-boton"
-                            onclick="mostrarDetalles(this)"
-                            aria-expanded="false">
-                        Leer más
-                    </button>
-
-                    <div class="personaje-detalles">
-                        <p>
-                            Información adicional del personaje.
-                        </p>
-                    </div>
-
-                </div>
-            </article>
-
-        </section>
-    </main>
-
-    <script src="../script.js"></script>
-
-    <script>
-        function mostrarDetalles(boton) {
-            const detalles =
-                boton.nextElementSibling;
-
-            const abierto =
-                detalles.classList.toggle("visible");
-
-            boton.textContent =
-                abierto ? "Leer menos" : "Leer más";
-
-            boton.setAttribute(
-                "aria-expanded", String(abierto)
-            );
-        }
-    </script>
-
+<header>
+<h1><a href="../index.html">KAMADA;EXYPRA</a></h1>
+<p><em>Natura Humana</em></p>
+<div class="selector-tema">
+<button onclick="modoOscuro()">Modo Oscuro</button>
+<button onclick="modoClaro()">Modo Claro</button>
+</div>
+</header>
+<nav>
+<a href="../index.html">Inicio</a>
+<div class="dropdown">
+<button type="button" class="dropdown-boton">Kamada;Exypra</button>
+<div class="dropdown-contenido">
+<a href="webnovel.html">Webnovel</a>
+<a href="extrastories.html">Extra Stories</a>
+<a href="personajes.html">Personajes</a>
+<a href="historia.html">Historia</a>
+</div>
+</div>
+<a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">Kamada, La Fuerza del Amor</a>
+<a href="#">Zear Yero</a>
+<a href="#">Videojuegos</a>
+<a href="../recomendaciones.html">Recomendaciones de la Hoya</a>
+<div class="dropdown">
+<button type="button" class="dropdown-boton">Kamada/Extra</button>
+<div class="dropdown-contenido">
+<a href="../kamada-extra/musica.html">🎵 MP3 / Música</a>
+</div>
+</div>
+</nav>
+<main class="personajes-pagina">
+<h1 class="personajes-titulo">PERSONAJES</h1>
+<p class="personajes-subtitulo">KAMADA;EXYPRA — Natura Humana</p>
+<section class="fichas-personajes">
+<article class="ficha-personaje">
+<img src="../imagenes/personaje1.jpg" alt="Retrato del primer personaje">
+<div class="ficha-info">
+<h2>Nombre del personaje</h2>
+<p class="ficha-fecha">Publicado: DD/MM/AAAA</p>
+<p class="ficha-descripcion">Escribe aquí la presentación de tu personaje.</p>
+<button type="button" class="ficha-boton" aria-expanded="false" onclick="mostrarFicha(this)">Leer más ↓</button>
+<div class="ficha-detalles"><p>Escribe aquí su biografía, personalidad, habilidades y relaciones.</p></div>
+</div>
+</article>
+<div class="separador-personajes">✦</div>
+<article class="ficha-personaje">
+<img src="../imagenes/personaje2.jpg" alt="Retrato del segundo personaje">
+<div class="ficha-info">
+<h2>Nombre del personaje</h2>
+<p class="ficha-fecha">Publicado: DD/MM/AAAA</p>
+<p class="ficha-descripcion">Escribe aquí la presentación de tu segundo personaje.</p>
+<button type="button" class="ficha-boton" aria-expanded="false" onclick="mostrarFicha(this)">Leer más ↓</button>
+<div class="ficha-detalles"><p>Escribe aquí la información adicional del personaje.</p></div>
+</div>
+</article>
+</section>
+</main>
+<footer class="footer-principal">
+<div class="footer-decoracion"><span></span><div class="footer-simbolo">✦</div><span></span></div>
+<div class="footer-marca"><strong>KAMADA;EXYPRA</strong><span>Natura Humana</span></div>
+<div class="footer-legal">
+<a href="../legal/aviso-legal.html">Aviso legal</a><span>·</span>
+<a href="../legal/privacidad.html">Privacidad</a><span>·</span>
+<a href="../legal/cookies.html">Cookies</a><span>·</span>
+<a href="../legal/terminos.html">Términos y condiciones</a><span>·</span>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=kamadaexypra@gmail.com" target="_blank" rel="noopener noreferrer">Contacto</a>
+</div>
+<p class="footer-copyright">© 2026 KAMADA;EXYPRA</p>
+</footer>
+<script src="../script.js"></script>
+<script>
+function mostrarFicha(boton){
+ const panel=boton.nextElementSibling;
+ const abierto=panel.classList.toggle('visible');
+ boton.textContent=abierto?'Leer menos ↑':'Leer más ↓';
+ boton.setAttribute('aria-expanded',String(abierto));
+}
+</script>
 </body>
 </html>
-
