@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +18,7 @@
 .novel-card:hover .novel-overlay,.novel-card:focus-within .novel-overlay,.novel-card.resumen-abierto .novel-overlay{opacity:1;visibility:visible}
 .novel-card:hover .novel-cover img{transform:none}
 .novel-country{font-size:12px;color:var(--accent);margin:8px 0 0}
+.novel-edition{font-size:12px;color:#aaa;margin:6px 0 0}.cinema-claro .novel-edition{color:#666}
 .novel-summary-button{margin-top:9px;border:1px solid #777;background:transparent;color:inherit;font:inherit;font-size:11px;padding:6px 9px;cursor:pointer}
 .novel-summary-button:hover,.novel-summary-button:focus-visible{border-color:var(--accent);color:var(--accent)}
 @media(hover:hover) and (pointer:fine){.novel-summary-button{display:none}}
@@ -84,7 +84,7 @@
 // Sube las portadas a /imagenes/ en GitHub y respeta mayúsculas y extensión.
 const novelas = [
   // {titulo:"Mi novela", autor:"Nombre del autor", anio:2020,
-  //  pais:"España", bandera:"🇪🇸", imagen:"../imagenes/mi-novela.jpg",
+  //  pais:"España", bandera:"🇪🇸", edicion:"Alianza", imagen:"../imagenes/mi-novela.jpg",
   //  resumen:"Escribe aquí tu breve resumen personal."},
 ];
 
@@ -94,7 +94,7 @@ const contador = document.getElementById("contador");
 const vacio = document.getElementById("vacio");
 function renderizar(){
   const termino = buscar.value.trim().toLocaleLowerCase();
-  const visibles = novelas.filter(n => [n.titulo,n.autor,n.anio,n.pais].some(x => String(x ?? "").toLocaleLowerCase().includes(termino)));
+  const visibles = novelas.filter(n => [n.titulo,n.autor,n.anio,n.pais,n.edicion].some(x => String(x ?? "").toLocaleLowerCase().includes(termino)));
   catalogo.replaceChildren();
   visibles.forEach(n => {
     const tarjeta = document.createElement("article"); tarjeta.className = "film-card novel-card";
@@ -110,6 +110,8 @@ function renderizar(){
     meta.textContent = [n.anio, n.autor].filter(Boolean).join(" · ");
     const pais = document.createElement("p"); pais.className = "novel-country";
     pais.textContent = [n.bandera,n.pais].filter(Boolean).join(" ");
+    const edicion = document.createElement("p"); edicion.className = "novel-edition";
+    edicion.textContent = n.edicion || "";
     const boton = document.createElement("button"); boton.className = "novel-summary-button";
     boton.type = "button"; boton.textContent = "Ver resumen"; boton.setAttribute("aria-expanded","false");
     boton.addEventListener("click", () => {
@@ -117,7 +119,7 @@ function renderizar(){
       boton.textContent = abierto ? "Cerrar resumen" : "Ver resumen";
       boton.setAttribute("aria-expanded", String(abierto));
     });
-    tarjeta.append(portada,titulo,meta,pais,boton); catalogo.append(tarjeta);
+    tarjeta.append(portada,titulo,meta,pais); if(n.edicion) tarjeta.append(edicion); tarjeta.append(boton); catalogo.append(tarjeta);
   });
   contador.textContent = visibles.length + " novela" + (visibles.length === 1 ? "" : "s");
   vacio.hidden = visibles.length !== 0;
