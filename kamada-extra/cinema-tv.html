@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cinema / TV | KAMADA;EXYPRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilo.css">
+<style>
+:root{--accent:#BFFF00}body{margin:0;background:#101010;color:#eee;font-family:'Merriweather',serif}body.cinema-claro{background:#f8f8f4;color:#191919}header{text-align:center;padding:28px 15px 18px}header h1{margin:0;font-family:Cinzel,serif;font-size:clamp(28px,5vw,43px)}header h1 a{color:var(--accent);text-decoration:none}header p{margin:9px 0;color:#aaa}.selector-tema button{cursor:pointer}nav{display:flex;justify-content:center;align-items:center;gap:10px 19px;flex-wrap:wrap;background:#050505;padding:14px 12px}nav a,nav .dropdown-boton{font-family:inherit;font-size:13px;color:#eee;text-decoration:none;background:none;border:0;cursor:pointer;padding:8px}nav a:hover,nav button:hover{color:var(--accent)}.dropdown{position:relative}.dropdown-contenido{display:none;position:absolute;top:100%;left:0;background:#171717;min-width:190px;z-index:20;border:1px solid #444}.dropdown-contenido a{display:block;padding:12px}.dropdown.abierto .dropdown-contenido{display:block}@media(hover:hover){.dropdown:hover .dropdown-contenido{display:block}}.cinema-wrap{max-width:1180px;margin:55px auto 80px;padding:0 20px}.cinema-title{text-align:center;color:var(--accent);font-family:Cinzel,serif;font-size:clamp(28px,5vw,43px);margin:0}.cinema-subtitle{text-align:center;color:#aaa;font-style:italic;font-size:14px;margin:13px 0 40px}.cinema-controls{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;margin-bottom:20px}.cinema-controls input{min-width:200px;flex:1;max-width:400px;background:#1b1b1b;color:#fff;border:1px solid #555;padding:12px 14px;border-radius:3px;font:inherit;font-size:13px}.filter-group{display:flex;gap:8px;flex-wrap:wrap}.filter-group button{background:transparent;color:inherit;border:1px solid #555;padding:10px 14px;cursor:pointer;font:inherit;font-size:12px}.filter-group button.activo,.filter-group button:hover{border-color:var(--accent);color:var(--accent)}.cinema-count{color:#999;font-size:12px;margin-bottom:24px}.cinema-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:32px 20px}.film-card{min-width:0}.poster{aspect-ratio:2/3;background:#242424;border:1px solid #333;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#888;text-align:center;font-size:12px}.poster img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}.film-card:hover img{transform:scale(1.04)}.film-title{font-size:14px;margin:12px 0 6px;line-height:1.5}.film-meta{font-size:12px;color:#aaa;margin:0}.film-score{color:var(--accent);font-size:12px;margin:8px 0 0}.cinema-empty{text-align:center;color:#999;padding:50px 0}.cinema-claro .cinema-subtitle,.cinema-claro .film-meta,.cinema-claro .cinema-count{color:#666}.cinema-claro .cinema-controls input{background:#fff;color:#111;border-color:#aaa}.cinema-claro .poster{background:#e5e5e5}.cinema-claro .filter-group button{border-color:#aaa}.cinema-claro .filter-group button.activo{color:#4b6900;border-color:#4b6900}.cinema-footer{text-align:center;border-top:1px solid #333;padding:32px 15px;color:#aaa;font-size:12px}.cinema-footer strong{display:block;color:var(--accent);font-family:Cinzel,serif;font-size:18px;margin-bottom:10px}.cinema-footer a{color:inherit;margin:0 7px;line-height:2.5}.cinema-footer a:hover{color:var(--accent)}@media(max-width:500px){.cinema-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}.cinema-wrap{margin-top:35px}.dropdown-contenido{left:50%;transform:translateX(-50%)}}
+</style>
+</head>
+<body>
+<header><h1><a href="../index.html">KAMADA;EXYPRA</a></h1><p><em>Natura Humana</em></p><div class="selector-tema"><button type="button" onclick="establecerTema('oscuro')">Modo Oscuro</button> <button type="button" onclick="establecerTema('claro')">Modo Claro</button></div></header>
+<nav aria-label="Navegación principal">
+<a href="../index.html">Inicio</a>
+<div class="dropdown"><button type="button" class="dropdown-boton" aria-expanded="false">Kamada;Exypra ▾</button><div class="dropdown-contenido"><a href="../kamadaexypra/webnovel.html">Webnovel</a><a href="../kamadaexypra/extrastories.html">Extra Stories</a><a href="../kamadaexypra/personajes.html">Personajes</a><a href="../kamadaexypra/historia.html">Historia</a></div></div>
+<a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">Kamada, La Fuerza del Amor</a>
+<a href="../recomendaciones.html">Recomendaciones de la Hoya</a>
+<div class="dropdown"><button type="button" class="dropdown-boton" aria-expanded="false">Kamada/Extra ▾</button><div class="dropdown-contenido"><a href="../kamada-extra/musica.html">🎵 MP3 / Música</a><a href="cinema-tv.html" aria-current="page">🎬 Cinema / TV</a></div></div>
+</nav>
+<main class="cinema-wrap">
+<h1 class="cinema-title">CINEMA / TV</h1>
+<p class="cinema-subtitle">Un archivo personal de películas y series</p>
+<div class="cinema-controls"><input id="buscar" type="search" placeholder="Buscar por título o año..." aria-label="Buscar películas o series"><div class="filter-group"><button type="button" class="activo" data-filtro="todos">Todos</button><button type="button" data-filtro="pelicula">Películas</button><button type="button" data-filtro="serie">Series</button></div></div>
+<p class="cinema-count" id="contador"></p>
+<section class="cinema-grid" id="catalogo" aria-label="Catálogo de películas y series"></section>
+<p class="cinema-empty" id="vacio" hidden>No hay títulos que coincidan con la búsqueda.</p>
+</main>
+<footer class="cinema-footer"><strong>KAMADA;EXYPRA</strong><p><em>Natura Humana</em></p><div><a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a> · <a href="../legal/terminos.html">Términos y condiciones</a> · <a href="mailto:kamadaexypra@gmail.com">Contacto</a></div><p>© 2026 KAMADA;EXYPRA</p></footer>
+<script>
+// AÑADE AQUÍ TUS PELÍCULAS Y SERIES. Las entradas siguientes son solo ejemplos.
+// Sube los pósteres a la carpeta /imagenes/ de tu repositorio.
+// Formato: {titulo:"...", anio:2020, tipo:"pelicula" o "serie", imagen:"../imagenes/archivo.jpg", nota:"9/10"}
+const obras = [
+  {titulo:"Película de ejemplo",anio:2024,tipo:"pelicula",imagen:"../imagenes/pelicula1.jpg",nota:"8/10"},
+  {titulo:"Serie de ejemplo",anio:2022,tipo:"serie",imagen:"../imagenes/serie1.jpg",nota:"9/10"}
+];
+let filtroActual="todos";
+const catalogo=document.getElementById("catalogo"),buscar=document.getElementById("buscar"),contador=document.getElementById("contador"),vacio=document.getElementById("vacio");
+function renderizar(){
+ const termino=buscar.value.trim().toLocaleLowerCase();
+ const visibles=obras.filter(o=>(filtroActual==="todos"||o.tipo===filtroActual)&&(o.titulo.toLocaleLowerCase().includes(termino)||String(o.anio).includes(termino)));
+ catalogo.replaceChildren();
+ visibles.forEach(o=>{
+  const tarjeta=document.createElement("article");tarjeta.className="film-card";
+  const poster=document.createElement("div");poster.className="poster";
+  const img=document.createElement("img");img.src=o.imagen;img.alt="Póster de "+o.titulo;img.loading="lazy";
+  img.onerror=()=>{poster.textContent="Sin imagen";};poster.append(img);
+  const titulo=document.createElement("h2");titulo.className="film-title";titulo.textContent=o.titulo;
+  const meta=document.createElement("p");meta.className="film-meta";meta.textContent=o.anio+" · "+(o.tipo==="serie"?"TV":"Cine");
+  tarjeta.append(poster,titulo,meta);
+  if(o.nota){const nota=document.createElement("p");nota.className="film-score";nota.textContent="★ "+o.nota;tarjeta.append(nota);}
+  catalogo.append(tarjeta);
+ });
+ contador.textContent=visibles.length+" título"+(visibles.length===1?"":"s");vacio.hidden=visibles.length!==0;
+}
+buscar.addEventListener("input",renderizar);
+document.querySelectorAll("[data-filtro]").forEach(b=>b.addEventListener("click",()=>{filtroActual=b.dataset.filtro;document.querySelectorAll("[data-filtro]").forEach(x=>x.classList.toggle("activo",x===b));renderizar();}));
+document.querySelectorAll(".dropdown-boton").forEach(b=>b.addEventListener("click",()=>{const menu=b.closest(".dropdown");const abierto=menu.classList.contains("abierto");document.querySelectorAll(".dropdown").forEach(x=>{x.classList.remove("abierto");x.querySelector("button").setAttribute("aria-expanded","false")});menu.classList.toggle("abierto",!abierto);b.setAttribute("aria-expanded",String(!abierto));}));
+document.addEventListener("click",e=>{if(!e.target.closest(".dropdown"))document.querySelectorAll(".dropdown").forEach(x=>{x.classList.remove("abierto");x.querySelector("button").setAttribute("aria-expanded","false")})});
+function establecerTema(tema){document.body.classList.toggle("cinema-claro",tema==="claro");localStorage.setItem("cinema-tema",tema)}
+establecerTema(localStorage.getItem("cinema-tema")||"oscuro");renderizar();
+</script>
+</body>
+</html>
