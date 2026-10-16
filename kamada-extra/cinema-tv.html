@@ -60,56 +60,56 @@
 <main class="cinema-wrap">
 <h1 class="cinema-title">CINEMA / TV</h1>
 <p class="cinema-subtitle">Un archivo personal de películas y series</p>
-<div class="cinema-controls"><input id="buscar" type="search" placeholder="Buscar por título o año..." aria-label="Buscar películas o series"><div class="filter-group"><button type="button" class="activo" data-filtro="todos">Todos</button><button type="button" data-filtro="pelicula">Películas</button><button type="button" data-filtro="serie">Series</button></div></div>
+<div class="cinema-controls"><input id="buscar" type="search" placeholder="Buscar por título, año o país..." aria-label="Buscar películas o series"><div class="filter-group"><button type="button" class="activo" data-filtro="todos">Todos</button><button type="button" data-filtro="pelicula">Películas</button><button type="button" data-filtro="serie">Series</button></div></div>
 <p class="cinema-count" id="contador"></p>
 <section class="cinema-grid" id="catalogo" aria-label="Catálogo de películas y series"></section>
 <p class="cinema-empty" id="vacio" hidden>No hay títulos que coincidan con la búsqueda.</p>
 </main>
 <footer class="cinema-footer"><strong>KAMADA;EXYPRA</strong><p><em>Natura Humana</em></p><div><a href="../legal/aviso-legal.html">Aviso legal</a> · <a href="../legal/privacidad.html">Privacidad</a> · <a href="../legal/cookies.html">Cookies</a> · <a href="../legal/terminos.html">Términos y condiciones</a> · <a href="mailto:kamadaexypra@gmail.com">Contacto</a></div><p>© 2026 KAMADA;EXYPRA</p></footer>
 <script>
-// AÑADE AQUÍ TUS PELÍCULAS Y SERIES. Las entradas siguientes son solo ejemplos.
+// AÑADE AQUÍ TUS PELÍCULAS Y SERIES. Mantén cada entrada dentro de const obras.
 // Sube los pósteres a la carpeta /imagenes/ de tu repositorio.
-// Formato: {titulo:"...", anio:2020, tipo:"pelicula" o "serie", imagen:"../imagenes/archivo.jpg", director:"Nombre", nota:"9/10"}
+// Formato: {titulo:"...", anio:2020, tipo:"pelicula" o "serie", imagen:"../imagenes/archivo.jpg", director:"Nombre", pais:"Japón", bandera:"🇯🇵"}
 const obras = [
- {titulo:"SLC Punk",anio:1998,tipo:"pelicula",imagen:"../imagenes/SLC_Punk.jpg",director:"James Merendino",nota:"8,5/10"},
-  {titulo:"No Country for Old Men",anio:2007,tipo:"pelicula",imagen:"../imagenes/No_country_for_old_men.jpg",director:"Joel y Ethan Coen",nota:"9/10"},
-  {titulo:"Less Than Zero",anio:1987,tipo:"pelicula",imagen:"../imagenes/Less_than_zero.jpg",director:"Marek Kanievska",nota:"9/10"},
-     {titulo:"Yo, el Vaquilla",anio:1985,tipo:"pelicula",imagen:"../imagenes/yo_el_vaquilla.jpg",director:"José Antonio de la Loma",nota:"6/10"},
-     {titulo:"Navajeros",anio:1980,tipo:"pelicula",imagen:"../imagenes/Navajeros.jfif",director:"Eloy de la Iglesia",nota:"9/10"},
-     {titulo:"The Usual Suspects",anio:1987,tipo:"pelicula",imagen:"../imagenes/The_usual_suspects.jpg",director:"Bryan Singer",nota:"9,5/10"},
-    {titulo:"El pico",anio:1983,tipo:"pelicula",imagen:"../imagenes/El_Pico.jpg",director:"Eloy de la Iglesia",nota:"9,5/10"},
-    {titulo:"Fear & Loathing in Las Vegas",anio:1998,tipo:"pelicula",imagen:"../imagenes/falilv.jpg",director:"Terry Gilliam",nota:"10/10"},
-    {titulo:"American Psycho",anio:2000,tipo:"pelicula",imagen:"../imagenes/American_Psycho.png",director:"Mary Harron",nota:"10/10"},
-    {titulo:"Pulp Fiction",anio:1994,tipo:"pelicula",imagen:"../imagenes/Pulp_Fiction.jpg",director:"Quentin Tarantino",nota:"10,5/10"},
-    {titulo:"The Long Goodbye",anio:1973,tipo:"pelicula",imagen:"../imagenes/thelonggoodbye.jfif",director:"Robert Altman",nota:"7,5/10"},
-    {titulo:"Sorry to Bother You",anio:2018,tipo:"pelicula",imagen:"../imagenes/sorrytobotheryou.jfif",director:"Boots Riley",nota:"6/10"},
-      {titulo:"Atlanta",anio:2016,tipo:"serie",imagen:"../imagenes/atlanta.jfif",director:"Varios directores",nota:"10/10"},
-     {titulo:"Taxi Driver",anio:1976,tipo:"pelicula",imagen:"../imagenes/taxidriver.jpg",director:"Martin Scorsese",nota:"10/10"},
-    {titulo:"A Clockwork Orange",anio:1971,tipo:"pelicula",imagen:"../imagenes/A_Clockwork_Orange.png",director:"Stanley Kubrick",nota:"10/10"},
-    {titulo:"Love Exposure",anio:2008,tipo:"pelicula",imagen:"../imagenes/LoveExposure.jpg",director:"Sion Sono",nota:"9/10"},
-    {titulo:"Cold Fish",anio:2010,tipo:"pelicula",imagen:"../imagenes/Cold_fish.jpg",director:"Sion Sono",nota:"9/10"},
-    {titulo:"The Forest of Love",anio:2019,tipo:"pelicula",imagen:"../imagenes/the-forest-of-love.jpg",director:"Sion Sono",nota:"10/10"},
-    {titulo:"Violent Cop",anio:1989,tipo:"pelicula",imagen:"../imagenes/ViolentCop.jpg",director:"Takeshi Kitano",nota:"9,5/10"},
-     {titulo:"Boiling Point",anio:1990,tipo:"pelicula",imagen:"../imagenes/Boiling_point.jfif",director:"Takeshi Kitano",nota:"7,5/10"},
-    {titulo:"Sonatine",anio:1993,tipo:"pelicula",imagen:"../imagenes/Sonatine.jpg",director:"Takeshi Kitano",nota:"10/10"},
-     {titulo:"Hana-bi",anio:1997,tipo:"pelicula",imagen:"../imagenes/Hanabi.jpg",director:"Takeshi Kitano",nota:"10/10"},
-     {titulo:"Outrage",anio:2010,tipo:"pelicula",imagen:"../imagenes/Outrage_2010.png",director:"Takeshi Kitano",nota:"8/10"},
-     {titulo:"Beyond Outrage",anio:2012,tipo:"pelicula",imagen:"../imagenes/Beyond_Outrage.jpg",director:"Takeshi Kitano",nota:"6,5/10"},
-     {titulo:"Outrage Coda",anio:2017,tipo:"pelicula",imagen:"../imagenes/Outrage_Coda.jpg",director:"Takeshi Kitano",nota:"7,5/10"},
-    {titulo:"Happy End",anio:2017,tipo:"pelicula",imagen:"../imagenes/Happy_end.jpg",director:"Michael Haneke",nota:"6/10"},
-     {titulo:"Funny Games",anio:1997,tipo:"pelicula",imagen:"../imagenes/Funny_games.jpg",director:"Michael Haneke",nota:"9,5/10"},
-     {titulo:"The Seventh Continent",anio:1989,tipo:"pelicula",imagen:"../imagenes/The_seventh_continent.jpg",director:"Michael Haneke",nota:"8/10"},
-     {titulo:"Benny's Video",anio:1992,tipo:"pelicula",imagen:"../imagenes/bennys_video.jpg",director:"Michael Haneke",nota:"9/10"},
-     {titulo:"Dancer in the Dark",anio:2000,tipo:"pelicula",imagen:"../imagenes/dancer_in_the_dark.jfif",director:"Lars Von Trier",nota:"9,5/10"},
-     {titulo:"Antichrist",anio:2009,tipo:"pelicula",imagen:"../imagenes/Antichrist.jfif",director:"Lars Von Trier",nota:"9/10"},
-     {titulo:"Melancholia",anio:2011,tipo:"pelicula",imagen:"../imagenes/melancholia_2011.jfif",director:"Lars Von Trier",nota:"9,5/10"},
-     {titulo:"The House that Jack Built",anio:2018,tipo:"pelicula",imagen:"../imagenes/The_House_That_Jack_Built.png",director:"Lars Von Trier",nota:"9/10"},
-     {titulo:"Beef",anio:2023,tipo:"serie",imagen:"../imagenes/Beef.jpg",director:"Lee Sung Jin",nota:"7,5/10"},
-     {titulo:"Buffalo'66",anio:1998,tipo:"pelicula",imagen:"../imagenes/buffalo66.jpg",director:"Vincent Gallo",nota:"9/10"},
-     {titulo:"The Basketball Diaries",anio:1995,tipo:"pelicula",imagen:"../imagenes/The_Basketball_Diaries_.jpg",director:"Scott Kalvert",nota:"9/10"},
-     {titulo:"Festen",anio:1998,tipo:"pelicula",imagen:"../imagenes/festen_.jpg",director:"Thomas Vinterberg",nota:"9,5/10"},
-     {titulo:"Italian for Begginers",anio:2000,tipo:"pelicula",imagen:"../imagenes/ItalianforBeginners.jpg",director:"Lone Scherfig",nota:"9/10"},
-     {titulo:"Deconstructing Harry",anio:1997,tipo:"pelicula",imagen:"../imagenes/Deconstructing_harry.jpg",director:"Woody Allen",nota:"9/10"},
+ {titulo:"SLC Punk",anio:1998,tipo:"pelicula",imagen:"../imagenes/SLC_Punk.jpg",director:"James Merendino",pais:"Estados Unidos",bandera:"🇺🇸"},
+  {titulo:"No Country for Old Men",anio:2007,tipo:"pelicula",imagen:"../imagenes/No_country_for_old_men.jpg",director:"Joel y Ethan Coen",pais:"Estados Unidos",bandera:"🇺🇸"},
+  {titulo:"Less Than Zero",anio:1987,tipo:"pelicula",imagen:"../imagenes/Less_than_zero.jpg",director:"Marek Kanievska",pais:"Estados Unidos",bandera:"🇺🇸"},
+     {titulo:"Yo, el Vaquilla",anio:1985,tipo:"pelicula",imagen:"../imagenes/yo_el_vaquilla.jpg",director:"José Antonio de la Loma",pais:"España",bandera:"🇪🇸"},
+     {titulo:"Navajeros",anio:1980,tipo:"pelicula",imagen:"../imagenes/Navajeros.jfif",director:"Eloy de la Iglesia",pais:"España",bandera:"🇪🇸"},
+     {titulo:"The Usual Suspects",anio:1987,tipo:"pelicula",imagen:"../imagenes/The_usual_suspects.jpg",director:"Bryan Singer",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"El pico",anio:1983,tipo:"pelicula",imagen:"../imagenes/El_Pico.jpg",director:"Eloy de la Iglesia",pais:"España",bandera:"🇪🇸"},
+    {titulo:"Fear & Loathing in Las Vegas",anio:1998,tipo:"pelicula",imagen:"../imagenes/falilv.jpg",director:"Terry Gilliam",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"American Psycho",anio:2000,tipo:"pelicula",imagen:"../imagenes/American_Psycho.png",director:"Mary Harron",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"Pulp Fiction",anio:1994,tipo:"pelicula",imagen:"../imagenes/Pulp_Fiction.jpg",director:"Quentin Tarantino",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"The Long Goodbye",anio:1973,tipo:"pelicula",imagen:"../imagenes/thelonggoodbye.jfif",director:"Robert Altman",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"Sorry to Bother You",anio:2018,tipo:"pelicula",imagen:"../imagenes/sorrytobotheryou.jfif",director:"Boots Riley",pais:"Estados Unidos",bandera:"🇺🇸"},
+      {titulo:"Atlanta",anio:2016,tipo:"serie",imagen:"../imagenes/atlanta.jfif",director:"Varios directores",pais:"Estados Unidos",bandera:"🇺🇸"},
+     {titulo:"Taxi Driver",anio:1976,tipo:"pelicula",imagen:"../imagenes/taxidriver.jpg",director:"Martin Scorsese",pais:"Estados Unidos",bandera:"🇺🇸"},
+    {titulo:"A Clockwork Orange",anio:1971,tipo:"pelicula",imagen:"../imagenes/A_Clockwork_Orange.png",director:"Stanley Kubrick",pais:"Reino Unido",bandera:"🇬🇧"},
+    {titulo:"Love Exposure",anio:2008,tipo:"pelicula",imagen:"../imagenes/LoveExposure.jpg",director:"Sion Sono",pais:"Japón",bandera:"🇯🇵"},
+    {titulo:"Cold Fish",anio:2010,tipo:"pelicula",imagen:"../imagenes/Cold_fish.jpg",director:"Sion Sono",pais:"Japón",bandera:"🇯🇵"},
+    {titulo:"The Forest of Love",anio:2019,tipo:"pelicula",imagen:"../imagenes/the-forest-of-love.jpg",director:"Sion Sono",pais:"Japón",bandera:"🇯🇵"},
+    {titulo:"Violent Cop",anio:1989,tipo:"pelicula",imagen:"../imagenes/ViolentCop.jpg",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+     {titulo:"Boiling Point",anio:1990,tipo:"pelicula",imagen:"../imagenes/Boiling_point.jfif",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+    {titulo:"Sonatine",anio:1993,tipo:"pelicula",imagen:"../imagenes/Sonatine.jpg",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+     {titulo:"Hana-bi",anio:1997,tipo:"pelicula",imagen:"../imagenes/Hanabi.jpg",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+     {titulo:"Outrage",anio:2010,tipo:"pelicula",imagen:"../imagenes/Outrage_2010.png",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+     {titulo:"Beyond Outrage",anio:2012,tipo:"pelicula",imagen:"../imagenes/Beyond_Outrage.jpg",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+     {titulo:"Outrage Coda",anio:2017,tipo:"pelicula",imagen:"../imagenes/Outrage_Coda.jpg",director:"Takeshi Kitano",pais:"Japón",bandera:"🇯🇵"},
+    {titulo:"Happy End",anio:2017,tipo:"pelicula",imagen:"../imagenes/Happy_end.jpg",director:"Michael Haneke",pais:"Francia",bandera:"🇫🇷"},
+     {titulo:"Funny Games",anio:1997,tipo:"pelicula",imagen:"../imagenes/Funny_games.jpg",director:"Michael Haneke",pais:"Austria",bandera:"🇦🇹"},
+     {titulo:"The Seventh Continent",anio:1989,tipo:"pelicula",imagen:"../imagenes/The_seventh_continent.jpg",director:"Michael Haneke",pais:"Austria",bandera:"🇦🇹"},
+     {titulo:"Benny's Video",anio:1992,tipo:"pelicula",imagen:"../imagenes/bennys_video.jpg",director:"Michael Haneke",pais:"Austria",bandera:"🇦🇹"},
+     {titulo:"Dancer in the Dark",anio:2000,tipo:"pelicula",imagen:"../imagenes/dancer_in_the_dark.jfif",director:"Lars Von Trier",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"Antichrist",anio:2009,tipo:"pelicula",imagen:"../imagenes/Antichrist.jfif",director:"Lars Von Trier",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"Melancholia",anio:2011,tipo:"pelicula",imagen:"../imagenes/melancholia_2011.jfif",director:"Lars Von Trier",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"The House that Jack Built",anio:2018,tipo:"pelicula",imagen:"../imagenes/The_House_That_Jack_Built.png",director:"Lars Von Trier",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"Beef",anio:2023,tipo:"serie",imagen:"../imagenes/Beef.jpg",director:"Lee Sung Jin",pais:"Estados Unidos",bandera:"🇺🇸"},
+     {titulo:"Buffalo'66",anio:1998,tipo:"pelicula",imagen:"../imagenes/buffalo66.jpg",director:"Vincent Gallo",pais:"Estados Unidos",bandera:"🇺🇸"},
+     {titulo:"The Basketball Diaries",anio:1995,tipo:"pelicula",imagen:"../imagenes/The_Basketball_Diaries_.jpg",director:"Scott Kalvert",pais:"Estados Unidos",bandera:"🇺🇸"},
+     {titulo:"Festen",anio:1998,tipo:"pelicula",imagen:"../imagenes/festen_.jpg",director:"Thomas Vinterberg",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"Italian for Begginers",anio:2000,tipo:"pelicula",imagen:"../imagenes/ItalianforBeginners.jpg",director:"Lone Scherfig",pais:"Dinamarca",bandera:"🇩🇰"},
+     {titulo:"Deconstructing Harry",anio:1997,tipo:"pelicula",imagen:"../imagenes/Deconstructing_harry.jpg",director:"Woody Allen",pais:"Estados Unidos",bandera:"🇺🇸"},
 
     
 ];
@@ -117,7 +117,7 @@ let filtroActual="todos";
 const catalogo=document.getElementById("catalogo"),buscar=document.getElementById("buscar"),contador=document.getElementById("contador"),vacio=document.getElementById("vacio");
 function renderizar(){
  const termino=buscar.value.trim().toLocaleLowerCase();
- const visibles=obras.filter(o=>(filtroActual==="todos"||o.tipo===filtroActual)&&(o.titulo.toLocaleLowerCase().includes(termino)||String(o.anio).includes(termino)));
+ const visibles=obras.filter(o=>(filtroActual==="todos"||o.tipo===filtroActual)&&(o.titulo.toLocaleLowerCase().includes(termino)||String(o.anio).includes(termino)||(o.pais||"").toLocaleLowerCase().includes(termino)));
  catalogo.replaceChildren();
  visibles.forEach(o=>{
   const tarjeta=document.createElement("article");tarjeta.className="film-card";
@@ -127,7 +127,7 @@ function renderizar(){
   const titulo=document.createElement("h2");titulo.className="film-title";titulo.textContent=o.titulo;
   const meta=document.createElement("p");meta.className="film-meta";meta.textContent=o.anio+" · "+(o.tipo==="serie"?"TV":"Cine")+(o.director?" · "+o.director:"");
   tarjeta.append(poster,titulo,meta);
-  if(o.nota){const nota=document.createElement("p");nota.className="film-score";nota.textContent="★ "+o.nota;tarjeta.append(nota);}
+  if(o.pais){const pais=document.createElement("p");pais.className="film-score";pais.textContent=(o.bandera?o.bandera+"  ":"")+o.pais;tarjeta.append(pais);}
   catalogo.append(tarjeta);
  });
  contador.textContent=visibles.length+" título"+(visibles.length===1?"":"s");vacio.hidden=visibles.length!==0;
