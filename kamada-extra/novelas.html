@@ -18,6 +18,7 @@
 .novel-card:hover .novel-overlay,.novel-card:focus-within .novel-overlay,.novel-card.resumen-abierto .novel-overlay{opacity:1;visibility:visible}
 .novel-card:hover .novel-cover img{transform:none}
 .novel-country{font-size:12px;color:var(--accent);margin:8px 0 0}
+.novel-flag{font-size:14px;vertical-align:baseline;display:inline-block;margin-right:4px}
 .novel-edition{font-size:12px;color:#aaa;margin:6px 0 0}.cinema-claro .novel-edition{color:#666}
 .novel-summary-button{margin-top:9px;border:1px solid #777;background:transparent;color:inherit;font:inherit;font-size:11px;padding:6px 9px;cursor:pointer}
 .novel-summary-button:hover,.novel-summary-button:focus-visible{border-color:var(--accent);color:var(--accent)}
@@ -156,7 +157,10 @@ function renderizar(){
     const meta = document.createElement("p"); meta.className = "film-meta";
     meta.textContent = [n.anio, n.autor].filter(Boolean).join(" · ");
     const pais = document.createElement("p"); pais.className = "novel-country";
-    pais.textContent = [n.bandera,n.pais].filter(Boolean).join(" ");
+    const bandera = document.createElement("span"); bandera.className = "novel-flag";
+    const codigoBandera = {us:"🇺🇸",de:"🇩🇪",jp:"🇯🇵"};
+    bandera.textContent = codigoBandera[String(n.bandera || "").toLowerCase()] || n.bandera || "";
+    pais.append(bandera, document.createTextNode(n.pais || ""));
     const edicion = document.createElement("p"); edicion.className = "novel-edition";
     edicion.textContent = n.edicion || "";
     const boton = document.createElement("button"); boton.className = "novel-summary-button";
