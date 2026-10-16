@@ -140,7 +140,7 @@ function renderizar(){
     img.onerror = () => {img.remove(); portada.insertAdjacentText("afterbegin", "Sin imagen");};
     portada.append(img);
     const resumen = document.createElement("div"); resumen.className = "novel-overlay";
-    const texto = document.createElement("p"); texto.textContent = n.resumen || "Resumen pendiente.";
+    const texto = document.createElement("p"); texto.innerHTML = n.resumen || "Resumen pendiente.";
     resumen.append(texto); portada.append(resumen);
     const titulo = document.createElement("h2"); titulo.className = "film-title"; titulo.textContent = n.titulo;
     const meta = document.createElement("p"); meta.className = "film-meta";
