@@ -1,0 +1,14 @@
+<div id="juego" style="width:100%;max-width:1000px;height:650px;margin:auto;"></div>
+
+<script>
+window.addEventListener("load", () => {
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+
+    document.getElementById("juego").appendChild(player);
+
+    player.ruffle().load(
+        "https://www.the-jeuxflash.com/static/jeux/9583.swf"
+    ).catch(console.error);
+});
+</script>
