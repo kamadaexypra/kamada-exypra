@@ -1869,3 +1869,9 @@ body.modo-claro .footer-marca::after {
         height: 250px;
     }
 }
+.banner-superior {
+    width: 25%;
+    height: 25%;
+    object-fit: contain;
+    margin: auto;
+}
