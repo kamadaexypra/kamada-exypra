@@ -1,14 +1,135 @@
-<div id="juego" style="width:100%;max-width:1000px;height:650px;margin:auto;"></div>
-
-<script>
-window.addEventListener("load", () => {
-    const ruffle = window.RufflePlayer.newest();
-    const player = ruffle.createPlayer();
-
-    document.getElementById("juego").appendChild(player);
-
-    player.ruffle().load(
-        "https://www.the-jeuxflash.com/static/jeux/9583.swf"
-    ).catch(console.error);
-});
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dragon Ball Fierce Fighting 2.9 | KAMADA;EXYPRA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilo.css">
+  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+  <style>
+    :root { --accent: #BFFF00; }
+    body { margin:0; background:#101010; color:#eee; font-family:'Merriweather',serif; }
+    body.modo-claro { background:#f8f8f4; color:#191919; }
+    header { text-align:center; padding:28px 15px 18px; }
+    header h1 { margin:0; font-family:Cinzel,serif; font-size:clamp(28px,5vw,43px); }
+    header h1 a { color:var(--accent); text-decoration:none; }
+    header p { margin:9px 0; color:#aaa; }
+    .selector-tema button { cursor:pointer; }
+    nav { display:flex; justify-content:center; align-items:center; gap:10px 19px; flex-wrap:wrap; background:#050505; padding:14px 12px; }
+    nav a, nav .dropdown-boton { font-family:inherit; font-size:13px; color:#eee; text-decoration:none; background:none; border:0; cursor:pointer; padding:8px; }
+    nav a:hover, nav button:hover { color:var(--accent); }
+    .dropdown { position:relative; }
+    .dropdown-contenido { display:none; position:absolute; top:100%; left:0; background:#171717; min-width:190px; z-index:20; border:1px solid #444; }
+    .dropdown-contenido a { display:block; padding:12px; }
+    .dropdown.abierto .dropdown-contenido { display:block; }
+    @media(hover:hover) { .dropdown:hover .dropdown-contenido { display:block; } }
+    main { max-width:1180px; margin:55px auto 80px; padding:0 20px; text-align:center; }
+    main h2 { color:var(--accent); font-family:Cinzel,serif; font-size:clamp(24px,4vw,38px); }
+    .subtitulo { color:#aaa; font-size:14px; }
+    #juego { width:100%; max-width:1000px; aspect-ratio:4/3; margin:30px auto; background:#000; border:1px solid #444; }
+    #juego ruffle-player { width:100%; height:100%; display:block; }
+    #estado { color:#aaa; font-size:13px; }
+    #estado.error { color:#ff9c9c; }
+    .enlace-juego { color:var(--accent); }
+    footer { text-align:center; border-top:1px solid #333; padding:32px 15px; color:#aaa; font-size:12px; }
+    footer strong { display:block; color:var(--accent); font-family:Cinzel,serif; font-size:18px; margin-bottom:10px; }
+    footer a { color:inherit; margin:0 7px; line-height:2.5; }
+    footer a:hover { color:var(--accent); }
+    @media(max-width:500px) { main { margin-top:35px; } .dropdown-contenido { left:50%; transform:translateX(-50%); } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="../index.html">KAMADA;EXYPRA</a></h1>
+    <p><em>Natura Humana</em></p>
+    <div class="selector-tema">
+      <button type="button" onclick="establecerTema('oscuro')">Modo Oscuro</button>
+      <button type="button" onclick="establecerTema('claro')">Modo Claro</button>
+    </div>
+  </header>
+  <nav aria-label="Menú principal">
+    <a href="../index.html">Inicio</a>
+    <div class="dropdown">
+      <button type="button" class="dropdown-boton" aria-expanded="false">Kamada;Exypra</button>
+      <div class="dropdown-contenido">
+        <a href="../kamadaexypra/webnovel.html">Webnovel</a>
+        <a href="../kamadaexypra/extrastories.html">Extra Stories</a>
+        <a href="../kamadaexypra/personajes.html">Personajes</a>
+        <a href="../kamadaexypra/historia.html">Historia</a>
+      </div>
+    </div>
+    <a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">Kamada, La Fuerza del Amor</a>
+    <a href="#">Zear Yero</a>
+    <a href="dragonball.html" aria-current="page">Videojuegos</a>
+    <a href="../recomendaciones.html">Recomendaciones de la Hoya</a>
+    <div class="dropdown">
+      <button type="button" class="dropdown-boton" aria-expanded="false">Kamada/Extra</button>
+      <div class="dropdown-contenido">
+        <a href="../kamada-extra/musica.html">🎵 MP3 / Música</a>
+        <a href="../kamada-extra/cinema-tv.html">🎬 Cinema / TV</a>
+        <a href="../kamada-extra/novelas.html">📚 Novelas</a>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h2>DRAGON BALL FIERCE FIGHTING 2.9</h2>
+    <p class="subtitulo">Juega desde KAMADA;EXYPRA con Ruffle</p>
+    <div id="juego" aria-label="Reproductor del juego"></div>
+    <p id="estado" role="status">Cargando Ruffle y el juego…</p>
+    <p><a class="enlace-juego" href="https://www.the-jeuxflash.com/dragon-ball-fierce-fighting-2-9" target="_blank" rel="noopener noreferrer">Abrir en la página original si no carga aquí ↗</a></p>
+  </main>
+  <footer>
+    <strong>KAMADA;EXYPRA</strong>
+    <p><em>Natura Humana</em></p>
+    <div>
+      <a href="../legal/aviso-legal.html">Aviso legal</a> ·
+      <a href="../legal/privacidad.html">Privacidad</a> ·
+      <a href="../legal/cookies.html">Cookies</a> ·
+      <a href="../legal/terminos.html">Términos y condiciones</a> ·
+      <a href="mailto:kamadaexypra@gmail.com">Contacto</a>
+    </div>
+    <p>© 2026 KAMADA;EXYPRA</p>
+  </footer>
+  <script>
+    document.querySelectorAll('.dropdown-boton').forEach(b => b.addEventListener('click', () => {
+      const menu = b.closest('.dropdown');
+      const abierto = menu.classList.contains('abierto');
+      document.querySelectorAll('.dropdown').forEach(x => {
+        x.classList.remove('abierto');
+        x.querySelector('button').setAttribute('aria-expanded','false');
+      });
+      menu.classList.toggle('abierto', !abierto);
+      b.setAttribute('aria-expanded', String(!abierto));
+    }));
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.dropdown')) document.querySelectorAll('.dropdown').forEach(x => {
+        x.classList.remove('abierto');
+        x.querySelector('button').setAttribute('aria-expanded','false');
+      });
+    });
+    function establecerTema(tema) {
+      document.body.classList.toggle('modo-claro', tema === 'claro');
+      localStorage.setItem('cinema-tema', tema);
+    }
+    establecerTema(localStorage.getItem('cinema-tema') || 'oscuro');
+    window.addEventListener('load', async () => {
+      const estado = document.getElementById('estado');
+      try {
+        if (!window.RufflePlayer) throw new Error('No se ha podido cargar Ruffle.');
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        document.getElementById('juego').appendChild(player);
+        await player.ruffle().load('https://www.the-jeuxflash.com/static/jeux/9583.swf');
+        estado.textContent = 'Juego cargado. Si no comienza, pulsa el botón de reproducción.';
+      } catch (error) {
+        console.error('Error al cargar el juego:', error);
+        estado.classList.add('error');
+        estado.textContent = 'No se pudo cargar el juego. El servidor externo podría bloquear la carga (CORS). Usa el enlace a la página original.';
+      }
+    });
+  </script>
+</body>
+</html>
