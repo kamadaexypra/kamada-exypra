@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../estilo.css">
-  <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   <style>
     :root { --accent: #BFFF00; }
     body { margin:0; background:#101010; color:#eee; font-family:'Merriweather',serif; }
@@ -29,8 +28,9 @@
     main { max-width:1180px; margin:55px auto 80px; padding:0 20px; text-align:center; }
     main h2 { color:var(--accent); font-family:Cinzel,serif; font-size:clamp(24px,4vw,38px); }
     .subtitulo { color:#aaa; font-size:14px; }
-    #juego { width:100%; max-width:1000px; aspect-ratio:4/3; margin:30px auto; background:#000; border:1px solid #444; }
-    #juego ruffle-player { width:100%; height:100%; display:block; }
+    #juego { width:95%; max-width:1100px; height:700px; margin:30px auto; background:#000; border:1px solid #444; }
+    #juego iframe { width:100%; height:100%; display:block; border:0; }
+    @media (max-width:600px) { #juego { height:500px; } }
     #estado { color:#aaa; font-size:13px; }
     #estado.error { color:#ff9c9c; }
     .enlace-juego { color:var(--accent); }
@@ -76,9 +76,8 @@
   </nav>
   <main>
     <h2>DRAGON BALL FIERCE FIGHTING 2.9</h2>
-    <p class="subtitulo">Juega desde KAMADA;EXYPRA con Ruffle</p>
-    <div id="juego" aria-label="Reproductor del juego"></div>
-    <p id="estado" role="status">Cargando Ruffle y el juego…</p>
+    <p class="subtitulo">Prueba a jugar desde KAMADA;EXYPRA</p>
+    <div id="juego" aria-label="Página del juego integrada"><iframe src="https://www.the-jeuxflash.com/dragon-ball-fierce-fighting-2-9" title="Dragon Ball Fierce Fighting 2.9" allow="fullscreen; autoplay" allowfullscreen loading="lazy"></iframe></div>
     <p><a class="enlace-juego" href="https://www.the-jeuxflash.com/dragon-ball-fierce-fighting-2-9" target="_blank" rel="noopener noreferrer">Abrir en la página original si no carga aquí ↗</a></p>
   </main>
   <footer>
@@ -115,21 +114,6 @@
       localStorage.setItem('cinema-tema', tema);
     }
     establecerTema(localStorage.getItem('cinema-tema') || 'oscuro');
-    window.addEventListener('load', async () => {
-      const estado = document.getElementById('estado');
-      try {
-        if (!window.RufflePlayer) throw new Error('No se ha podido cargar Ruffle.');
-        const ruffle = window.RufflePlayer.newest();
-        const player = ruffle.createPlayer();
-        document.getElementById('juego').appendChild(player);
-        await player.ruffle().load('https://www.the-jeuxflash.com/static/jeux/9583.swf');
-        estado.textContent = 'Juego cargado. Si no comienza, pulsa el botón de reproducción.';
-      } catch (error) {
-        console.error('Error al cargar el juego:', error);
-        estado.classList.add('error');
-        estado.textContent = 'No se pudo cargar el juego. El servidor externo podría bloquear la carga (CORS). Usa el enlace a la página original.';
-      }
-    });
   </script>
 </body>
 </html>
