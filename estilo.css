@@ -1802,3 +1802,21 @@ body.modo-claro .footer-legal a:hover {
 body.modo-claro .footer-marca::after {
     background: #000000;
 }
+/* GIFs decorativos de KAMADA;EXYPRA */
+
+.zona-gifs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 60px auto;
+    max-width: 1100px;
+}
+
+.zona-gifs img {
+    width: 88px;
+    height: 31px;
+    object-fit: fill;
+    flex-shrink: 0;
+}
