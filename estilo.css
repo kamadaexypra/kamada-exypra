@@ -1906,3 +1906,61 @@ body.modo-claro .footer-marca::after {
     max-width: 100% !important;
     object-fit: contain !important;
 }
+/* CABECERA MÁS COMPACTA */
+
+.cabecera-banner {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 20px 0 10px !important;
+    margin: 0 !important;
+}
+
+.cabecera-banner .enlace-banner {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+}
+
+.cabecera-banner .banner-superior {
+    display: block !important;
+
+    width: 475px !important;
+    max-width: 90% !important;
+    height: auto !important;
+
+    margin: 0 auto !important;
+    object-fit: contain !important;
+}
+
+/* MENÚ MÁS CERCA DEL BANNER */
+
+nav {
+    margin-top: 0 !important;
+    padding: 12px 15px !important;
+}
+
+/* PRESENTACIÓN MÁS COMPACTA */
+
+.hero-novela {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    margin-top: 0 !important;
+}
+
+@media (max-width: 600px) {
+    .cabecera-banner {
+        padding: 12px 0 8px !important;
+    }
+
+    .cabecera-banner .banner-superior {
+        width: 90% !important;
+    }
+
+    nav {
+        gap: 12px !important;
+    }
+}
