@@ -1827,3 +1827,45 @@ body.modo-claro .footer-marca::after {
     height: auto;
     margin: 0 auto 25px;
 }
+/* BANNER SUPERIOR */
+
+.cabecera-banner {
+    width: 100%;
+    height: 470px;
+    padding: 0;
+    margin: 0;
+    background: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlace-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-superior {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.banner-superior:hover {
+    opacity: 0.85;
+}
+
+/* ADAPTACIÓN PARA MÓVILES */
+
+@media (max-width: 600px) {
+    .cabecera-banner {
+        height: 250px;
+    }
+}
