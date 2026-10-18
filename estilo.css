@@ -1882,3 +1882,27 @@ body.modo-claro .footer-marca::after {
     height: auto;
     margin: 25px auto 35px;
 }
+/* REDUCIR EL BANNER SUPERIOR */
+
+.cabecera-banner {
+    height: 470px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+}
+
+.cabecera-banner .enlace-banner {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.cabecera-banner .banner-superior {
+    width: 25% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+}
