@@ -1875,3 +1875,10 @@ body.modo-claro .footer-marca::after {
     object-fit: contain;
     margin: auto;
 }
+.imagen-cita {
+    display: block;
+    width: 90%;
+    max-width: 900px;
+    height: auto;
+    margin: 25px auto 35px;
+}
