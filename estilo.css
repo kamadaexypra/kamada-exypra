@@ -1820,3 +1820,10 @@ body.modo-claro .footer-marca::after {
     object-fit: fill;
     flex-shrink: 0;
 }
+.hero-banner {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto 25px;
+}
