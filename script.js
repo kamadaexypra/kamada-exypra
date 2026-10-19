@@ -1,31 +1,306 @@
 
-// =========================
-// MODO CLARO / OSCURO
-// =========================
+/* =========================================
+   KAMADA;EXYPRA — SCRIPT PRINCIPAL
+========================================= */
 
-const botonTema = document.getElementById("boton-tema");
+document.addEventListener("DOMContentLoaded", function () {
 
-if (botonTema) {
-    botonTema.addEventListener("click", function () {
-        document.body.classList.toggle("modo-claro");
+    // =====================================
+    // MODO CLARO / OSCURO
+    // =====================================
+
+    const botonTema = document.getElementById("boton-tema");
+
+    function aplicarTema(tema) {
+        document.body.classList.remove(
+            "modo-claro",
+            "modo-oscuro"
+        );
+
+        document.body.classList.add(
+            tema === "claro" ? "modo-claro" : "modo-oscuro"
+        );
+
+        localStorage.setItem("tema", tema);
+    }
+
+    // Recuperar tema guardado
+    const temaGuardado = localStorage.getItem("tema");
+
+    aplicarTema(
+        temaGuardado === "claro" ? "claro" : "oscuro"
+    );
+
+    // Botón para alternar tema
+    if (botonTema) {
+        botonTema.addEventListener("click", function () {
+
+            const esClaro = document.body.classList.contains(
+                "modo-claro"
+            );
+
+            aplicarTema(esClaro ? "oscuro" : "claro");
+        });
+    }
+
+
+    // =====================================
+    // MENÚS DESPLEGABLES
+    // =====================================
+
+    document.querySelectorAll(".dropdown").forEach(
+        function (dropdown) {
+
+            const boton = dropdown.querySelector(
+                ".dropdown-boton"
+            );
+
+            if (!boton) return;
+
+            boton.setAttribute("aria-expanded", "false");
+
+            boton.addEventListener("click", function (event) {
+                event.stopPropagation();
+
+                const abierto = dropdown.classList.contains(
+                    "abierto"
+                );
+
+                // Cerrar los demás menús
+                document.querySelectorAll(".dropdown").forEach(
+                    function (otroMenu) {
+                        otroMenu.classList.remove("abierto");
+
+                        const otroBoton = otroMenu.querySelector(
+                            ".dropdown-boton"
+                        );
+
+                        if (otroBoton) {
+                            otroBoton.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+                        }
+                    }
+                );
+
+                if (!abierto) {
+                    dropdown.classList.add("abierto");
+                    boton.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+                }
+            });
+        }
+    );
+
+    // Cerrar menús al pulsar fuera
+    document.addEventListener("click", function (event) {
+
+        if (!event.target.closest(".dropdown")) {
+
+            document.querySelectorAll(".dropdown").forEach(
+                function (dropdown) {
+
+                    dropdown.classList.remove("abierto");
+
+                    const boton = dropdown.querySelector(
+                        ".dropdown-boton"
+                    );
+
+                    if (boton) {
+                        boton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+                }
+            );
+        }
     });
-}
 
-// =========================
-// GUARDAR MODO CLARO / OSCURO
-// =========================
+    // Cerrar menús con Escape
+    document.addEventListener("keydown", function (event) {
 
-// Recuperar el tema guardado
-const temaGuardado = localStorage.getItem("tema");
+        if (event.key === "Escape") {
 
-if (temaGuardado === "claro") {
-    document.body.classList.add("modo-claro");
-    document.body.classList.remove("modo-oscuro");
-} else {
-    document.body.classList.add("modo-oscuro");
-    document.body.classList.remove("modo-claro");
-}
+            document.querySelectorAll(".dropdown").forEach(
+                function (dropdown) {
 
+                    dropdown.classList.remove("abierto");
+
+                    const boton = dropdown.querySelector(
+                        ".dropdown-boton"
+                    );
+
+                    if (boton) {
+                        boton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+                }
+            );
+        }
+    });
+
+
+    // =====================================
+    // TEXTO DE LA NOVELA
+    // =====================================
+
+    document.querySelectorAll(".texto-novela").forEach(
+        function (contenedor) {
+
+            // Evitar procesar dos veces
+            if (contenedor.dataset.formateado === "true") {
+                return;
+            }
+
+            // Conservar las etiquetas HTML originales
+            const htmlOriginal = contenedor.innerHTML.trim();
+
+            // Dividir por líneas en blanco,
+            // sin borrar <strong>, <em>, <span>, etc.
+            const parrafos = htmlOriginal.split(
+                /\r?\n\s*\r?\n/
+            );
+
+            contenedor.innerHTML = parrafos
+                .filter(function (parrafo) {
+                    return parrafo.trim() !== "";
+                })
+                .map(function (parrafo) {
+
+                    const contenido = parrafo.trim();
+
+                    // Conservar bloques HTML existentes
+                    if (/^<(p|div|h[1-6]|blockquote|ul|ol|section)\b/i.test(contenido)) {
+                        return contenido;
+                    }
+
+                    return "<p>" + contenido + "</p>";
+                })
+                .join("\n");
+
+            contenedor.dataset.formateado = "true";
+        }
+    );
+
+
+    // =====================================
+    // REPRODUCTOR DE MÚSICA
+    // INTERLUDE + DANCE & SCREAM
+    // =====================================
+
+    const botonesMusica = document.querySelectorAll(
+        ".boton-portada[data-audio]"
+    );
+
+    botonesMusica.forEach(function (boton) {
+
+        const audioId = boton.dataset.audio;
+
+        const audio = document.getElementById(audioId);
+
+        const icono = boton.querySelector(".icono-play");
+
+        if (!audio || !icono) {
+            return;
+        }
+
+        function actualizarIcono() {
+
+            const reproduciendo = !audio.paused;
+
+            icono.textContent = reproduciendo
+                ? "❚❚"
+                : "▶";
+
+            boton.setAttribute(
+                "aria-pressed",
+                String(reproduciendo)
+            );
+
+            boton.setAttribute(
+                "aria-label",
+                (reproduciendo ? "Pausar " : "Reproducir ") +
+                audioId
+            );
+        }
+
+        boton.addEventListener("click", async function () {
+
+            if (audio.paused) {
+
+                // Pausar otras canciones
+                document.querySelectorAll("audio").forEach(
+                    function (otroAudio) {
+
+                        if (otroAudio !== audio) {
+                            otroAudio.pause();
+                        }
+                    }
+                );
+
+                try {
+                    await audio.play();
+                } catch (error) {
+
+                    console.error(
+                        "Error al reproducir audio:",
+                        error
+                    );
+
+                    alert(
+                        "No se pudo reproducir la canción. Comprueba el enlace del MP3."
+                    );
+                }
+
+            } else {
+
+                audio.pause();
+            }
+
+            actualizarIcono();
+        });
+
+        audio.addEventListener(
+            "play",
+            actualizarIcono
+        );
+
+        audio.addEventListener(
+            "pause",
+            actualizarIcono
+        );
+
+        audio.addEventListener(
+            "ended",
+            actualizarIcono
+        );
+
+        audio.addEventListener("error", function () {
+
+            console.error(
+                "No se pudo cargar el audio:",
+                audioId
+            );
+
+            actualizarIcono();
+        });
+
+        actualizarIcono();
+    });
+
+});
+
+
+// =========================================
+// FUNCIONES GLOBALES
+// Compatibilidad con botones onclick
+// =========================================
 
 // MODO OSCURO
 function modoOscuro() {
@@ -47,10 +322,7 @@ function modoClaro() {
 }
 
 
-// =========================
 // MENÚ KAMADA;EXYPRA
-// =========================
-
 function abrirMenu() {
 
     const menu = document.getElementById("menuKamada");
@@ -61,64 +333,6 @@ function abrirMenu() {
 }
 
 
-// =========================
-// TEXTO DE LA NOVELA
-// =========================
-
-document.querySelectorAll(".texto-novela").forEach(contenedor => {
-
-    const texto = contenedor.textContent.trim();
-
-    const parrafos = texto.split(/\n\s*\n/);
-
-    contenedor.innerHTML = parrafos
-        .map(parrafo => `<p>${parrafo.trim()}</p>`)
-        .join("");
-
-});
-
-
-// =========================
-// REPRODUCTOR DE MÚSICA
-// =========================
-
-function reproducirCancion() {
-
-    const audio = document.getElementById("interlude");
-    const icono = document.getElementById("iconoPlay");
-
-    if (!audio || !icono) {
-        return;
-    }
-
-    if (audio.paused) {
-
-        audio.play()
-            .then(() => {
-                icono.textContent = "❚❚";
-            })
-            .catch(error => {
-                console.log("Error reproduciendo audio:", error);
-            });
-
-    } else {
-
-        audio.pause();
-        icono.textContent = "▶";
-
-    }
-}
-
-
-// Cambiar el icono cuando termine la canción
-
-const audioInterlude = document.getElementById("interlude");
-const iconoInterlude = document.getElementById("iconoPlay");
-
-if (audioInterlude && iconoInterlude) {
-
-    audioInterlude.addEventListener("ended", function () {
-        iconoInterlude.textContent = "▶";
-    });
-
-}
+// =========================================
+// FIN — KAMADA;EXYPRA
+// =========================================
