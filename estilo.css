@@ -1978,3 +1978,10 @@ nav {
 .dropdown.abierto .dropdown-contenido {
     display: block;
 }
+.subtitulo-recomendaciones {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: #ccc;
+    margin: 10px auto 35px;
+}
