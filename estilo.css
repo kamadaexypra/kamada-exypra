@@ -1975,3 +1975,6 @@ nav {
 .imagen-album {
     object-fit: cover;
 }
+.dropdown.abierto .dropdown-contenido {
+    display: block;
+}
