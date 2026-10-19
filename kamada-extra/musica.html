@@ -106,45 +106,6 @@
         <p class="footer-copyright">© 2026 KAMADA;EXYPRA</p>
     </footer>
 
-    <!-- REPRODUCTORES -->
-    <script>
-        const botonesMusica = document.querySelectorAll('.boton-portada[data-audio]');
-
-        botonesMusica.forEach(function (boton) {
-            const audio = document.getElementById(boton.dataset.audio);
-            const icono = boton.querySelector('.icono-play');
-            const titulo = boton.closest('.tarjeta-musica').querySelector('h3').textContent;
-
-            function actualizarBoton() {
-                const reproduciendo = !audio.paused;
-                icono.textContent = reproduciendo ? '❚❚' : '▶';
-                boton.setAttribute('aria-pressed', String(reproduciendo));
-                boton.setAttribute('aria-label', (reproduciendo ? 'Pausar ' : 'Reproducir ') + titulo);
-            }
-
-            boton.addEventListener('click', async function () {
-                if (audio.paused) {
-                    document.querySelectorAll('.tarjeta-musica audio').forEach(function (otroAudio) {
-                        if (otroAudio !== audio) otroAudio.pause();
-                    });
-                    try {
-                        await audio.play();
-                    } catch (error) {
-                        console.error('Error al reproducir:', error);
-                        alert('No se pudo reproducir la canción. Comprueba el enlace del MP3.');
-                    }
-                } else {
-                    audio.pause();
-                }
-                actualizarBoton();
-            });
-
-            audio.addEventListener('play', actualizarBoton);
-            audio.addEventListener('pause', actualizarBoton);
-            audio.addEventListener('ended', actualizarBoton);
-            audio.addEventListener('error', actualizarBoton);
-        });
-    </script>
     <script src="../script.js"></script>
 </body>
 </html>
