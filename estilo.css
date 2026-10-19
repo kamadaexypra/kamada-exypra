@@ -1964,3 +1964,14 @@ nav {
         gap: 12px !important;
     }
 }
+.tarjeta-musica {
+    margin-bottom: 35px;
+}
+
+.boton-portada {
+    cursor: pointer;
+}
+
+.imagen-album {
+    object-fit: cover;
+}
