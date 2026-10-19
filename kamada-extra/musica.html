@@ -1,259 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>MP3 - Kamada/Extra</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../estilo.css">
 </head>
-
 <body>
-
     <!-- CABECERA -->
-
     <header class="cabecera-banner">
         <a href="../index.html" class="enlace-banner">
-            <img
-                src="../Imagenes%202/banner-kamada.jpg"
-                alt="KAMADA;EXYPRA - Volver al inicio"
-                class="banner-superior">
+            <img src="../Imagenes%202/banner-kamada.jpg" alt="KAMADA;EXYPRA — Volver al inicio" class="banner-superior">
         </a>
     </header>
 
-    <!-- MENÚ -->
-
+    <!-- MENÚ PRINCIPAL -->
     <nav>
-
         <a href="../index.html">Inicio</a>
 
         <div class="dropdown">
-            <button type="button" class="dropdown-boton">
-                Kamada;Exypra
-            </button>
-
+            <button type="button" class="dropdown-boton">Kamada;Exypra</button>
             <div class="dropdown-contenido">
-                <a href="../kamadaexypra/webnovel.html" class="boton-leer">
-                    LEER WEBNOVEL
-                </a>
-
-                <a href="../kamadaexypra/extrastories.html">
-                    <em>Extra Stories</em>
-                </a>
-
-                <a href="../kamadaexypra/personajes.html">
-                    Personajes
-                </a>
-
-                <a href="../kamadaexypra/historia.html">
-                    Historia
-                </a>
+                <a href="../kamadaexypra/indice.html" class="boton-leer">LEER WEBNOVEL</a>
+                <a href="../kamadaexypra/extrastories.html"><em>Extra Stories</em></a>
+                <a href="../kamadaexypra/personajes.html">Personajes</a>
+                <a href="../kamadaexypra/historia.html">Historia</a>
             </div>
         </div>
 
-        <a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">
-            Kamada, La Fuerza del Amor
-        </a>
-
+        <a href="../kamadalafuerzadelamor/kamadalafuerzadelamor.html">Kamada, La Fuerza del Amor</a>
         <a href="#"><em>Zear Yero</em></a>
-
-        <a href="../videojuegos/dragonball.html">
-            Videojuegos
-        </a>
-
-        <a href="../recomendaciones.html">
-            Recomendaciones de la Hoya
-        </a>
+        <a href="../videojuegos/dragonball.html">Videojuegos</a>
+        <a href="../recomendaciones.html">Recomendaciones de la Hoya</a>
 
         <div class="dropdown">
-            <button type="button" class="dropdown-boton">
-                Kamada/Extra
-            </button>
-
+            <button type="button" class="dropdown-boton">Kamada/Extra</button>
             <div class="dropdown-contenido">
                 <a href="musica.html">🎵 MP3 / Música</a>
                 <a href="cinema-tv.html">🎬 Cinema / TV</a>
                 <a href="novelas.html">📚 Novelas</a>
             </div>
         </div>
-
     </nav>
 
     <!-- CONTENIDO -->
-
     <main>
         <section>
-
             <h2>CANCIONES QUE ME GUSTAN</h2>
 
+            <!-- CANCIÓN 1 -->
             <div class="tarjeta-musica">
-
-                <!-- PORTADA CLICABLE -->
-
-                <button
-                    type="button"
-                    class="boton-portada"
-                    id="botonInterlude"
-                    aria-label="Reproducir Interlude"
-                    aria-pressed="false">
-
-                    <img
-                        src="phase 2 album.jfif"
-                        alt="Portada de Interlude"
-                        class="imagen-album">
-
-                    <span
-                        class="icono-play"
-                        id="iconoPlay"
-                        aria-hidden="true">▶</span>
-
+                <button type="button" class="boton-portada" data-audio="interlude" aria-label="Reproducir Interlude" aria-pressed="false">
+                    <img src="phase 2 album.jfif" alt="Portada de Interlude" class="imagen-album">
+                    <span class="icono-play" aria-hidden="true">▶</span>
                 </button>
-
-                <!-- INFORMACIÓN -->
-
                 <div class="info-musica">
-
                     <h3>Interlude</h3>
-
-                    <p class="artista">
-                        Fear, and Loathing in Las Vegas
-                    </p>
-
-                    <p class="tipo-cancion">
-                        Instrumental
-                    </p>
-
-                    <!-- NUEVO MP3 -->
-
+                    <p class="artista">Fear, and Loathing in Las Vegas</p>
+                    <p class="tipo-cancion">Instrumental</p>
                     <audio id="interlude" loop preload="none">
-                        <source
-                            src="https://res.cloudinary.com/ip2n3vxp/video/upload/v1792417047/interlude_dance.mp3"
-                            type="audio/mpeg">
-
-                        Tu navegador no puede reproducir esta canción.
+                        <source src="https://res.cloudinary.com/ip2n3vxp/video/upload/v1787998933/Interlude-Eb-63bpm-441hz.mp3" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
                     </audio>
-
                 </div>
-
             </div>
 
+            <!-- CANCIÓN 2 -->
+            <div class="tarjeta-musica">
+                <button type="button" class="boton-portada" data-audio="danceScream" aria-label="Reproducir Dance &amp; Scream" aria-pressed="false">
+                    <img src="../imagenes/Dance_&amp;_Scream.jpg" alt="Portada de Dance &amp; Scream" class="imagen-album">
+                    <span class="icono-play" aria-hidden="true">▶</span>
+                </button>
+                <div class="info-musica">
+                    <h3>Dance &amp; Scream</h3>
+                    <p class="artista">Fear, and Loathing in Las Vegas</p>
+                    <p class="tipo-cancion">Instrumental</p>
+                    <audio id="danceScream" loop preload="none">
+                        <source src="https://res.cloudinary.com/ip2n3vxp/video/upload/v1792417047/interlude_dance.mp3" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
-
+    <!-- PIE DE PÁGINA -->
     <footer class="footer-principal">
-
         <div class="footer-decoracion">
-            <span></span>
-            <div class="footer-simbolo">✦</div>
-            <span></span>
+            <span></span><div class="footer-simbolo">✦</div><span></span>
         </div>
-
         <div class="footer-marca">
             <strong>KAMADA;EXYPRA</strong>
             <span>Natura Humana</span>
         </div>
-
         <div class="footer-legal">
-
-            <a href="../legal/aviso-legal.html">Aviso legal</a>
-            <span>·</span>
-
-            <a href="../legal/privacidad.html">Privacidad</a>
-            <span>·</span>
-
-            <a href="../legal/cookies.html">Cookies</a>
-            <span>·</span>
-
-            <a href="../legal/terminos.html">
-                Términos y condiciones
-            </a>
-            <span>·</span>
-
-            <a
-                href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kamadaexypra@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer">
-                Contacto
-            </a>
-
+            <a href="../legal/aviso-legal.html">Aviso legal</a><span>·</span>
+            <a href="../legal/privacidad.html">Privacidad</a><span>·</span>
+            <a href="../legal/cookies.html">Cookies</a><span>·</span>
+            <a href="../legal/terminos.html">Términos y condiciones</a><span>·</span>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=kamadaexypra@gmail.com" target="_blank" rel="noopener noreferrer">Contacto</a>
         </div>
-
-        <p class="footer-copyright">
-            © 2026 KAMADA;EXYPRA
-        </p>
-
+        <p class="footer-copyright">© 2026 KAMADA;EXYPRA</p>
     </footer>
 
-    <!-- REPRODUCTOR -->
-
+    <!-- REPRODUCTORES -->
     <script>
-        const audio = document.getElementById("interlude");
-        const boton = document.getElementById("botonInterlude");
-        const icono = document.getElementById("iconoPlay");
+        const botonesMusica = document.querySelectorAll('.boton-portada[data-audio]');
 
-        function actualizarBoton() {
-            const reproduciendo = !audio.paused;
+        botonesMusica.forEach(function (boton) {
+            const audio = document.getElementById(boton.dataset.audio);
+            const icono = boton.querySelector('.icono-play');
+            const titulo = boton.closest('.tarjeta-musica').querySelector('h3').textContent;
 
-            icono.textContent = reproduciendo ? "❚❚" : "▶";
-
-            boton.setAttribute(
-                "aria-pressed",
-                String(reproduciendo)
-            );
-
-            boton.setAttribute(
-                "aria-label",
-                reproduciendo
-                    ? "Pausar Interlude"
-                    : "Reproducir Interlude"
-            );
-        }
-
-        boton.addEventListener("click", async function () {
-
-            if (audio.paused) {
-                try {
-                    await audio.play();
-                } catch (error) {
-                    console.error(
-                        "Error al reproducir:",
-                        error
-                    );
-
-                    alert(
-                        "No se pudo reproducir la canción. Comprueba el enlace del MP3."
-                    );
-                }
-            } else {
-                audio.pause();
+            function actualizarBoton() {
+                const reproduciendo = !audio.paused;
+                icono.textContent = reproduciendo ? '❚❚' : '▶';
+                boton.setAttribute('aria-pressed', String(reproduciendo));
+                boton.setAttribute('aria-label', (reproduciendo ? 'Pausar ' : 'Reproducir ') + titulo);
             }
 
-            actualizarBoton();
-        });
+            boton.addEventListener('click', async function () {
+                if (audio.paused) {
+                    document.querySelectorAll('.tarjeta-musica audio').forEach(function (otroAudio) {
+                        if (otroAudio !== audio) otroAudio.pause();
+                    });
+                    try {
+                        await audio.play();
+                    } catch (error) {
+                        console.error('Error al reproducir:', error);
+                        alert('No se pudo reproducir la canción. Comprueba el enlace del MP3.');
+                    }
+                } else {
+                    audio.pause();
+                }
+                actualizarBoton();
+            });
 
-        audio.addEventListener("play", actualizarBoton);
-        audio.addEventListener("pause", actualizarBoton);
-        audio.addEventListener("ended", actualizarBoton);
-
-        audio.addEventListener("error", function () {
-            console.error(
-                "No se pudo cargar el archivo de audio."
-            );
-            actualizarBoton();
+            audio.addEventListener('play', actualizarBoton);
+            audio.addEventListener('pause', actualizarBoton);
+            audio.addEventListener('ended', actualizarBoton);
+            audio.addEventListener('error', actualizarBoton);
         });
     </script>
-
     <script src="../script.js"></script>
-
 </body>
 </html>
