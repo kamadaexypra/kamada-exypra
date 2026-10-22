@@ -407,3 +407,55 @@ function cambiarCookies() {
     localStorage.removeItem("kamada_analytics_consent");
     window.location.reload();
 }
+// =====================================
+// KAMADA;EXYPRA — FINAL DEL PRÓLOGO
+// =====================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const esPrologo = window.location.pathname ===
+        "/kamadaexypra/webnovel.html";
+
+    if (!esPrologo) return;
+
+    const textoNovela = document.querySelector(".texto-novela");
+
+    if (!textoNovela) return;
+
+    let finalRegistrado = false;
+
+    const observador = new IntersectionObserver(function (entradas) {
+
+        entradas.forEach(function (entrada) {
+
+            if (!entrada.isIntersecting || finalRegistrado) return;
+
+            finalRegistrado = true;
+
+            // Solo registrar si el lector aceptó Analytics
+            if (
+                localStorage.getItem("kamada_analytics_consent") === "aceptado" &&
+                typeof window.gtag === "function"
+            ) {
+                window.gtag("event", "final_prologo", {
+                    capitulo: "prologo",
+                    novela: "KAMADA;EXYPRA"
+                });
+            }
+
+            observador.disconnect();
+
+        });
+
+    }, {
+        threshold: 0.5
+    });
+
+    // Observar el último párrafo del prólogo
+    const parrafos = textoNovela.querySelectorAll("p");
+
+    if (parrafos.length > 0) {
+        observador.observe(parrafos[parrafos.length - 1]);
+    }
+
+});
