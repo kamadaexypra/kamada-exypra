@@ -2153,3 +2153,42 @@ nav {
         padding: 11px 16px;
     }
 }
+
+/* CORRECCIÓN FINAL DEL BANNER DE COOKIES */
+
+#aviso-cookies {
+    width: calc(100% - 32px) !important;
+    max-width: 650px !important;
+    padding: 22px 25px !important;
+    box-sizing: border-box !important;
+}
+
+#aviso-cookies p {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    margin: 0 0 18px !important;
+    font-weight: normal !important;
+}
+
+#aviso-cookies a,
+#aviso-cookies a:link,
+#aviso-cookies a:visited {
+    color: #BFFF00 !important;
+    font-size: inherit !important;
+    text-decoration: underline !important;
+}
+
+#aviso-cookies button {
+    font-size: 14px !important;
+    padding: 11px 20px !important;
+}
+
+@media (max-width: 600px) {
+    #aviso-cookies {
+        padding: 18px 15px !important;
+    }
+
+    #aviso-cookies p {
+        font-size: 13px !important;
+    }
+}
