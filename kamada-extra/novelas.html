@@ -223,5 +223,6 @@ document.addEventListener("click",e=>{if(!e.target.closest(".dropdown"))document
 function establecerTema(tema){document.body.classList.toggle("cinema-claro",tema==="claro");localStorage.setItem("cinema-tema",tema)}
 establecerTema(localStorage.getItem("cinema-tema")||"oscuro");renderizar();
 </script>
+   <script src="../script.js"></script>
 </body>
 </html>
