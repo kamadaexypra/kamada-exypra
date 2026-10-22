@@ -532,3 +532,43 @@ function abrirMenu() {
         iniciar();
     }
 })();
+
+/* ENLACE GLOBAL PARA CONFIGURAR COOKIES */
+document.addEventListener("DOMContentLoaded", function () {
+    const pies = document.querySelectorAll(
+        ".footer-legal, .cinema-footer, .footer-principal"
+    );
+
+    pies.forEach(function (pie) {
+        if (pie.querySelector(".enlace-configurar-cookies")) {
+            return;
+        }
+
+        const enlaceExistente = Array.from(
+            pie.querySelectorAll("a")
+        ).find(a => a.textContent.trim() === "Configurar cookies");
+
+        if (enlaceExistente) {
+            return;
+        }
+
+        const enlace = document.createElement("a");
+        enlace.href = "#";
+        enlace.className = "enlace-configurar-cookies";
+        enlace.textContent = "Configurar cookies";
+
+        enlace.addEventListener("click", function (evento) {
+            evento.preventDefault();
+
+            if (typeof window.cambiarCookies === "function") {
+                window.cambiarCookies();
+            }
+        });
+
+        const contenedor = pie.querySelector(".footer-legal")
+            || pie.querySelector("div")
+            || pie;
+
+        contenedor.append(" · ", enlace);
+    });
+});
