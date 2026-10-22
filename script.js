@@ -403,3 +403,7 @@ function abrirMenu() {
         iniciarConsentimiento();
     }
 })();
+function cambiarCookies() {
+    localStorage.removeItem("kamada_analytics_consent");
+    window.location.reload();
+}
