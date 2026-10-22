@@ -1,3 +1,46 @@
+
+/* FUENTES LOCALES — KAMADA;EXYPRA */
+
+@font-face {
+    font-family: "Cinzel";
+    src: url("files/Cinzel-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("files/Merriweather-VariableFont_opsz,wdth,wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Merriweather";
+    src: url("files/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 300 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("files/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("files/PlayfairDisplay-Italic-VariableFont_wght.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 400 900;
+    font-display: swap;
+}
+
 /* ==================================================
    KAMADA;EXYPRA - ESTILO PRINCIPAL
    ================================================== */
