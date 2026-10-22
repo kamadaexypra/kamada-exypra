@@ -336,16 +336,74 @@ function abrirMenu() {
 // =========================================
 // FIN — KAMADA;EXYPRA
 // =========================================
-// GOOGLE ANALYTICS Y CONSENTIMIENTO
+
+/* =========================================
+   KAMADA;EXYPRA — COOKIES Y ANALYTICS
+========================================= */
 
 (function () {
     const GA_ID = "G-QLRTW427SC";
     const STORAGE_KEY = "kamada_analytics_consent";
 
-    function iniciarAnalytics() {
-        if (document.getElementById("google-analytics-script")) return;
+    function obtenerConsentimiento() {
+        try {
+            return localStorage.getItem(STORAGE_KEY);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function guardarConsentimiento(valor) {
+        try {
+            localStorage.setItem(STORAGE_KEY, valor);
+        } catch (error) {
+            console.warn("No se pudo guardar el consentimiento", error);
+        }
+    }
+
+    function eliminarCookiesAnalytics() {
+        const nombres = document.cookie
+            .split(";")
+            .map(cookie => cookie.trim().split("=")[0])
+            .filter(nombre =>
+                nombre === "_ga" ||
+                nombre.startsWith("_ga_") ||
+                nombre === "_gid" ||
+                nombre.startsWith("_gat")
+            );
+
+        const partes = location.hostname.split(".");
+        const dominios = [""];
+
+        for (let i = 0; i < partes.length - 1; i++) {
+            dominios.push(partes.slice(i).join("."));
+        }
+
+        nombres.forEach(nombre => {
+            dominios.forEach(dominio => {
+                document.cookie =
+                    nombre + "=; Max-Age=0; path=/" +
+                    (dominio ? "; domain=" + dominio : "");
+            });
+        });
+    }
+
+    function desactivarAnalytics() {
+        window["ga-disable-" + GA_ID] = true;
+        eliminarCookiesAnalytics();
+    }
+
+    function activarAnalytics() {
+        if (obtenerConsentimiento() !== "aceptado") return;
+
+        window["ga-disable-" + GA_ID] = false;
+
+        if (document.getElementById("google-analytics-script")) {
+            return;
+        }
 
         window.dataLayer = window.dataLayer || [];
+
         window.gtag = function () {
             window.dataLayer.push(arguments);
         };
@@ -356,106 +414,121 @@ function abrirMenu() {
         const script = document.createElement("script");
         script.id = "google-analytics-script";
         script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+        script.src =
+            "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
 
         document.head.appendChild(script);
     }
 
-    function iniciarConsentimiento() {
-        const consentimiento = localStorage.getItem(STORAGE_KEY);
-
-        if (consentimiento === "aceptado") {
-            iniciarAnalytics();
-            return;
-        }
-
-        if (consentimiento === "rechazado") return;
+    function mostrarAvisoCookies() {
+        document.getElementById("aviso-cookies")?.remove();
 
         const aviso = document.createElement("div");
         aviso.id = "aviso-cookies";
+        aviso.setAttribute("role", "dialog");
+        aviso.setAttribute("aria-label", "Preferencias de cookies");
 
         aviso.innerHTML = `
             <p>
-                KAMADA;EXYPRA utiliza cookies analíticas opcionales
-                para conocer las visitas a la web.
+                KAMADA;EXYPRA utiliza cookies analíticas
+                opcionales de Google Analytics para conocer
+                las visitas a la web.
+                <a href="/legal/cookies.html">Más información</a>
             </p>
-            <button id="aceptar-analytics">Aceptar</button>
-            <button id="rechazar-analytics">Rechazar</button>
+            <button type="button" id="aceptar-analytics">
+                Aceptar
+            </button>
+            <button type="button" id="rechazar-analytics">
+                Rechazar
+            </button>
         `;
 
         document.body.appendChild(aviso);
 
-        document.getElementById("aceptar-analytics").onclick = function () {
-            localStorage.setItem(STORAGE_KEY, "aceptado");
-            aviso.remove();
-            iniciarAnalytics();
-        };
+        document.getElementById("aceptar-analytics")
+            .addEventListener("click", function () {
+                guardarConsentimiento("aceptado");
+                aviso.remove();
+                activarAnalytics();
+            });
 
-        document.getElementById("rechazar-analytics").onclick = function () {
-            localStorage.setItem(STORAGE_KEY, "rechazado");
-            aviso.remove();
-        };
+        document.getElementById("rechazar-analytics")
+            .addEventListener("click", function () {
+                guardarConsentimiento("rechazado");
+                desactivarAnalytics();
+                aviso.remove();
+
+                // Detener también el script ya cargado
+                window.location.reload();
+            });
+    }
+
+    // Permite cambiar la decisión desde el footer
+    window.cambiarCookies = function () {
+        mostrarAvisoCookies();
+    };
+
+    function observarFinalPrologo() {
+        if (
+            window.location.pathname !==
+            "/kamadaexypra/webnovel.html"
+        ) return;
+
+        const texto = document.querySelector(".texto-novela");
+        if (!texto) return;
+
+        const parrafos = texto.querySelectorAll("p");
+        const ultimo = parrafos[parrafos.length - 1];
+
+        if (!ultimo) return;
+
+        let registrado = false;
+
+        const observador = new IntersectionObserver(function (entradas) {
+            entradas.forEach(function (entrada) {
+                if (!entrada.isIntersecting || registrado) return;
+
+                registrado = true;
+
+                if (
+                    obtenerConsentimiento() === "aceptado" &&
+                    !window["ga-disable-" + GA_ID] &&
+                    typeof window.gtag === "function"
+                ) {
+                    window.gtag("event", "final_prologo", {
+                        capitulo: "prologo",
+                        novela: "KAMADA;EXYPRA"
+                    });
+                }
+
+                observador.disconnect();
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        observador.observe(ultimo);
+    }
+
+    function iniciar() {
+        const consentimiento = obtenerConsentimiento();
+
+        if (consentimiento === "aceptado") {
+            activarAnalytics();
+        } else {
+            desactivarAnalytics();
+
+            if (consentimiento !== "rechazado") {
+                mostrarAvisoCookies();
+            }
+        }
+
+        observarFinalPrologo();
     }
 
     if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", iniciarConsentimiento);
+        document.addEventListener("DOMContentLoaded", iniciar);
     } else {
-        iniciarConsentimiento();
+        iniciar();
     }
 })();
-function cambiarCookies() {
-    localStorage.removeItem("kamada_analytics_consent");
-    window.location.reload();
-}
-// =====================================
-// KAMADA;EXYPRA — FINAL DEL PRÓLOGO
-// =====================================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const esPrologo = window.location.pathname ===
-        "/kamadaexypra/webnovel.html";
-
-    if (!esPrologo) return;
-
-    const textoNovela = document.querySelector(".texto-novela");
-
-    if (!textoNovela) return;
-
-    let finalRegistrado = false;
-
-    const observador = new IntersectionObserver(function (entradas) {
-
-        entradas.forEach(function (entrada) {
-
-            if (!entrada.isIntersecting || finalRegistrado) return;
-
-            finalRegistrado = true;
-
-            // Solo registrar si el lector aceptó Analytics
-            if (
-                localStorage.getItem("kamada_analytics_consent") === "aceptado" &&
-                typeof window.gtag === "function"
-            ) {
-                window.gtag("event", "final_prologo", {
-                    capitulo: "prologo",
-                    novela: "KAMADA;EXYPRA"
-                });
-            }
-
-            observador.disconnect();
-
-        });
-
-    }, {
-        threshold: 0.5
-    });
-
-    // Observar el último párrafo del prólogo
-    const parrafos = textoNovela.querySelectorAll("p");
-
-    if (parrafos.length > 0) {
-        observador.observe(parrafos[parrafos.length - 1]);
-    }
-
-});
