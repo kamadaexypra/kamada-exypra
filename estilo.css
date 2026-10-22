@@ -2192,3 +2192,59 @@ nav {
         font-size: 13px !important;
     }
 }
+
+/* INFORMACIÓN EDITORIAL DEL PRÓLOGO */
+
+.datos-publicacion {
+    max-width: 650px;
+    margin: 35px auto 50px;
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.datos-categoria {
+    display: block;
+    color: #BFFF00;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.datos-publicacion h2 {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 15px;
+    color: inherit;
+}
+
+.datos-linea {
+    width: 80px;
+    height: 1px;
+    background: #BFFF00;
+    margin: 0 auto 20px;
+}
+
+.datos-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: 13px;
+    opacity: .8;
+}
+
+.datos-separador {
+    color: #BFFF00;
+}
+
+@media (max-width: 600px) {
+    .datos-publicacion h2 {
+        font-size: 27px;
+    }
+
+    .datos-meta {
+        font-size: 12px;
+    }
+}
