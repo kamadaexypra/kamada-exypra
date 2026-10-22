@@ -336,3 +336,70 @@ function abrirMenu() {
 // =========================================
 // FIN — KAMADA;EXYPRA
 // =========================================
+// GOOGLE ANALYTICS Y CONSENTIMIENTO
+
+(function () {
+    const GA_ID = "G-QLRTW427SC";
+    const STORAGE_KEY = "kamada_analytics_consent";
+
+    function iniciarAnalytics() {
+        if (document.getElementById("google-analytics-script")) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+            window.dataLayer.push(arguments);
+        };
+
+        window.gtag("js", new Date());
+        window.gtag("config", GA_ID);
+
+        const script = document.createElement("script");
+        script.id = "google-analytics-script";
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+
+        document.head.appendChild(script);
+    }
+
+    function iniciarConsentimiento() {
+        const consentimiento = localStorage.getItem(STORAGE_KEY);
+
+        if (consentimiento === "aceptado") {
+            iniciarAnalytics();
+            return;
+        }
+
+        if (consentimiento === "rechazado") return;
+
+        const aviso = document.createElement("div");
+        aviso.id = "aviso-cookies";
+
+        aviso.innerHTML = `
+            <p>
+                KAMADA;EXYPRA utiliza cookies analíticas opcionales
+                para conocer las visitas a la web.
+            </p>
+            <button id="aceptar-analytics">Aceptar</button>
+            <button id="rechazar-analytics">Rechazar</button>
+        `;
+
+        document.body.appendChild(aviso);
+
+        document.getElementById("aceptar-analytics").onclick = function () {
+            localStorage.setItem(STORAGE_KEY, "aceptado");
+            aviso.remove();
+            iniciarAnalytics();
+        };
+
+        document.getElementById("rechazar-analytics").onclick = function () {
+            localStorage.setItem(STORAGE_KEY, "rechazado");
+            aviso.remove();
+        };
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", iniciarConsentimiento);
+    } else {
+        iniciarConsentimiento();
+    }
+})();
