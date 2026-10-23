@@ -7,7 +7,28 @@
 <link rel="stylesheet" href="../estilo.css">
 <style>
 /* Perfil clásico estilo Blogger, con fondo suave */
-body { background:#e9e7df; color:#242424; }
+
+/* FONDO COMPLETO DEL PERFIL */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.48),
+            rgba(0, 0, 0, 0.58)
+        ),
+        url("../imagenes/Nakochan.jfif");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #ffffff;
+}
+
 .perfil-blogger { max-width:1160px; margin:65px auto; padding:0 28px; display:grid; grid-template-columns:220px minmax(0,1fr); gap:65px; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.4; }
 .perfil-lateral img {width:210px;height:210px;object-fit:cover;display:block;background:#d4d3cb;}
 .perfil-lateral a,.perfil-principal a {color:#147b7d;text-decoration:underline;}
@@ -20,6 +41,45 @@ body { background:#e9e7df; color:#242424; }
 .fila-perfil dd {margin:0;}
 .perfil-principal dl {margin:0;}
 @media(max-width:700px){.perfil-blogger{grid-template-columns:1fr;gap:30px;margin:30px auto;padding:0 20px}.perfil-lateral img{width:160px;height:160px}.perfil-principal h1{font-size:30px}.perfil-principal h2{font-size:27px}.fila-perfil{grid-template-columns:105px minmax(0,1fr);gap:12px;font-size:15px}}
+  
+/* PERFIL SOBRE LA FOTOGRAFÍA */
+
+.perfil-blogger {
+    position: relative;
+    z-index: 1;
+    min-height: 75vh;
+}
+
+.perfil-principal h1,
+.perfil-principal h2 {
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+}
+
+.perfil-principal,
+.perfil-lateral {
+    color: #ffffff;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.85);
+}
+
+.perfil-principal a,
+.perfil-lateral a {
+    color: #bfff00;
+}
+
+.perfil-lateral img {
+    border: 2px solid rgba(255,255,255,0.7);
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 700px) {
+    body {
+        background-attachment: scroll;
+        background-position: center top;
+    }
+}
+
 </style>
 </head>
 <body>
