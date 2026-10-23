@@ -80,6 +80,77 @@ body {
     }
 }
 
+/* ===================================
+   PERFIL SIN FONDO NEGRO
+=================================== */
+
+/* Fotografía detrás de toda la página */
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    background-color: transparent !important;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagenes/Nakochan.jfif") !important;
+
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+
+    color: white !important;
+}
+
+/* Eliminar fondos de los contenedores */
+.perfil-blogger,
+.perfil-lateral,
+.perfil-principal,
+.perfil-principal dl,
+.perfil-principal .fila-perfil,
+.perfil-principal .blogs {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Mantener el texto visible */
+.perfil-blogger {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.85);
+}
+
+/* Títulos blancos */
+.perfil-principal h1,
+.perfil-principal h2 {
+    color: white !important;
+    background: transparent !important;
+}
+
+/* Enlaces verdes */
+.perfil-lateral a,
+.perfil-principal a {
+    color: #BFFF00 !important;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 700px) {
+    body {
+        background-attachment: scroll !important;
+        background-position: center top !important;
+    }
+}
+
 </style>
 </head>
 <body>
