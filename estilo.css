@@ -2494,3 +2494,28 @@ nav {
 .botones-retro a:hover {
     transform: translateY(-3px);
 }
+
+/* SUBIR LOS BOTONES SIN CAMBIAR SU POSICIÓN */
+
+.botones-retro {
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+}
+
+/* Reducir espacios entre los datos personales */
+.fila-perfil {
+    margin: 5px 0 !important;
+}
+
+/* Subir ligeramente el contenido del perfil */
+.perfil-blogger {
+    margin-top: 30px !important;
+}
+
+/* Reducir separación entre secciones */
+.perfil-principal h2 {
+    margin-top: 22px !important;
+    margin-bottom: 15px !important;
+}
