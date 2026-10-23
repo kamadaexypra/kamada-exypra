@@ -2474,3 +2474,23 @@ nav {
 .botones-retro img:hover {
     transform: scale(1.12);
 }
+
+/* ENLACES DE LOS BOTONES GIF */
+
+.botones-retro a {
+    display: inline-block;
+    width: 88px;
+    height: 31px;
+    line-height: 0;
+    text-decoration: none;
+}
+
+.botones-retro a img {
+    width: 88px;
+    height: 31px;
+    display: block;
+}
+
+.botones-retro a:hover {
+    transform: translateY(-3px);
+}
