@@ -2314,3 +2314,25 @@ nav {
 .capitulo-meta .enlace-autor:hover {
     text-decoration: underline;
 }
+
+/* Fecha y autor */
+.capitulo-meta {
+    color: #ffffff;
+}
+
+.capitulo-meta .fecha-publicacion {
+    color: #ffffff;
+}
+
+/* Sora: blanco por defecto */
+.capitulo-meta .enlace-autor {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Sora: verde al pasar el ratón */
+.capitulo-meta .enlace-autor:hover {
+    color: #BFFF00;
+}
