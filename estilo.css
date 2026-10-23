@@ -2205,3 +2205,76 @@ nav {
     margin: 15px 0;
     color: inherit;
 }
+
+.capitulo-destacado {
+    max-width: 900px;
+    margin: 65px auto;
+    padding: 0 24px;
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+.capitulo-destacado h2 {
+    font-size: 15px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    color: #819b00;
+}
+
+.capitulo-preview {
+    border-top: 1px solid #9995;
+    border-bottom: 1px solid #9995;
+    padding: 30px 0;
+}
+
+.capitulo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+    opacity: 0.65;
+    margin-bottom: 18px;
+}
+
+.capitulo-preview h3 {
+    font-size: 26px;
+    margin-bottom: 24px;
+    line-height: 1.4;
+}
+
+.capitulo-extracto {
+    font-size: 17px;
+    line-height: 1.95;
+    opacity: 0.85;
+}
+
+.capitulo-extracto p {
+    margin-bottom: 17px;
+}
+
+.boton-continuar {
+    display: inline-block;
+    margin-top: 20px;
+    color: #789500;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 7px;
+    transition: 0.2s;
+}
+
+.boton-continuar:hover {
+    color: #a7d000;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 600px) {
+    .capitulo-preview h3 {
+        font-size: 21px;
+    }
+
+    .capitulo-extracto {
+        font-size: 16px;
+    }
+}
