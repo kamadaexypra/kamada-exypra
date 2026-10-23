@@ -2446,3 +2446,31 @@ nav {
         width: 180px;
     }
 }
+
+/* BOTONES GIF RETRO */
+
+.botones-retro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 55px;
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.35);
+    background: transparent !important;
+}
+
+.botones-retro img {
+    width: 88px;
+    height: 31px;
+    object-fit: fill;
+    display: block;
+    image-rendering: pixelated;
+    transition: transform 0.2s ease;
+}
+
+.botones-retro img:hover {
+    transform: scale(1.12);
+}
