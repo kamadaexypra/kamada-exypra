@@ -2290,3 +2290,17 @@ nav {
 .enlace-autor:hover {
     opacity: 1;
 }
+
+.capitulo-meta {
+    color: #BFFF00;
+}
+
+.capitulo-meta .enlace-autor {
+    color: #BFFF00;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.capitulo-meta .enlace-autor:hover {
+    opacity: 0.7;
+}
