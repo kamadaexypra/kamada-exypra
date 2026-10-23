@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sobre mí | KAMADA;EXYPRA</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+/* Perfil sencillo, inspirado en el diseño clásico de Blogger */
+body { background:#e9e7df; color:#242424; }
+.perfil-blogger { max-width:1160px; margin:65px auto; padding:0 28px; display:grid; grid-template-columns:220px minmax(0,1fr); gap:65px; font-family:Arial,Helvetica,sans-serif; font-size:17px; line-height:1.4; }
+.perfil-lateral img {width:210px;height:210px;object-fit:cover;display:block;background:#d4d3cb;}
+.perfil-lateral a,.perfil-principal a {color:#147b7d;text-decoration:underline;}
+.perfil-lateral p {margin:24px 0;}
+.perfil-principal h1 {font-size:37px;margin:0 0 24px;font-weight:700;}
+.perfil-principal h2 {font-size:34px;margin:36px 0 24px;font-weight:700;}
+.perfil-principal .blogs {margin:0 0 30px;}
+.fila-perfil {display:grid;grid-template-columns:155px minmax(0,1fr);gap:18px;margin:9px 0;align-items:start;}
+.fila-perfil dt {font-weight:700;text-align:right;}
+.fila-perfil dd {margin:0;}
+.perfil-principal dl {margin:0;}
+@media(max-width:700px){.perfil-blogger{grid-template-columns:1fr;gap:30px;margin:30px auto;padding:0 20px}.perfil-lateral img{width:160px;height:160px}.perfil-principal h1{font-size:30px}.perfil-principal h2{font-size:27px}.fila-perfil{grid-template-columns:105px minmax(0,1fr);gap:12px;font-size:15px}}
+</style>
+</head>
+<body>
+<main class="perfil-blogger">
+<aside class="perfil-lateral">
+<img src="imagenes/perfil.jpg" alt="Imagen de perfil" onerror="this.style.visibility='hidden'">
+<p><a href="imagenes/perfil.jpg" target="_blank" rel="noopener">Ver tamaño completo</a></p>
+<p>En la web desde<br>2026</p>
+<p>Visitas del perfil:<br>—</p>
+</aside>
+<section class="perfil-principal">
+<h1>Mis blogs</h1>
+<p class="blogs"><a href="index.html">KAMADA;EXYPRA</a></p>
+<h2>Información personal</h2>
+<dl>
+<div class="fila-perfil"><dt>Nombre</dt><dd>[Tu nombre o seudónimo]</dd></div>
+<div class="fila-perfil"><dt>Ubicación</dt><dd>[Opcional]</dd></div>
+<div class="fila-perfil"><dt>Introducción</dt><dd>[Escribe aquí tu presentación]</dd></div>
+<div class="fila-perfil"><dt>Intereses</dt><dd>[Tus intereses]</dd></div>
+<div class="fila-perfil"><dt>Películas favoritas</dt><dd>[Tus películas favoritas]</dd></div>
+<div class="fila-perfil"><dt>Libros favoritos</dt><dd>[Tus libros favoritos]</dd></div>
+</dl>
+</section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
