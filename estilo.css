@@ -2304,3 +2304,13 @@ nav {
 .capitulo-meta .enlace-autor:hover {
     opacity: 0.7;
 }
+
+.capitulo-meta .enlace-autor {
+    color: #BFFF00;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.capitulo-meta .enlace-autor:hover {
+    text-decoration: underline;
+}
